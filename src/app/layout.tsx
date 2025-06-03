@@ -1,5 +1,5 @@
+import {titleFont, paragraphFont} from "@/components/ui/fonts";
 import type { Metadata } from "next";
-
 import "./globals.css";
 import React from "react";
 
@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="fr" className={`${titleFont.variable}`}>
+      <body className={`${paragraphFont.className} `}>
         {children}
       </body>
     </html>
