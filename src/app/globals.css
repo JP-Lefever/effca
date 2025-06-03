@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --red-main : #D00931;
+    --white-main : #FFFFFF;
+    --grey-effect : #E0E0DF;
+    --black-test : #2E2E29;
+
+}
