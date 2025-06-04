@@ -2,6 +2,7 @@ import {titleFont, paragraphFont} from "@/assets/fonts/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -18,6 +19,18 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${titleFont.variable}`}>
       <body className={`${paragraphFont.className} `}>
+      <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+      />
         {children}
       </body>
     </html>
