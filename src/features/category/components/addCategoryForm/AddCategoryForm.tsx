@@ -17,22 +17,25 @@ export default function AddCategoryForm() {
         const response = await addCategory(data)
 
         if(response.success){
-            toast.success(`La catégorie ${response.data.label} a bien été créé`)
+            toast.success(`La catégorie ${response.data.label} a bien été ajoutée`)
             reset()
         }
     }
 
     return (<>
 
-    <section >
+    <section className={styles.section} >
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+            <fieldset>
+            <legend>{dataCategory.legend}</legend>
             <label htmlFor={"label"}>{dataCategory.category}</label>
-            <input type={"text"} {...register("label", { required: dataError.require, pattern:{
+            <input type={"text"} placeholder={dataCategory.example.join(', ')} {...register("label", { required: dataError.require, pattern:{
                 value : /[a-zA-Z0-9]/g,
                 message: dataError.pattern
                 } })} />
-            <button type={"submit"}>{dataCategory.button}</button>
+            <button className={styles.button} type={"submit"}>{dataCategory.button}</button>
             {errors.label && (<p>{errors.label.message as string}</p>)}
+            </fieldset>
         </form>
     </section>
     </>)

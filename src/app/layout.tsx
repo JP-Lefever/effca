@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${titleFont.variable}`}>
+    <html lang="fr" className={`${titleFont.variable} ${paragraphFont.variable}`}>
       <body className={`${paragraphFont.className} `}>
       <ToastContainer
           position="top-right"

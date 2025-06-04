@@ -11,6 +11,7 @@ try {
     })
 
     return {success : true, data : newCategory}
+
 }catch(err) {
     console.error(err)
     return {success : false, error : "Une erreur est survenue" }
