@@ -28,7 +28,8 @@ export default function NavAdmin() {
                             {openSection[typeKey] &&
                             <ul>
                                 {value.items.map((item, i)=>(
-                                    <Link href={"#"} className={styles.menu} key={i}>
+
+                                    <Link href={value.links[i]} className={styles.menu} key={i}>
                                         {item}
                                     </Link>
                                 ))}

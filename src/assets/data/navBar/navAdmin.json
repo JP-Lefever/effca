@@ -6,28 +6,32 @@
       "ajouter une catégorie/fonction",
       "ajouter un poste",
       "Modifier/supprimer un membre"
-    ]
+    ],
+    "links" : ["/admin/addMember" , "/admin/addCategory", "/admin/addPosition", "/admin/modifyMember"]
   },
   "club": {
     "title": "Club",
     "items": [
       "Ajouter l'histoire du club",
       "Modifier l'histoire du club"
-    ]
+    ],
+    "links" : ["/admin/addHistory" , "/admin/modifyHistory"]
   },
   "partner": {
     "title": "Partenaires",
     "items": [
       "Ajouter un partenaire",
       "Modifier/supprimer un partenaire"
-    ]
+    ],
+    "links" : ["/admin/addPartner" , "/admin/modifyPartner"]
   },
   "actuality": {
     "title": "Actualités",
     "items": [
       "Ajouter une actualitée",
       "Modifier/supprimer actualitée"
-    ]
+    ],
+    "links" : ["/admin/addActuality" , "/admin/modifyActuality"]
   },
   "photo": {
     "title": "Photo",
@@ -35,6 +39,7 @@
       "Ajouter un Album",
       "Ajouter une photo",
       "Modifier/supprimer photo"
-    ]
+    ],
+    "links" : ["/admin/addAlbum" , "/admin/addPhoto", "/admin/modifyPhoto"]
   }
 }
