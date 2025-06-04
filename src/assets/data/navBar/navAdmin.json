@@ -1,0 +1,40 @@
+{
+  "members": {
+    "title": "Membres/joueurs",
+    "items": [
+      "Ajouter un membre/joueur du club",
+      "ajouter une catégorie/fonction",
+      "ajouter un poste",
+      "Modifier/supprimer un membre"
+    ]
+  },
+  "club": {
+    "title": "Club",
+    "items": [
+      "Ajouter l'histoire du club",
+      "Modifier l'histoire du club"
+    ]
+  },
+  "partner": {
+    "title": "Partenaires",
+    "items": [
+      "Ajouter un partenaire",
+      "Modifier/supprimer un partenaire"
+    ]
+  },
+  "actuality": {
+    "title": "Actualités",
+    "items": [
+      "Ajouter une actualitée",
+      "Modifier/supprimer actualitée"
+    ]
+  },
+  "photo": {
+    "title": "Photo",
+    "items": [
+      "Ajouter un Album",
+      "Ajouter une photo",
+      "Modifier/supprimer photo"
+    ]
+  }
+}
