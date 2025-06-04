@@ -1,4 +1,4 @@
-import {titleFont, paragraphFont} from "@/components/ui/fonts";
+import {titleFont, paragraphFont} from "@/assets/fonts/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
