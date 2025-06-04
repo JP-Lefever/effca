@@ -20,6 +20,9 @@
     font-family: var(--title-font),sans-serif;
     letter-spacing: 0.1em;
     font-size: 1.2em;
+    @media screen and (max-width: 568px)  {
+        width : 100%;
+    }
 }
 .section label {
     font-size: 1.4em;
@@ -30,6 +33,9 @@
     height: 5vh;
     font-family: var(--paragraph-font),sans-serif;
     font-size: 1.2em;
+    @media screen and (max-width: 568px)  {
+        width : 100%;
+    }
 }
 .section p {
     color: var(--red-main);

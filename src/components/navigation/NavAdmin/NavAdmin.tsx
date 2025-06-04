@@ -3,22 +3,30 @@ import styles from "./navAdmin.module.css"
 import dataNav from "@/assets/data/navBar/navAdmin.json"
 import {useState} from "react";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import {white} from "next/dist/lib/picocolors";
 
 
 export default function NavAdmin() {
 
     const [openSection, setOpenSection] = useState<Partial<Record<keyof typeof dataNav, boolean>>>({})
+    const [openMenu, setOpenMenu] = useState<boolean>(true)
 
     const toggleSection = (key : keyof typeof dataNav) => {
       setOpenSection((prev)=>({
           ...prev,
           [key] : !prev[key],
       }))
+    }
 
+    const toggleMenu = ()=>{
+        setOpenMenu(!openMenu)
     }
 
     return (
         <nav className={styles.nav}>
+            <button className={styles.buttonMenu} type={"button"} onClick={toggleMenu}>{openMenu ? <ChevronLeft  color={"white"}/> :  <ChevronRight  color={"white"}/>}</button>
+            {openMenu &&
             <ul>
                 {Object.entries(dataNav).map(([key,value])=>{
                     const typeKey = key as keyof typeof dataNav;
@@ -39,6 +47,7 @@ export default function NavAdmin() {
                     )
                 })}
             </ul>
+            }
         </nav>
     )
 }
