@@ -3,8 +3,8 @@
     "title": "Membres/joueurs",
     "items": [
       "Ajouter un membre/joueur du club",
-      "ajouter une catégorie/fonction",
-      "ajouter un poste",
+      "Ajouter une catégorie/fonction",
+      "Ajouter un poste",
       "Modifier/supprimer un membre"
     ],
     "links" : ["/admin/addMember" , "/admin/addCategory", "/admin/addPosition", "/admin/modifyMember"]

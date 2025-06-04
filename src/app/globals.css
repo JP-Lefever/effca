@@ -6,6 +6,7 @@
 
 body{
     overflow-x: hidden;
+    overflow-y: scroll;
     scroll-behavior: smooth;
 }
 
@@ -16,4 +17,6 @@ body{
     --black-text : #2E2E29;
     --black-dark : #000000FF;
     --padding-section : 1em;
+    --border-radius-button : 20px;
+
 }

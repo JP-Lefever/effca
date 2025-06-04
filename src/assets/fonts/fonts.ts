@@ -9,4 +9,5 @@ export const titleFont = Bebas_Neue({
 export const paragraphFont = Oswald({
     weight : "400",
     subsets : ['latin'],
+    variable : "--paragraph-font",
 })
