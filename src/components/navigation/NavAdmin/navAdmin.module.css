@@ -2,7 +2,7 @@
     background-color: var(--red-main);
     width : fit-content;
     padding : var(--padding-section);
-    min-height : 100vh;
+    height : 100dvh;
 }
 .nav ul {
     display: flex;
