@@ -4,7 +4,7 @@ import dataNav from "@/assets/data/navBar/navAdmin.json"
 import {useState} from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import {white} from "next/dist/lib/picocolors";
+
 
 
 export default function NavAdmin() {
