@@ -20,6 +20,18 @@ model Player_position {
   members Members[]
 }
 
+model Category{
+  id String @id @default(uuid())
+  label String
+  members Members[]
+}
+
+model MemberFunction{
+  id String @id @default(uuid())
+  label String
+  members Members[]
+}
+
 model Members{
   id String @id @default(uuid())
   firstname String
@@ -27,19 +39,18 @@ model Members{
   photo String?
   is_admin Boolean @default(false)
   positionId String?
+  categoryId String?
+  memberFunctionId String?
   position Player_position? @relation(fields:[positionId], references: [id])
-  category Category[]
+  category Category? @relation(fields:[categoryId], references: [id])
+  memberFunction MemberFunction? @relation(fields:[memberFunctionId], references: [id])
 
   @@index([positionId])
 
 }
 
 
-model Category{
-  id String @id @default(uuid())
-  label String
-  members Members[]
-}
+
 
 model Club {
   id String @id @default(uuid())

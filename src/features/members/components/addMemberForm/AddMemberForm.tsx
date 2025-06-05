@@ -7,9 +7,10 @@ import {PlayerPositionProps} from "@/features/position/type";
 import {MemberProps} from "@/features/members/type";
 import {addNewMember} from "@/features/members/action";
 import {toast} from "react-toastify";
+import {RoleProps} from "@/features/associationRole/type";
 
 
-export default function AddMemberForm({categories, playerPosition} : {categories: CategoryProps[], playerPosition: PlayerPositionProps[]}) {
+export default function AddMemberForm({categories, playerPosition ,memberRole} : {categories: CategoryProps[], playerPosition: PlayerPositionProps[], memberRole : RoleProps[]}) {
 
     const {register, handleSubmit, formState:{errors}} = useForm<MemberProps>()
 
@@ -89,6 +90,9 @@ export default function AddMemberForm({categories, playerPosition} : {categories
                     <label htmlFor={"memberFunctionId"}>{dataMember.memberFunction}</label>
                     <select {...register('memberFunctionId')}>
                         <option value="">{dataMember.optionFunction}</option>
+                        {memberRole.map((member)=>(
+                            <option key={member.id} value={member.id}>{member.label}</option>
+                        ))}
 
                     </select>
                     {errors.categoryId && (<p>{errors.categoryId.message as string}</p>)}

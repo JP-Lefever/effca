@@ -9,7 +9,7 @@
   "optionCategory" : "Choisissez une catégorie",
   "memberFunction" : "Role dans l'association *",
   "optionFunction" : "Choisissez un role",
-  "optional" : "Champs non obligatoire",
+  "optional" : "*Champs non obligatoire",
   "photo" : "Photo",
   "button" : "Ajouter"
 }
