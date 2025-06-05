@@ -20,7 +20,7 @@ export default function AddRole(){
         if(response.success){
             toast.success(`Le role ${response.data.label} a bien été ajoutée`)
             reset()
-        }
+        }else{toast.error("Erreur lors de l'ajout du membre")}
     }
 
     return (

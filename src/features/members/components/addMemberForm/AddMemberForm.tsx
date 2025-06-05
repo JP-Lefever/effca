@@ -8,39 +8,50 @@ import {MemberProps} from "@/features/members/type";
 import {addNewMember} from "@/features/members/action";
 import {toast} from "react-toastify";
 import {RoleProps} from "@/features/associationRole/type";
+import styles from "./addMemberForm.module.css"
 
 
 export default function AddMemberForm({categories, playerPosition ,memberRole} : {categories: CategoryProps[], playerPosition: PlayerPositionProps[], memberRole : RoleProps[]}) {
 
-    const {register, handleSubmit, formState:{errors}} = useForm<MemberProps>()
+    const {register, handleSubmit, formState:{errors}, reset} = useForm<MemberProps>()
 
     const onSubmit = async (data : MemberProps) => {
 
         const { photo, ...rest } = data
+        let photoUrl: string | null  = null
+
+        if (photo && photo.length>0) {
 
         const formData = new FormData()
-        if (photo) {
         formData.append("photo", photo[0])
-        }
 
         const responseUpload = await fetch("/api/upload",{
             method: "POST",
             body: formData,
         })
+
         const resultUpload = await responseUpload.json()
 
+            if(!resultUpload.success){
+                 toast.error("Erreur lors du chargement de la photo");
+               return;
+            }
+            photoUrl = resultUpload.url
+        }
 
-        const responseAddMember = await addNewMember( rest, resultUpload.url)
+
+        const responseAddMember = await addNewMember( rest, photoUrl)
 
         if (responseAddMember.success) {
             toast.success(`${responseAddMember.data.firstname} a bien été ajouté`)
-        }
+            reset()
+        } else{toast.error("Erreur lors de l'ajout du membre")}
 
     }
 
     return (<>
 
-    <section>
+    <section className={styles.section}>
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
                 <legend>{dataMember.legend}</legend>
@@ -103,7 +114,7 @@ export default function AddMemberForm({categories, playerPosition ,memberRole} :
                     <input type={"file"} {...register('photo')} />
                     </div>
 
-                <button type="submit">{dataMember.button}</button>
+                <button type="submit" className={styles.button}>{dataMember.button}</button>
             </fieldset>
             <p>{dataMember.optional}</p>
         </form>

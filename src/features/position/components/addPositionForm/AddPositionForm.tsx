@@ -19,7 +19,7 @@ export default function AddPositionForm() {
         if(response.success){
             toast.success(`Le poste ${response.data.label} a bien été ajouté`)
             reset()
-        }
+        }else{toast.error("Erreur lors de l'ajout du membre")}
     }
 
     return (<>
