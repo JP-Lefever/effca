@@ -30,7 +30,7 @@ export default function AddCategoryForm() {
             <legend>{dataCategory.legend}</legend>
             <label htmlFor={"label"}>{dataCategory.category}</label>
             <input type={"text"} placeholder={dataCategory.example.join(', ')} {...register("label", { required: dataError.require, pattern:{
-                value : /^[\p{L}0-9_-]+$/u,
+                value : /^[\p{L}0-9_\-\s]+$/u,
                 message: dataError.pattern
                 } })} />
             <button className={styles.button} type={"submit"}>{dataCategory.button}</button>

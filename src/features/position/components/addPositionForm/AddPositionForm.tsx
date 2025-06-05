@@ -32,7 +32,7 @@ export default function AddPositionForm() {
                 <input type="text" placeholder={positionData.example.join(', ')} {...register("label" ,
                     {required : errorsData.require ,
                     pattern:{
-                    value : /^[\p{L}0-9_-]+$/u,
+                    value : /^[\p{L}0-9_\-\s]+$/u,
                     message: errorsData.pattern
                     }})} />
                 <button className={styles.button} type="submit">{positionData.button}</button>

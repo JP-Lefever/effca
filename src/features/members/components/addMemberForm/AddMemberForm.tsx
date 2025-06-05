@@ -60,7 +60,7 @@ export default function AddMemberForm({categories, playerPosition ,memberRole} :
                     <label htmlFor={"firstname"}>{dataMember.firstname}</label>
                     <input type="text" {...register('firstname', {required : dataError.require,
                     pattern : {
-                        value : /^[\p{L}0-9_-]+$/u,
+                        value : /^[\p{L}0-9_\-\s]+$/u,
                         message : dataError.pattern
                     }})} />
                         {errors.firstname && (<p>{errors.firstname.message as string}</p>)}
@@ -70,7 +70,7 @@ export default function AddMemberForm({categories, playerPosition ,memberRole} :
                     <label htmlFor={'lastname'}>{dataMember.lastname}</label>
                     <input type="text" {...register('lastname', {required : dataError.require,
                         pattern : {
-                        value : /^[\p{L}0-9_-]+$/u,
+                        value : /^[\p{L}0-9_\-\s]+$/u,
                         message : dataError.pattern
                     }})} />
                         {errors.lastname && (<p>{errors.lastname.message as string}</p>)}
