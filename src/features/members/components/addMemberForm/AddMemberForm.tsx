@@ -4,15 +4,43 @@ import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
 import {CategoryProps} from "@/features/category/types";
 import {PlayerPositionProps} from "@/features/position/type";
+import {MemberProps} from "@/features/members/type";
+import {addNewMember} from "@/features/members/action";
+import {toast} from "react-toastify";
+
 
 export default function AddMemberForm({categories, playerPosition} : {categories: CategoryProps[], playerPosition: PlayerPositionProps[]}) {
 
-    const {register, formState:{errors}} = useForm()
+    const {register, handleSubmit, formState:{errors}} = useForm<MemberProps>()
+
+    const onSubmit = async (data : MemberProps) => {
+
+        const { photo, ...rest } = data
+
+        const formData = new FormData()
+        if (photo) {
+        formData.append("photo", photo[0])
+        }
+
+        const responseUpload = await fetch("/api/upload",{
+            method: "POST",
+            body: formData,
+        })
+        const resultUpload = await responseUpload.json()
+        console.log(resultUpload)
+
+        const responseAddMember = await addNewMember( rest, resultUpload.url)
+
+        if (responseAddMember.success) {
+            toast.success(`${responseAddMember.data.firstname} a bien été ajouté`)
+        }
+
+    }
 
     return (<>
 
     <section>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
                 <legend>{dataMember.legend}</legend>
 
@@ -37,8 +65,8 @@ export default function AddMemberForm({categories, playerPosition} : {categories
                     </div>
 
                     <div role="group">
-                    <label htmlFor={"position"}>{dataMember.position}</label>
-                    <select {...register('position')}>{dataMember.position}
+                    <label htmlFor={"positionId"}>{dataMember.position}</label>
+                    <select {...register('positionId')}>{dataMember.position}
                         <option value="">{dataMember.optionPosition}</option>
                         {playerPosition.map((position)=>(
                             <option key={position.id} value={position.id}>{position.label}</option>
@@ -47,14 +75,14 @@ export default function AddMemberForm({categories, playerPosition} : {categories
                     </div>
 
                     <div role="group">
-                    <label htmlFor={"category"}>{dataMember.category}</label>
-                    <select {...register('category' , {required: dataError.require})}>
+                    <label htmlFor={"categoryId"}>{dataMember.category}</label>
+                    <select {...register('categoryId' , {required: dataError.require})}>
                         <option value="">{dataMember.optionCategory}</option>
                         {categories.map(category => (
                             <option key={category.id} value={category.id}>{category.label}</option>
                         ))}
                     </select>
-                        {errors.category && (<p>{errors.category.message as string}</p>)}
+                        {errors.categoryId && (<p>{errors.categoryId.message as string}</p>)}
                     </div>
 
                     <div role="group">
