@@ -1,0 +1,6 @@
+{
+  "legend" : "Role associatif",
+  "category" : "Ajouter un role",
+  "example" : [ "Président", "Trésorier","..."],
+  "button" : "Ajouter"
+}
