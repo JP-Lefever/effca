@@ -3,11 +3,12 @@
     "title": "Membres/joueurs",
     "items": [
       "Ajouter un membre/joueur du club",
-      "Ajouter une catégorie/fonction",
+      "Ajouter une catégorie",
       "Ajouter un poste",
+      "Ajouter un role dans l'asso",
       "Modifier/supprimer un membre"
     ],
-    "links" : ["/admin/addMember" , "/admin/addCategory", "/admin/addPosition", "/admin/modifyMember"]
+    "links" : ["/admin/addMember" , "/admin/addCategory", "/admin/addPosition", "/admin/addRole", "/admin/modifyMember"]
   },
   "club": {
     "title": "Club",

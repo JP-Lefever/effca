@@ -1,6 +1,6 @@
 {
   "legend" : "Category",
   "category" : "Ajouter une catégorie",
-  "example" : ["Senior, Junior, Président", "Trésorier","..."],
+  "example" : ["Senior, Jeunes","..."],
   "button" : "Ajouter"
 }
