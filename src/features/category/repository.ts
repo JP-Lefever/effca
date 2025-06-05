@@ -1,7 +1,7 @@
 import {prisma} from "@/lib/prisma"
 import {CategoryProps, ResultProps} from "@/features/category/types";
 
-export async function createCategory(category: CategoryProps) : Promise<ResultProps<CategoryProps>> {
+export async function createCategory(category: Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> {
 try {
 
     const newCategory = await prisma.category.create({

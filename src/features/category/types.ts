@@ -1,4 +1,5 @@
 export type CategoryProps = {
+    id: string;
     label: string;
 }
 
