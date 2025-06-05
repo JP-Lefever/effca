@@ -3,8 +3,9 @@ import dataMember from "@/assets/data/member/member.json"
 import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
 import {CategoryProps} from "@/features/category/types";
+import {PlayerPositionProps} from "@/features/position/type";
 
-export default function AddMemberForm({categories} : {categories: CategoryProps[]}) {
+export default function AddMemberForm({categories, playerPosition} : {categories: CategoryProps[], playerPosition: PlayerPositionProps[]}) {
 
     const {register, formState:{errors}} = useForm()
 
@@ -38,7 +39,10 @@ export default function AddMemberForm({categories} : {categories: CategoryProps[
                     <div role="group">
                     <label htmlFor={"position"}>{dataMember.position}</label>
                     <select {...register('position')}>{dataMember.position}
-                        <option value="top">Top</option>
+                        <option value="">{dataMember.optionPosition}</option>
+                        {playerPosition.map((position)=>(
+                            <option key={position.id} value={position.id}>{position.label}</option>
+                        ))}
                     </select>
                     </div>
 

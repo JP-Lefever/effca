@@ -20,3 +20,18 @@ export async function createPlayerPosition(data : Omit<PlayerPositionProps, "id"
     }
 
 }
+
+export async function readPosition() : Promise<ResultProps<PlayerPositionProps[]>>{
+
+    try {
+
+    const positions = await prisma.player_position.findMany()
+
+    return {success : true, data : positions}
+    } catch(err) {
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue" }
+    }
+
+
+}

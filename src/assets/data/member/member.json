@@ -4,6 +4,7 @@
   "firstname" :  "Prénom",
   "lastname" : "Nom",
   "position" : "Poste",
+  "optionPosition" : "Choisissez un poste (si necessaire)",
   "category" : "Catégorie",
   "optionCategory" : "Choisissez une catégorie",
   "photo" : "Photo",
