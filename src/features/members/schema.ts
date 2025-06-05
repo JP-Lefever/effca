@@ -8,4 +8,5 @@ export const memberSchema = z.object({
     lastname : z.string().regex(regex, {message : dataError.pattern}).nonempty({message: dataError.require}),
     positionId: z.string().optional(),
     categoryId : z.string().optional(),
+    memberFunctionId : z.string().optional(),
 })

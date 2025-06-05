@@ -6,8 +6,8 @@ export type MemberProps = {
     is_admin : boolean,
     lastname : string,
     positionId: string | null,
-    categoryId: string;
-    memberFunctionId : string;
+    categoryId: string | null,
+    memberFunctionId : string |null;
     photo: string | null
 }
 

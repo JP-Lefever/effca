@@ -27,7 +27,7 @@ export default function AddMemberForm({categories, playerPosition} : {categories
             body: formData,
         })
         const resultUpload = await responseUpload.json()
-        console.log(resultUpload)
+
 
         const responseAddMember = await addNewMember( rest, resultUpload.url)
 
@@ -77,7 +77,7 @@ export default function AddMemberForm({categories, playerPosition} : {categories
                     <div role="group">
                     <label htmlFor={"categoryId"}>{dataMember.category}</label>
                     <select {...register('categoryId')}>
-                        <option value="">{dataMember.optionCategory}</option>
+                        <option value={""}>{dataMember.optionCategory}</option>
                         {categories.map(category => (
                             <option key={category.id} value={category.id}>{category.label}</option>
                         ))}
