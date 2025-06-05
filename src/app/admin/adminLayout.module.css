@@ -2,7 +2,9 @@
     display: flex;
     min-height: 100vh;
 }
-
+.aside{
+    min-height: 100dvh;
+}
 .main{
     flex: 1;
     padding: var(--padding-section);

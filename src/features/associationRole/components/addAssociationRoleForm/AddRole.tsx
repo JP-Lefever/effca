@@ -20,7 +20,7 @@ export default function AddRole(){
         if(response.success){
             toast.success(`Le role ${response.data.label} a bien été ajoutée`)
             reset()
-        }
+        }else{toast.error("Erreur lors de l'ajout du membre")}
     }
 
     return (
@@ -30,7 +30,7 @@ export default function AddRole(){
                     <legend>{dataRole.legend}</legend>
                     <label htmlFor={"label"}>{dataRole.category}</label>
                     <input type={"text"} placeholder={dataRole.example.join(', ')} {...register("label", { required: dataError.require, pattern:{
-                            value : /^[\p{L}0-9_-]+$/u,
+                            value : /^[\p{L}0-9_\-\s]+$/u,
                             message: dataError.pattern
                         } })} />
                     <button className={styles.button} type={"submit"}>{dataRole.button}</button>

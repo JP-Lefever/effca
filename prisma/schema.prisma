@@ -42,8 +42,8 @@ model Members{
   categoryId String?
   memberFunctionId String?
   position Player_position? @relation(fields:[positionId], references: [id])
-  category Category? @relation(fields: [categoryId], references: [id])
-  memberFunction MemberFunction? @relation(fields: [memberFunctionId], references: [id])
+  category Category? @relation(fields:[categoryId], references: [id])
+  memberFunction MemberFunction? @relation(fields:[memberFunctionId], references: [id])
 
   @@index([positionId])
 

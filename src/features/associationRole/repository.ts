@@ -18,5 +18,17 @@ export async function createAssociationRole(data : Omit<RoleProps, "id">) : Prom
         console.log(err)
         return {success : false, error : "Une erreur est survenue"}
     }
+}
 
+export async function readAllRole() : Promise<ResultProps<RoleProps[]>> {
+
+    try {
+
+        const roles = await prisma.memberFunction.findMany()
+
+        return {success : true, data : roles}
+    }catch(err){
+        console.log(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
 }

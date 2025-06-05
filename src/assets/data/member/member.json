@@ -1,0 +1,15 @@
+{
+  "legend" : "Membre du club",
+  "member" : "Ajouter un membre",
+  "firstname" :  "Prénom",
+  "lastname" : "Nom",
+  "position" : "Poste *",
+  "optionPosition" : "Choisissez un poste",
+  "category" : "Catégorie *",
+  "optionCategory" : "Choisissez une catégorie",
+  "memberFunction" : "Role dans l'association *",
+  "optionFunction" : "Choisissez un role",
+  "optional" : "*Champs non obligatoire",
+  "photo" : "Photo",
+  "button" : "Ajouter"
+}

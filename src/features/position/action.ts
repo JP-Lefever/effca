@@ -1,7 +1,7 @@
 "use server"
 import type {PlayerPositionProps, ResultProps} from "@/features/position/type";
 import {playerPositionSchema} from "@/features/position/schema";
-import {createPlayerPosition} from "@/features/position/repository";
+import {createPlayerPosition, readPosition} from "@/features/position/repository";
 
 export const addPlayerPosition = async (data : Omit<PlayerPositionProps, "id">) : Promise<ResultProps<PlayerPositionProps>> =>{
 
@@ -19,5 +19,16 @@ export const addPlayerPosition = async (data : Omit<PlayerPositionProps, "id">) 
     console.log(response)
     return {success : response.success, data: response.data}
 
+
+}
+
+export const readAllPosition = async () : Promise<ResultProps<PlayerPositionProps[]>> =>{
+
+    const response = await readPosition();
+
+    if(!response.success){
+        return {success : false, error : "Une erreur est survenue" }
+    }
+    return {success : response.success, data: response.data}
 
 }
