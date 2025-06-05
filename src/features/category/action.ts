@@ -2,7 +2,7 @@
 import {CategoryProps, ResultProps} from "@/features/category/types";
 import {categorySchema} from "@/features/category/schema";
 import {createCategory, readCategories} from "@/features/category/repository";
-import {MemberProps} from "@/features/members/type";
+
 
 
 export const addCategory = async (data : Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> => {
