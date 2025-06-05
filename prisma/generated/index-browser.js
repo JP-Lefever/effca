@@ -125,18 +125,25 @@ exports.Prisma.Player_positionScalarFieldEnum = {
   label: 'label'
 };
 
+exports.Prisma.CategoryScalarFieldEnum = {
+  id: 'id',
+  label: 'label'
+};
+
+exports.Prisma.MemberFunctionScalarFieldEnum = {
+  id: 'id',
+  label: 'label'
+};
+
 exports.Prisma.MembersScalarFieldEnum = {
   id: 'id',
   firstname: 'firstname',
   lastname: 'lastname',
   photo: 'photo',
   is_admin: 'is_admin',
-  positionId: 'positionId'
-};
-
-exports.Prisma.CategoryScalarFieldEnum = {
-  id: 'id',
-  label: 'label'
+  positionId: 'positionId',
+  categoryId: 'categoryId',
+  memberFunctionId: 'memberFunctionId'
 };
 
 exports.Prisma.ClubScalarFieldEnum = {
@@ -193,8 +200,9 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   Player_position: 'Player_position',
-  Members: 'Members',
   Category: 'Category',
+  MemberFunction: 'MemberFunction',
+  Members: 'Members',
   Club: 'Club',
   Partner: 'Partner',
   Actuality: 'Actuality',
