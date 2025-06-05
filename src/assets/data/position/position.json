@@ -1,0 +1,6 @@
+{
+  "legend" : "Poste",
+  "position" : "Ajouter un poste",
+  "example" : ["Attaquant", "Defenseur","..."],
+  "button" : "Ajouter"
+}

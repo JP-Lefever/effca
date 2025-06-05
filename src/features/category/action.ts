@@ -4,7 +4,7 @@ import {categorySchema} from "@/features/category/schema";
 import {createCategory} from "@/features/category/repository";
 
 
-export const addCategory = async (data : CategoryProps) : Promise<ResultProps<CategoryProps>> => {
+export const addCategory = async (data : Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> => {
 
     const validData = categorySchema.safeParse(data);
 
