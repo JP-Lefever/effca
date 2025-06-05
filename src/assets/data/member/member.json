@@ -1,0 +1,11 @@
+{
+  "legend" : "Membre du club",
+  "member" : "Ajouter un membre",
+  "firstname" :  "Prénom",
+  "lastname" : "Nom",
+  "position" : "Poste",
+  "category" : "Catégorie",
+  "optionCategory" : "Choisissez une catégorie",
+  "photo" : "Photo",
+  "button" : "Ajouter"
+}

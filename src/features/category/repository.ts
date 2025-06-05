@@ -1,19 +1,35 @@
 import {prisma} from "@/lib/prisma"
 import {CategoryProps, ResultProps} from "@/features/category/types";
+import {MemberProps} from "@/features/members/type";
 
 export async function createCategory(category: Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> {
-try {
+    try {
 
-    const newCategory = await prisma.category.create({
-        data :{
-            label : category.label
-        }
-    })
+        const newCategory = await prisma.category.create({
+            data :{
+                label : category.label
+            }
+        })
 
-    return {success : true, data : newCategory}
+        return {success : true, data : newCategory}
 
-}catch(err) {
-    console.error(err)
-    return {success : false, error : "Une erreur est survenue" }
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue" }
+    }
 }
+
+
+export async function readCategories(): Promise<ResultProps<CategoryProps[]>> {
+
+    try {
+        const categories = await  prisma.category.findMany();
+
+
+            return {success : true, data : categories}
+
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue" }
+    }
 }

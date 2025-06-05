@@ -1,6 +1,6 @@
 import AddPositionForm from "@/features/position/components/addPositionForm/AddPositionForm";
 
-export default function addPosition() {
+export default function addPositionPage() {
 
     return (<>
 

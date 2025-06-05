@@ -1,7 +1,8 @@
 "use server"
 import {CategoryProps, ResultProps} from "@/features/category/types";
 import {categorySchema} from "@/features/category/schema";
-import {createCategory} from "@/features/category/repository";
+import {createCategory, readCategories} from "@/features/category/repository";
+import {MemberProps} from "@/features/members/type";
 
 
 export const addCategory = async (data : Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> => {
@@ -18,4 +19,15 @@ export const addCategory = async (data : Omit<CategoryProps, "id">) : Promise<Re
         return {success: false, error : response.error};
     }
     return {success : response.success, data : response.data};
+}
+
+export const readAllCategories = async() : Promise<ResultProps<CategoryProps[]>> =>{
+
+    const response = await readCategories();
+
+    if (!response.success){
+        return {success : response.success, error : response.error}
+    }
+
+    return {success : response.success, data : response.data}
 }
