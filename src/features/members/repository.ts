@@ -12,11 +12,8 @@ export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "
                 lastname : lastname,
                 positionId : positionId,
                 photo : photo ,
-                category: {
-                    connect : [
-                        {id : categoryId }
-                    ]
-                }
+                categoryId: categoryId,
+
             }
         })
 

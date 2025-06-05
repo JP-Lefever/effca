@@ -7,6 +7,7 @@ export type MemberProps = {
     lastname : string,
     positionId: string | null,
     categoryId: string;
+    memberFunctionId : string;
     photo: string | null
 }
 

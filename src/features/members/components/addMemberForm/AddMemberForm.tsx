@@ -76,7 +76,7 @@ export default function AddMemberForm({categories, playerPosition} : {categories
 
                     <div role="group">
                     <label htmlFor={"categoryId"}>{dataMember.category}</label>
-                    <select {...register('categoryId' , {required: dataError.require})}>
+                    <select {...register('categoryId')}>
                         <option value="">{dataMember.optionCategory}</option>
                         {categories.map(category => (
                             <option key={category.id} value={category.id}>{category.label}</option>
@@ -85,6 +85,15 @@ export default function AddMemberForm({categories, playerPosition} : {categories
                         {errors.categoryId && (<p>{errors.categoryId.message as string}</p>)}
                     </div>
 
+                <div role="group">
+                    <label htmlFor={"memberFunctionId"}>{dataMember.memberFunction}</label>
+                    <select {...register('memberFunctionId')}>
+                        <option value="">{dataMember.optionFunction}</option>
+
+                    </select>
+                    {errors.categoryId && (<p>{errors.categoryId.message as string}</p>)}
+                </div>
+
                     <div role="group">
                     <label htmlFor={'photo'}>{dataMember.photo}</label>
                     <input type={"file"} {...register('photo')} />
@@ -92,6 +101,7 @@ export default function AddMemberForm({categories, playerPosition} : {categories
 
                 <button type="submit">{dataMember.button}</button>
             </fieldset>
+            <p>{dataMember.optional}</p>
         </form>
     </section>
     </>)
