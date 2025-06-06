@@ -33,7 +33,11 @@ export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "
 export async function readAllMembers() : Promise<ResultProps<MemberProps[]>> {
 
     try {
-        const members = await prisma.members.findMany()
+        const members = await prisma.members.findMany({
+            orderBy : {
+                    firstname: "asc",
+    }
+        })
 
         return {success : true, data: members }
     }catch(err) {

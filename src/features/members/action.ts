@@ -40,7 +40,7 @@ export const editMember = async (data : Omit<MemberProps, "id" | "is_admin" | "p
 
 
     const validData = memberSchema.safeParse(data)
-    console.log(validData.error)
+
     if (!validData.success) {
         return {success : false, error : "Une erreur est survenue"}
     }

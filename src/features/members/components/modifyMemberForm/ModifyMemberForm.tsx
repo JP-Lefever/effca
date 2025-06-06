@@ -35,7 +35,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
     }
 
     const onSubmitModify = async (data : MemberProps) => {
-
+    console.log(data.categoryId)
         const {photo, ...rest} = data
 
         let photoUrl : string  = photo as string
