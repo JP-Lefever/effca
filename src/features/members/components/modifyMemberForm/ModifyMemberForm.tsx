@@ -71,7 +71,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
             <form onSubmit={handleSubmit(onSubmitModify)} className={styles.form}>
                 {photo && typeof photo === "string" &&
                     <figure className={styles.imageWrapper}>
-                        <Image src={photo} alt={""} fill={true}/>
+                        <Image className={styles.image} src={photo} alt={""} fill={true}/>
                     </figure>
                 }
                 <fieldset>
