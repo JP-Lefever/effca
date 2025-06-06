@@ -29,3 +29,14 @@ export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "
     }
 }
 
+export async function readAllMembers() : Promise<ResultProps<MemberProps[]>> {
+
+    try {
+        const members = await prisma.members.findMany()
+
+        return {success : true, data: members }
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "une erreur est survenue"}
+    }
+}
