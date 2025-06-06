@@ -8,7 +8,7 @@ export type MemberProps = {
     positionId: string | null,
     categoryId: string | null,
     memberFunctionId : string |null;
-    photo: string | null
+    photo: string | null | FileList
 }
 
 export type ResultProps<T> = | {success : true, data : T} | {success : false, error : string};
