@@ -1,9 +1,72 @@
+
+
 .form {
     display: flex;
     flex-direction: column;
-    width : 20vw;
+    width : 15vw;
     align-items: center;
-    justify-content: space-between;
-    min-height: 40vh;
-    border: 1px solid black;
+    justify-content: space-around;
+    min-height: 45vh;
+    border: 2px solid var(--red-main);
+    padding : 1em 0 ;
+    background : linear-gradient(130deg, var(--red-main) 0%, var(--red-main) 20%, var(--white-main) 20%,var(--white-main) 100%);
 }
+
+.form fieldset {
+    display: flex;
+    flex-direction: column;
+    width : 10vw;
+    border : none;
+   gap: 0.5em;
+    margin : 1em;
+}
+
+.imageWrapper {
+    position: relative;
+    width : 8vw;
+    height : 15vh;
+}
+
+.imageWrapper image {
+    object-fit: cover;
+
+}
+
+.labelFile {
+    cursor: pointer;
+    border : solid 1px var(--red-main);
+    text-align : center;
+    font-size : 1.2em;
+    border-color : black;
+}
+.input {
+    font-family : var(--paragraph-font),sans-serif;
+    font-size : 1.2em;
+    text-align : center;
+}
+
+.readOnly {
+    font-family : var(--paragraph-font),sans-serif;
+    font-size : 1.2em;
+    text-align : center;
+    background-color: transparent;
+    border: none;
+    color: var(--red-main);
+    appearance: none;
+    width: 10vw;
+    opacity: 1;
+}
+.form div {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+.button {
+    border-color: var(--black-dark);
+    background-color: transparent;
+    width : 4vw;
+    margin-top : 1em;
+    padding : 0.4em;
+
+}
+

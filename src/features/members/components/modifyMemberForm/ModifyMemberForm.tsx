@@ -8,9 +8,10 @@ import {RoleProps} from "@/features/associationRole/type";
 import {PlayerPositionProps} from "@/features/position/type";
 import {CategoryProps} from "@/features/category/types";
 import {useState} from "react";
-import { FilePenLine, CircleCheckBig } from 'lucide-react';
+import { FilePenLine, CircleCheckBig, Trash2 } from 'lucide-react';
 import {editMember} from "@/features/members/action";
 import {toast} from "react-toastify";
+
 
 
 export default function ModifyMemberForm({member, memberFunction, positions, categories}: {member: MemberProps, memberFunction: RoleProps[], positions : PlayerPositionProps[], categories : CategoryProps[]}) {
@@ -37,7 +38,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
 
         const {photo, ...rest} = data
 
-        let photoUrl = null
+        let photoUrl : string  = photo as string
         if (photo && typeof photo !== "string" && photo.length > 0) {
             const formData = new FormData();
             formData.append("photo", photo[0])
@@ -60,6 +61,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
 
         if(responseModifyMember.success) {
             toast.success(`${responseModifyMember.data.firstname} a bien été modifié`)
+            setModify(!modify)
         }
     }
 
@@ -68,37 +70,47 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
 
             <form onSubmit={handleSubmit(onSubmitModify)} className={styles.form}>
                 {photo && typeof photo === "string" &&
-                <Image src={photo} alt={""} width={150} height={150} />
+                    <figure className={styles.imageWrapper}>
+                        <Image src={photo} alt={""} fill={true}/>
+                    </figure>
                 }
+                <fieldset>
                 {!modify &&
-                <input type={"file"} {...register("photo")}/>
+                    <>
+                    <label className={styles.labelFile} htmlFor="photo">Modifier la photo</label>
+                    <input id={"photo"} style={{display: "none"}} type={"file"} {...register("photo")}/>
+                    </>
                 }
-                <input readOnly={modify} disabled={modify} type={"text"} {...register("firstname")}/>
-                <input readOnly={modify} disabled={modify} type={"text"} {...register("lastname")}/>
-                <select disabled={modify} {...register("categoryId")}>
+                <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("firstname")}/>
+                <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("lastname")}/>
+                <select className={modify ? styles.readOnly : styles.input} disabled={modify} {...register("categoryId")}>
                     <option value={""}>{dataMember.optionCategory}</option>
                     {categories.map((category) =>(
                         <option key={category.id} value={category.id}>{category.label}</option>
                     ))}
                 </select>
-                <select disabled={modify} {...register("positionId")}>
+                <select className={modify ? styles.readOnly : styles.input} disabled={modify} {...register("positionId")}>
                     <option value={""}>{dataMember.optionPosition}</option>
                     {positions.map((position) =>(
                         <option key={position.id} value={position.id}>{position.label}</option>
                     ))}
                 </select>
-                <select disabled={modify} {...register("memberFunctionId")}>
+                <select className={modify ? styles.readOnly : styles.input} disabled={modify} {...register("memberFunctionId")}>
                     <option value={""}>{dataMember.optionFunction}</option>
                     {memberFunction.map((role) =>(
                         <option key={role.id} value={role.id}>{role.label}</option>
                     ))}
                 </select>
+                    <div role={"group"}>
                 {modify &&
-            <button type={"button"} onClick={handleModify}><FilePenLine/></button>
+            <button className={styles.button} type={"button"} onClick={handleModify}><FilePenLine color={"blue"}/></button>
                 }
                 {!modify &&
-                    <button type={"submit"}><CircleCheckBig/></button>
+                    <button className={styles.button} type={"submit"}><CircleCheckBig color={"green"}/></button>
                 }
+                    <button className={styles.button} type={"button"}><Trash2 color={"red"}/></button>
+                    </div>
+                </fieldset>
             </form>
 
 

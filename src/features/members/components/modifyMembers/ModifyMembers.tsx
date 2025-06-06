@@ -1,3 +1,4 @@
+import styles from "./modifyMember.module.css"
 import ModifyMemberForm from "@/features/members/components/modifyMemberForm/ModifyMemberForm";
 import {MemberProps} from "@/features/members/type";
 import {readCategories} from "@/features/category/repository";
@@ -15,11 +16,13 @@ export default async function ModifyMembers({members}: {members: MemberProps[]})
     }
 
     return (<>
+        <section className={styles.sectionCard}>
         {members.map((member) => (
-           <section key={member.id}>
+           <article key={member.id} >
             <ModifyMemberForm member ={member} categories = {categories.data} memberFunction={memberFunction.data} positions = {positions.data} />
-           </section>
+           </article>
 
         ))}
+        </section>
         </>)
 }
