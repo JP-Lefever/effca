@@ -17,3 +17,16 @@ export async function createHistory (data : Omit<HistoryProps, "id">): Promise<R
         return {success : false, error : "Une erreur est survenue"}
     }
 }
+
+export async function readHistory (): Promise<ResultProps<HistoryProps>> {
+
+
+    try {
+       const history =  await prisma.club.findMany()
+        console.log(history)
+        return {success: true, data : history[0]}
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
+}

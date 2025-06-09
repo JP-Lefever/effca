@@ -3,7 +3,7 @@
 
 import {HistoryProps, ResultProps} from "@/features/history/type";
 import {historySchema} from "@/features/history/schema";
-import {createHistory} from "@/features/history/repository";
+import {createHistory, readHistory} from "@/features/history/repository";
 
 export  const createHistoryClub =  async (data : Omit<HistoryProps, "id">) : Promise<ResultProps<null>> =>{
 
@@ -14,6 +14,17 @@ export  const createHistoryClub =  async (data : Omit<HistoryProps, "id">) : Pro
     }
 
     const response = await createHistory(validData.data)
+
+    if(!response.success){
+        return {success : response.success, error : response.error}
+    }
+
+    return {success : response.success, data : response.data}
+}
+
+export const readHistoryClub = async (): Promise<ResultProps<HistoryProps>> =>{
+
+    const response = await readHistory()
 
     if(!response.success){
         return {success : response.success, error : response.error}
