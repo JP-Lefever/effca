@@ -1,0 +1,23 @@
+"use server"
+
+
+import {HistoryProps, ResultProps} from "@/features/history/type";
+import {historySchema} from "@/features/history/schema";
+import {createHistory} from "@/features/history/repository";
+
+export  const createHistoryClub =  async (data : Omit<HistoryProps, "id">) : Promise<ResultProps<null>> =>{
+
+    const validData = historySchema.safeParse(data)
+
+    if(!validData.success){
+        return {success : false, error : "Données invalides"}
+    }
+
+    const response = await createHistory(validData.data)
+
+    if(!response.success){
+        return {success : response.success, error : response.error}
+    }
+
+    return {success : response.success, data : response.data}
+}
