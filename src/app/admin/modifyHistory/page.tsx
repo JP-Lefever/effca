@@ -1,9 +1,10 @@
 import ModifyHistoryForm from "@/features/history/components/modifyHistoryForm/ModifyHistoryForm";
-import {readHistory} from "@/features/history/repository";
+import {readHistoryClub} from "@/features/history/action";
+
 
 export default async function ModifyHistoryPage(){
 
-    const history = await readHistory();
+    const history = await readHistoryClub();
 
     if(!history.success){
         return <p>Une erreur est survenue</p>
@@ -13,6 +14,6 @@ export default async function ModifyHistoryPage(){
 
     return (<>
 
-        <ModifyHistoryForm history={history.data}/>
+        <ModifyHistoryForm data={history.data}/>
     </>)
 }
