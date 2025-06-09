@@ -1,5 +1,7 @@
 {
   "legend" : "Le club",
   "history" : "Ajouter l'histoire du club",
-  "button" : "Ajouter"
+  "button" : "Ajouter",
+  "modifyHistory" : "Modifier l'histoire du club",
+  "buttonModify" : "modifier"
 }
