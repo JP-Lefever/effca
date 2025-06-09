@@ -3,8 +3,8 @@
 
 import {MemberProps, ResultProps} from "@/features/members/type";
 import {memberSchema} from "@/features/members/schema";
-import {createMember, updateMembers} from "@/features/members/repository";
-import {readAllMembers} from "@/features/members/repository";
+import {createMember, updateMembers, readAllMembers, DestroyMember} from "@/features/members/repository";
+
 
 export const addNewMember = async (data : Omit<MemberProps, "photo">, photo : string |null) : Promise<ResultProps<Omit<MemberProps,"categoryId">>> =>{
 
@@ -52,4 +52,17 @@ export const editMember = async (data : Omit<MemberProps, "id" | "is_admin" | "p
     }
 
     return {success : response.success, data : response.data}
+}
+
+export const deleteMember = async (id: string) : Promise<ResultProps<null>> => {
+
+    const response = await DestroyMember(id)
+
+    if (!response.success) {
+        return {success : response.success, error : response.error}
+    }
+
+    return {success : response.success, data : response.data}
+
+
 }

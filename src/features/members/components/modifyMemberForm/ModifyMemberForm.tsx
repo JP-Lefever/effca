@@ -11,6 +11,9 @@ import {useState} from "react";
 import { FilePenLine, CircleCheckBig, Trash2 } from 'lucide-react';
 import {editMember} from "@/features/members/action";
 import {toast} from "react-toastify";
+import {createPortal} from "react-dom";
+import DeleteMemberModal from "@/features/members/components/deleteMemberModal/DeleteMemberModal";
+
 
 
 
@@ -35,7 +38,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
     }
 
     const onSubmitModify = async (data : MemberProps) => {
-    console.log(data.categoryId)
+
         const {photo, ...rest} = data
 
         let photoUrl : string  = photo as string
@@ -64,6 +67,15 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
             setModify(!modify)
         }
     }
+
+        const [openModal, setOpenModal] = useState(false);
+
+        const handleOpenModal = () => {
+            setOpenModal(!openModal);
+        }
+
+
+
 
     return (<>
 
@@ -108,7 +120,11 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
                 {!modify &&
                     <button className={styles.button} type={"submit"}><CircleCheckBig color={"green"}/></button>
                 }
-                    <button className={styles.button} type={"button"}><Trash2 color={"red"}/></button>
+                    <button onClick={handleOpenModal} className={styles.button} type={"button"}><Trash2 color={"red"}/></button>
+
+                        {openModal && (
+                            createPortal(<DeleteMemberModal id = {id} closeModalAction = {handleOpenModal}/>, document.body)
+                        )}
                     </div>
                 </fieldset>
             </form>

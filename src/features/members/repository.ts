@@ -69,3 +69,19 @@ export async function updateMembers(data: Omit<MemberProps, "id" | "is_admin" | 
         return {success : false, error : "une erreur est survenue"}
     }
 }
+
+export async function DestroyMember(id : string) : Promise<ResultProps<null>> {
+
+    try {
+         await prisma.members.delete({
+            where : {
+                id : id
+            }
+        })
+
+        return {success : true, data : null}
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "une erreur est survenue"}
+    }
+}
