@@ -11,5 +11,6 @@
   "optionFunction" : "Choisissez un role",
   "optional" : "*Champs non obligatoire",
   "photo" : "Photo",
-  "button" : "Ajouter"
+  "button" : "Ajouter",
+  "delete" : "Etes vous sur de vouloir supprimer le joueur ?"
 }

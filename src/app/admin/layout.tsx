@@ -1,6 +1,6 @@
 import {ReactNode} from "react";
 import styles from "./adminLayout.module.css"
-import NavAdmin from "@/components/navigation/NavAdmin/NavAdmin";
+import NavAdmin from "@/components/layout/navigation/NavAdmin/NavAdmin";
 
 
 export default function layoutAdmin({children}: Readonly<{children: ReactNode}>) {
