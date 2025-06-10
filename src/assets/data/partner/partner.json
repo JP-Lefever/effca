@@ -1,0 +1,11 @@
+{
+  "legendName" : "Partenaires",
+  "name" : "name",
+  "labelPartner" : "Nom du partenaire",
+  "is_main" : "is_main",
+  "selectName" : "Le partenaire est il un partenaire majeur ?",
+  "photo" : "photo",
+  "labelFile" : "Ajouter une photo/image",
+  "buttonAdd" : "Ajouter",
+  "buttonModify" : "Modifier"
+}
