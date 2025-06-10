@@ -48,3 +48,7 @@
     font-size: 1.2em;
     margin-top : 0.5em;
 }
+
+.section p{
+    color: var(--red-main);
+}
