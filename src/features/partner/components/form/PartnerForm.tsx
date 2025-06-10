@@ -11,7 +11,7 @@ import {toast} from "react-toastify";
 export default function PartnerForm({dataForm, partners} : { dataForm : formProps, partners?: PartnerProps }) {
 
 
-    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd} = dataForm
+    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify} = dataForm
 
     const {register , handleSubmit, formState: {errors}, reset} = useForm<PartnerProps>({
         defaultValues : {
@@ -56,12 +56,12 @@ console.log(partners?.photo)
 
     return (<>
 
-    <section className={styles.section}>
+    <section className={partners ? styles.sectionModify : styles.section}>
         <form onSubmit={handleSubmit(onSubmitNewPartner)}>
             <fieldset >
                 <legend>{legendName}</legend>
                 {partners && typeof partners.photo === "string" && (
-                    <Image src = {partners.photo } alt={partners.name} width ={320} height ={480} />
+                    <Image className={styles.image} src = {partners.photo } alt={partners.name} width ={160} height ={160} />
                 )}
                     <div role={"group"}>
                         <label htmlFor={photo}>{labelFile}</label>
@@ -86,7 +86,7 @@ console.log(partners?.photo)
                         </select>
                         {errors[is_main] && (<p>{errors[is_main]?.message as string}</p>)}
                     </div>
-                <button type="submit">{buttonAdd}</button>
+                <button type="submit">{partners ? buttonModify : buttonAdd}</button>
             </fieldset>
         </form>
     </section>

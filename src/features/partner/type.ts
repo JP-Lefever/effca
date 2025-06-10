@@ -11,6 +11,7 @@ export type formProps = {
     photo: formFieldName;
     labelFile: string;
     buttonAdd : string;
+    buttonModify : string;
 }
 
 export type PartnerProps = {

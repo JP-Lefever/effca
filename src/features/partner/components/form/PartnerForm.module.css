@@ -9,9 +9,20 @@
     font-size: 1.2em;
     border: 2px solid var(--red-main);
 }
+.sectionModify fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--padding-section);
+    gap : 1em;
+    font-size: 1.2em;
+    border: 2px solid var(--red-main);
+    width: 20vw;
+}
 
 
-.section button {
+.section button,
+.sectionModify button {
     background-color: var(--red-main);
     width: 20vw;
     padding: 0.2em;
@@ -25,11 +36,13 @@
         width : 100%;
     }
 }
-.section label {
+.section label,
+.sectionModify label {
     font-size: 1.4em;
 }
 
-.section input{
+.section input,
+.sectionModify input {
     width : 100%;
     min-height: 5vh;
     font-family: var(--paragraph-font),sans-serif;
@@ -37,18 +50,26 @@
     margin-top : 0.5em;
 }
 
-.section div {
+.section div,
+.sectionModify div {
     display: flex;
     flex-direction: column;
 }
 
-.section select {
+.section select,
+.sectionModify select {
     min-height: 5vh;
     font-family: var(--paragraph-font),sans-serif;
     font-size: 1.2em;
     margin-top : 0.5em;
 }
 
-.section p{
+.section p,
+.sectionModify p{
     color: var(--red-main);
+}
+
+.image {
+    width : fit-content;
+    margin : auto;
 }
