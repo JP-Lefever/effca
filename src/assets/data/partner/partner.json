@@ -6,6 +6,7 @@
   "selectName" : "Le partenaire est il un partenaire majeur ?",
   "photo" : "photo",
   "labelFile" : "Ajouter une photo/image",
+  "modifyFile" : "Modifier photo",
   "buttonAdd" : "Ajouter",
   "buttonModify" : "Modifier"
 }
