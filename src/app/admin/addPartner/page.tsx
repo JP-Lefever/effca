@@ -1,15 +1,16 @@
 import PartnerForm from "@/features/partner/components/form/PartnerForm";
 import dataForm from "@/assets/data/partner/partner.json"
+import {PartnerProps} from "@/features/partner/type";
 
 export default function AddPartnerPage(){
 
-   const {legendName,inputRegisterName,labelPartner,selectName,selectRegister,fileRegisterName,labelFile, buttonAdd} = dataForm;
+   const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd} = dataForm;
 
     return (<>
         <PartnerForm
-            legendName={legendName} inputRegisterName={inputRegisterName}
+            legendName={legendName} name={name as keyof PartnerProps}
             labelPartner={labelPartner} selectName={selectName}
-            selectRegister={selectRegister} fileRegisterName={fileRegisterName}
+            is_main={is_main as keyof PartnerProps} photo={photo as keyof PartnerProps}
             labelFile={labelFile} buttonAdd={buttonAdd}
         />
     </>)

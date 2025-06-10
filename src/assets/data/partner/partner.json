@@ -1,10 +1,10 @@
 {
   "legendName" : "Partenaires",
-  "inputRegisterName" : "name",
+  "name" : "name",
   "labelPartner" : "Nom du partenaire",
-  "selectRegister" : "is_main",
+  "is_main" : "is_main",
   "selectName" : "Le partenaire est il un partenaire majeur ?",
-  "fileRegisterName" : "photo",
+  "photo" : "photo",
   "labelFile" : "Ajouter une photo/image",
   "buttonAdd" : "Ajouter",
   "buttonModify" : "Modifier"

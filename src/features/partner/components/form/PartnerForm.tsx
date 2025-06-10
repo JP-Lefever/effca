@@ -7,7 +7,7 @@ import {addNewPartner} from "@/features/partner/action";
 import {toast} from "react-toastify";
 
 
-export default function PartnerForm({legendName,inputRegisterName,labelPartner,selectName,selectRegister,fileRegisterName,labelFile, buttonAdd} : formProps) {
+export default function PartnerForm({legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd} : formProps) {
 
     const {register , handleSubmit, formState: {errors}, reset} = useForm<PartnerProps>()
 
@@ -50,27 +50,27 @@ export default function PartnerForm({legendName,inputRegisterName,labelPartner,s
             <fieldset >
                 <legend>{legendName}</legend>
                     <div role={"group"}>
-                        <label htmlFor={fileRegisterName}>{labelFile}</label>
-                        <input type="file" {...register(fileRegisterName, {required : dataError.require})} />
-                        {errors[fileRegisterName] && (<p>{errors[fileRegisterName]?.message as string}</p>)}
+                        <label htmlFor={photo}>{labelFile}</label>
+                        <input type="file" {...register(photo, {required : dataError.require})} />
+                        {errors[photo] && (<p>{errors[photo]?.message as string}</p>)}
                     </div>
                     <div role={"group"}>
-                        <label htmlFor={inputRegisterName}>{labelPartner}</label>
-                        <input type="text" {...register(inputRegisterName , {required:dataError.require ,
+                        <label htmlFor={name}>{labelPartner}</label>
+                        <input type="text" {...register(name , {required:dataError.require ,
                         pattern: {
                             value : /^[^<>]*$/,
                             message : dataError.pattern
                         }})} />
-                        {errors[inputRegisterName] && <p>{errors[inputRegisterName]?.message as string}</p>}
+                        {errors[name] && <p>{errors[name]?.message as string}</p>}
                     </div>
                     <div role={"group"}>
-                        <label htmlFor={selectRegister}>{selectName}</label>
-                        <select {...register(selectRegister, {required:dataError.require})}>
+                        <label htmlFor={is_main}>{selectName}</label>
+                        <select {...register(is_main, {required:dataError.require})}>
                             <option value="">---</option>
                             <option value={"false"}>Non</option>
                             <option value={"true"}>Oui</option>
                         </select>
-                        {errors[selectRegister] && (<p>{errors[selectRegister]?.message as string}</p>)}
+                        {errors[is_main] && (<p>{errors[is_main]?.message as string}</p>)}
                     </div>
                 <button type="submit">{buttonAdd}</button>
             </fieldset>

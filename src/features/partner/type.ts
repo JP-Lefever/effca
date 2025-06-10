@@ -4,11 +4,11 @@ type formFieldName = keyof PartnerProps
 
 export type formProps = {
     legendName : string;
-    inputRegisterName : formFieldName ;
+    name : formFieldName ;
     labelPartner: string;
     selectName: string;
-    selectRegister: formFieldName;
-    fileRegisterName: formFieldName;
+    is_main: formFieldName;
+    photo: formFieldName;
     labelFile: string;
     buttonAdd : string;
 }
