@@ -18,6 +18,17 @@
     font-size: 1.2em;
     border: 2px solid var(--red-main);
     width: 20vw;
+    @media screen and (max-width: 568px) {
+        width: 80vw;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px) {
+        width: 40vw;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1280px) {
+        width: 25vw;
+    }
+}
+.sectionModify form {
 
 }
 

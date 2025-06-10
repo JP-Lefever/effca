@@ -97,7 +97,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
             <fieldset >
                 <legend>{legendName}</legend>
                 {partners && typeof partners.photo === "string" && (
-                    <Image className={styles.image} src = {partners.photo } alt={partners.name} width ={160} height ={160} />
+                    <Image className={styles.image} src = {partners.photo } alt={partners.name} width ={120} height ={120} />
                 )}
                     <div role={"group"}>
                         <label htmlFor={photo}>{labelFile}</label>
