@@ -1,5 +1,6 @@
 "use client"
 import styles from "./PartnerForm.module.css"
+import Image from "next/image"
 import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
 import { formProps, PartnerProps} from "@/features/partner/type";
@@ -7,10 +8,20 @@ import {addNewPartner} from "@/features/partner/action";
 import {toast} from "react-toastify";
 
 
-export default function PartnerForm({legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd} : formProps) {
+export default function PartnerForm({dataForm, partners} : { dataForm : formProps, partners?: PartnerProps }) {
 
-    const {register , handleSubmit, formState: {errors}, reset} = useForm<PartnerProps>()
 
+    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd} = dataForm
+
+    const {register , handleSubmit, formState: {errors}, reset} = useForm<PartnerProps>({
+        defaultValues : {
+            name : partners?.name,
+            is_main : partners?.is_main,
+
+        }
+        }
+    )
+console.log(partners?.photo)
     const onSubmitNewPartner = async (data : PartnerProps) =>{
 
         const {photo, ...rest} = data
@@ -49,6 +60,9 @@ export default function PartnerForm({legendName,name,labelPartner,selectName,is_
         <form onSubmit={handleSubmit(onSubmitNewPartner)}>
             <fieldset >
                 <legend>{legendName}</legend>
+                {partners && typeof partners.photo === "string" && (
+                    <Image src = {partners.photo } alt={partners.name} width ={320} height ={480} />
+                )}
                     <div role={"group"}>
                         <label htmlFor={photo}>{labelFile}</label>
                         <input type="file" {...register(photo, {required : dataError.require})} />

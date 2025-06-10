@@ -3,7 +3,7 @@ import {PartnerProps} from "@/features/partner/type";
 import {ResultProps} from "@/features/history/type";
 
 
-export default  async function createPartner(data : Omit<PartnerProps, "id" |"photo">, photo: string ) : Promise<ResultProps<PartnerProps>> {
+export  async function createPartner(data : Omit<PartnerProps, "id" |"photo">, photo: string ) : Promise<ResultProps<PartnerProps>> {
 
     const {is_main, name} = data
 
@@ -17,6 +17,19 @@ export default  async function createPartner(data : Omit<PartnerProps, "id" |"ph
 
         })
         return {success : true, data : newPartner}
+    }catch(err){
+        console.error(err)
+        return  {success : false, error : "Une erreur est survenue"}
+    }
+}
+
+export  async function readAllPartner() : Promise<ResultProps<PartnerProps[]>> {
+
+    try{
+
+        const partners= await prisma.partner.findMany()
+
+        return {success : true, data : partners}
     }catch(err){
         console.error(err)
         return  {success : false, error : "Une erreur est survenue"}
