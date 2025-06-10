@@ -35,3 +35,28 @@ export  async function readAllPartner() : Promise<ResultProps<PartnerProps[]>> {
         return  {success : false, error : "Une erreur est survenue"}
     }
 }
+
+export async function updatePartner(data : Omit<PartnerProps, "id" | "photo">, photo: string, id : string) : Promise<ResultProps<PartnerProps>> {
+
+        const {is_main, name} = data
+    try {
+        const updatedPartner = await prisma.partner.update({
+            data : {
+                is_main : is_main,
+                name : name,
+                photo : photo
+            },
+            where : {
+                id : id,
+            }
+        })
+
+        return {success : true, data : updatedPartner}
+    }catch(err){
+            console.error(err)
+        return  {success : false, error : "Une erreur est survenue"}
+    }
+
+
+
+}
