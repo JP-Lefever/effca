@@ -1,6 +1,11 @@
 {
-  "legend" : "Partenaires",
-  "category" : "Ajouter une catégorie",
-  "example" : ["Senior, Jeunes","..."],
-  "button" : "Ajouter"
+  "legendName" : "Partenaires",
+  "inputRegisterName" : "name",
+  "labelPartner" : "Nom du partenaire",
+  "selectRegister" : "is_main",
+  "selectName" : "Le partenaire est il un partenaire majeur ?",
+  "fileRegisterName" : "photo",
+  "labelFile" : "Ajouter une photo/image",
+  "buttonAdd" : "Ajouter",
+  "buttonModify" : "Modifier"
 }

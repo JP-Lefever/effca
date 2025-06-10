@@ -78,7 +78,7 @@ export default function AddMemberForm({categories, playerPosition ,memberRole} :
 
                     <div role="group">
                     <label htmlFor={"positionId"}>{dataMember.position}</label>
-                    <select {...register('positionId')}>{dataMember.position}
+                    <select {...register('positionId')}>
                         <option value="">{dataMember.optionPosition}</option>
                         {playerPosition.map((position)=>(
                             <option key={position.id} value={position.id}>{position.label}</option>

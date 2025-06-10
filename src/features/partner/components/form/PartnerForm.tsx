@@ -1,7 +1,9 @@
+"use client"
 import {useForm} from "react-hook-form";
+import {formProps} from "@/features/partner/type";
 
-export default function Form({legendName,inputRegisterName,labelPartner,selectName,selectRegister,fileRegisterName,labelFile} :
- {legendName: string, inputRegisterName: string,labelPartner:string, selectName: string, selectRegister:string, fileRegisterName : string, labelFile: string}) {
+
+export default function PartnerForm({legendName,inputRegisterName,labelPartner,selectName,selectRegister,fileRegisterName,labelFile, buttonAdd} : formProps) {
 
     const {register } = useForm()
 
@@ -16,12 +18,13 @@ export default function Form({legendName,inputRegisterName,labelPartner,selectNa
                 <input type="file" {...register(fileRegisterName)} />
                 <label htmlFor={inputRegisterName}>{labelPartner}</label>
                 <input type="text" {...register(inputRegisterName)} />
-                <select {...register(selectRegister)}>{selectName}
+                <label htmlFor={selectRegister}>{selectName}</label>
+                <select {...register(selectRegister)}>
                     <option value="">---</option>
                     <option value={0}>Non</option>
                     <option value={1}>Oui</option>
                 </select>
-                <button type="submit">Submit</button>
+                <button type="submit">{buttonAdd}</button>
             </fieldset>
         </form>
     </section>
