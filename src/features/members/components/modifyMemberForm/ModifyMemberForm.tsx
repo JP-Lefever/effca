@@ -42,6 +42,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
         const {photo, ...rest} = data
 
         let photoUrl : string  = photo as string
+
         if (photo && typeof photo !== "string" && photo.length > 0) {
             const formData = new FormData();
             formData.append("photo", photo[0])

@@ -1,0 +1,27 @@
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+
+}
+.card {
+    border : solid 1px var(--black-dark);
+    width : 20vw;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding : var(--padding-section);
+    word-break: break-all;
+    background : linear-gradient(30deg, var(--red-main) 0%, var(--red-main) 10%, var(--white-main) 10%);
+
+}
+
+.link {
+    text-decoration: none;
+    font-family: var(--paragraph-font), sans-serif;
+    color : var(--red-main);
+    font-size : 1.2em
+}

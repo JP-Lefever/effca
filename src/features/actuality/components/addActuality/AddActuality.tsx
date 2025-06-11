@@ -7,9 +7,12 @@ import {ActualityProps} from "@/features/actuality/type";
 import {addNewActuality} from "@/features/actuality/action";
 import {toast} from "react-toastify";
 
+
+
 export default function AddActuality() {
 
     const {register, handleSubmit, formState : {errors}, reset} = useForm<ActualityProps>()
+
 
     const onSubmit = async (data : ActualityProps) => {
 
@@ -17,9 +20,9 @@ export default function AddActuality() {
             title : data.title,
             description : data.description,
             date : data.date,
-            contact : data.contact === "" ? null : data.contact,
-            mail : data.mail === "" ? null : data.mail,
-            phone : data.phone === "" ? null : data.phone,
+            contact : data.contact === "" || data.contact === undefined ? null : data.contact,
+            mail : data.mail === "" || data.contact === undefined ? null : data.mail,
+            phone : data.phone === "" || data.contact === undefined ? null : data.phone,
 
         }
 
@@ -50,6 +53,9 @@ export default function AddActuality() {
             if (responseNewActuality.success) {
                 toast.success(`L'évènement ${responseNewActuality.data.title} a bien été ajouté`)
                 reset()
+
+
+
             } else {
                 toast.error("Une erreur est survenue")
             }
