@@ -22,7 +22,23 @@ export async function createActuality(data : Omit<ActualityProps, "id" | "photo"
             })
             return {success : true, data : newActuality}
         }catch(err){
-            console.log(err)
+            console.error(err)
             return {success : false, error : "Une erreur est survenue"}
         }
+}
+
+export async function readAllActuality() : Promise<ResultProps<ActualityProps[]>> {
+
+    try {
+        const actualities = await prisma.actuality.findMany({
+            orderBy : {
+                date : "asc"
+            }
+        })
+
+        return {success : true, data: actualities}
+    }catch(err){
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
 }
