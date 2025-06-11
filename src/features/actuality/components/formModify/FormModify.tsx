@@ -4,24 +4,85 @@ import dataForm from "@/assets/data/actuality/actuality.json";
 import dataError from "@/assets/data/errors/errors.json";
 import {useForm} from "react-hook-form";
 import {ActualityProps} from "@/features/actuality/type";
+import Image from "next/image";
+import {toast} from "react-toastify";
+import {editActuality} from "@/features/actuality/action";
+import {redirect} from "next/navigation";
 
 export default function FormModify({actuality}: {actuality: ActualityProps}) {
 
-    const {title, description, date, contact, mail, phone, photo} = actuality;
+    const {title, description, date, contact, mail, phone, photo, id} = actuality;
 
-const {register, formState : {errors}} = useForm<ActualityProps>({defaultValues : {
+    const photoUrl = photo as string;
+
+    const newDate = new Date(date).toISOString().split("T")[0];
+
+
+const {register, handleSubmit, formState : {errors}} = useForm<ActualityProps>({defaultValues : {
         title: title,
         description : description,
-        date : date,
+        date : newDate,
         contact : contact,
         mail: mail,
         phone : phone
     }});
 
+const onSubmit = async (data : ActualityProps) => {
+
+    const rest = {
+        title : data.title,
+        description : data.description,
+        date : data.date,
+        contact : data.contact === "" || data.contact === undefined ? null : data.contact,
+        mail : data.mail === "" || data.contact === undefined ? null : data.mail,
+        phone : data.phone === "" || data.contact === undefined ? null : data.phone,
+
+    }
+
+    const {photo} = data
+    let photoUrl = photo as string;
+
+    if(photo && typeof photo !== "string" && photo.length >0){
+
+        const formData = new FormData();
+        formData.append("photo" , photo[0])
+
+        const responseUpload = await fetch("/api/upload", {
+            method: "POST",
+            body: formData
+        })
+
+        const result = await responseUpload.json();
+
+        if(!result.success){
+            return toast.error("Erreur lors de l'upload de l'image")
+        }
+
+        photoUrl = result.url
+    }
+
+        const responseUpdate = await editActuality(rest, photoUrl, id)
+
+            if (responseUpdate.success){
+                toast.success(`L'évènement ${responseUpdate.data.title} a bien été modifié`)
+                redirect("/admin/modifyActuality")
+            } else {
+                toast.error("Une erreur est survenue")
+            }
+
+}
+
     return <>
         <section className={styles.section}>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
+                    {photoUrl ?
+                    <Image src={photoUrl} alt={title} width={180} height={180}/>
+                    : <p>Aucune photo ajoutée</p> }
+                    <div role="group">
+                        <label htmlFor={"photo"}>{dataForm.modifyPhoto}</label>
+                        <input type={"file"} {...register("photo")}/>
+                    </div>
                     <legend>{dataForm.legend}</legend>
                     <div role="group">
                         <label htmlFor={"title"}>{dataForm.title}</label>
@@ -77,11 +138,8 @@ const {register, formState : {errors}} = useForm<ActualityProps>({defaultValues 
                         })}/>
                         {errors.phone && (<p>{errors.phone.message as string}</p>)}
                     </div>
-                    <div role="group">
-                        <label htmlFor={"photo"}>{dataForm.photo}</label>
-                        <input type={"file"} {...register("photo")}/>
-                    </div>
-                    <button type={"submit"}>{dataForm.button}</button>
+
+                    <button type={"submit"}>{dataForm.modifyButton}</button>
                 </fieldset>
                 <p>{dataForm.options}</p>
             </form>

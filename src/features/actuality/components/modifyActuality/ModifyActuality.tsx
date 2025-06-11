@@ -14,11 +14,11 @@ export default async function ModifyActuality(){
     }
 
     return(<>
-    <section className={styles.card}>
+    <section className={styles.section}>
 
         {actualities.data.map((actuality)=>(
-            <article key={actuality.id} >
-                <Link href={`/admin/modifyActuality/${actuality.id}`}>{actuality.title}</Link>
+            <article key={actuality.id} className={styles.card}>
+                <Link className={styles.link} href={`/admin/modifyActuality/${actuality.id}`}>{actuality.title}</Link>
             </article>
         ))}
     </section>

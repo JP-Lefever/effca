@@ -8,5 +8,7 @@
   "phone" : "Téléphone de contact pour l'évènement *",
   "photo" : "Ajouter une affiche ou une photo pour cet évènement *",
   "options" : "* Champs optionnels",
-  "button" : "Ajouter"
+  "button" : "Ajouter",
+  "modifyPhoto" : "Modifier la photo de l'évènement",
+  "modifyButton" : "Modifier"
 }

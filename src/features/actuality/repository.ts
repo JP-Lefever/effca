@@ -1,10 +1,10 @@
-import {ActualityProps, ResultProps} from "@/features/actuality/type";
+import { ActualityPropsBD, ResultProps} from "@/features/actuality/type";
 import {prisma} from "@/lib/prisma";
 
 
 
 
-export async function createActuality(data : Omit<ActualityProps, "id" | "photo">, photo : string | null) :Promise<ResultProps<ActualityProps>> {
+export async function createActuality(data : Omit<ActualityPropsBD, "id" | "photo">, photo : string | null) :Promise<ResultProps<ActualityPropsBD>> {
 
     const {title, description, date,contact, mail, phone} = data;
 
@@ -27,10 +27,14 @@ export async function createActuality(data : Omit<ActualityProps, "id" | "photo"
         }
 }
 
-export async function readAllActualities( ) : Promise<ResultProps<ActualityProps[]>> {
+export async function readAllActualities( ) : Promise<ResultProps<ActualityPropsBD[]>> {
 
     try {
-        const actuality = await prisma.actuality.findMany()
+        const actuality = await prisma.actuality.findMany({
+            orderBy :{
+                date : "asc"
+            }
+        })
 
         return {success : true, data: actuality}
     }catch(err){
@@ -39,7 +43,7 @@ export async function readAllActualities( ) : Promise<ResultProps<ActualityProps
     }
 }
 
-export async function readActuality( id: string) : Promise<ResultProps<ActualityProps>> {
+export async function readActuality( id: string) : Promise<ResultProps<ActualityPropsBD>> {
 
     try {
         const actuality = await prisma.actuality.findUnique({
@@ -55,4 +59,33 @@ export async function readActuality( id: string) : Promise<ResultProps<Actuality
         console.error(err)
         return {success : false, error : "Une erreur est survenue"}
     }
+}
+
+export async function updateActuality(data : Omit<ActualityPropsBD, "id" | "photo">, photo : string | null, id : string) :Promise<ResultProps<ActualityPropsBD>> {
+
+    const {title,description, date,contact, mail, phone} = data
+
+    try {
+        const updatedActuality = await prisma.actuality.update({
+            data : {
+                title : title,
+                description : description,
+                date : date,
+                contact: contact,
+                mail : mail,
+                phone : phone,
+                photo : photo ,
+
+            }, where :
+                {
+                    id : id,
+                }
+        })
+
+        return {success : true, data : updatedActuality}
+    }catch(err){
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
+
 }

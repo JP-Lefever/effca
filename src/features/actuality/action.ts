@@ -1,11 +1,11 @@
 "use server"
 
 
-import {ActualityProps, ResultProps} from "@/features/actuality/type";
+import {ActualityProps, ActualityPropsBD, ResultProps} from "@/features/actuality/type";
 import {actualitySchema} from "@/features/actuality/schema";
-import {createActuality, readActuality, readAllActualities} from "@/features/actuality/repository";
+import {createActuality, readActuality, readAllActualities, updateActuality} from "@/features/actuality/repository";
 
-export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string) : Promise<ResultProps<ActualityProps>> => {
+export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string) : Promise<ResultProps<ActualityPropsBD>> => {
 
     const validData = actualitySchema.safeParse(data)
 
@@ -21,7 +21,7 @@ export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo"
 
         return {success: response.success, data: response.data}
 }
-export const browseActualities = async () : Promise<ResultProps<ActualityProps[]>> => {
+export const browseActualities = async () : Promise<ResultProps<ActualityPropsBD[]>> => {
 
     const response = await readAllActualities()
 
@@ -33,7 +33,7 @@ export const browseActualities = async () : Promise<ResultProps<ActualityProps[]
 
 }
 
-export const readActualityId = async (id : string) : Promise<ResultProps<ActualityProps>> => {
+export const readActualityId = async (id : string) : Promise<ResultProps<ActualityPropsBD>> => {
 
     const response = await readActuality(id)
 
@@ -42,5 +42,21 @@ export const readActualityId = async (id : string) : Promise<ResultProps<Actuali
     }
 
     return {success : response.success, data: response.data}
+
+}
+
+export const editActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string |null, id : string) : Promise<ResultProps<ActualityPropsBD>> => {
+
+    const validData = actualitySchema.safeParse(data)
+        if(!validData.success) {
+            return {success: false, error : "Donnée invalides"}
+        }
+    const response = await updateActuality( validData.data, photo, id,)
+
+        if(!response.success) {
+            return {success : response.success, error : response.error}
+        }
+
+        return {success: response.success, data: response.data}
 
 }
