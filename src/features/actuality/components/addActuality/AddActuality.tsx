@@ -49,6 +49,7 @@ export default function AddActuality() {
 
             if (responseNewActuality.success) {
                 toast.success(`L'évènement ${responseNewActuality.data.title} a bien été ajouté`)
+                reset()
             } else {
                 toast.error("Une erreur est survenue")
             }
