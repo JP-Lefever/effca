@@ -8,5 +8,6 @@
   "labelFile" : "Ajouter une photo/image",
   "modifyFile" : "Modifier photo",
   "buttonAdd" : "Ajouter",
-  "buttonModify" : "Modifier"
+  "buttonModify" : "Modifier",
+  "buttonDelete" : "Supprimer"
 }

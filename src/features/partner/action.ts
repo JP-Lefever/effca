@@ -3,7 +3,7 @@
 
 import {PartnerProps, ResultProps} from "@/features/partner/type";
 import {partnerSchema} from "@/features/partner/schema";
-import {createPartner, readAllPartner, updatePartner} from "@/features/partner/repository";
+import {createPartner, deletePartner, readAllPartner, updatePartner} from "@/features/partner/repository";
 
 
 export const addNewPartner = async (data : Omit<PartnerProps, "id" | "photo">, photo : string ) : Promise<ResultProps<PartnerProps>> =>{
@@ -50,5 +50,17 @@ export const editPartner = async (data : Omit<PartnerProps, "id" | "photo">, pho
     }
 
     return {success : response.success, data : response.data}
+
+}
+
+export const destroyPartner = async (id: string) : Promise<ResultProps<null>> =>{
+
+    const response = await deletePartner(id)
+
+    if (!response.success){
+        return {success : response.success, error : response.error}
+    }
+
+    return {success : response.success, data : null}
 
 }
