@@ -6,7 +6,7 @@
   "contact" : "Personne a contacter pour l'évènement *",
   "mail" : "Mail de contact pour l'évènement *",
   "phone" : "Téléphone de contact pour l'évènement *",
-  "photo" : "Ajouter une afficher ou une photo pour cet évènement *",
-  "options" : "Optionnel",
+  "photo" : "Ajouter une affiche ou une photo pour cet évènement *",
+  "options" : "* Champs optionnels",
   "button" : "Ajouter"
 }
