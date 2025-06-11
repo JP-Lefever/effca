@@ -27,16 +27,30 @@ export async function createActuality(data : Omit<ActualityProps, "id" | "photo"
         }
 }
 
-export async function readAllActuality() : Promise<ResultProps<ActualityProps[]>> {
+export async function readAllActualities( ) : Promise<ResultProps<ActualityProps[]>> {
 
     try {
-        const actualities = await prisma.actuality.findMany({
-            orderBy : {
-                date : "asc"
+        const actuality = await prisma.actuality.findMany()
+
+        return {success : true, data: actuality}
+    }catch(err){
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
+}
+
+export async function readActuality( id: string) : Promise<ResultProps<ActualityProps>> {
+
+    try {
+        const actuality = await prisma.actuality.findUnique({
+            where : {
+                id: id
             }
         })
-
-        return {success : true, data: actualities}
+        if (!actuality) {
+            return {success : false, error : "Actualitée non trouvée"}
+        }
+        return {success : true, data: actuality}
     }catch(err){
         console.error(err)
         return {success : false, error : "Une erreur est survenue"}

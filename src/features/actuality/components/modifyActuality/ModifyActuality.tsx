@@ -1,5 +1,7 @@
+import styles from "./modifyActuality.module.css"
 import {browseActualities} from "@/features/actuality/action";
-import FormModify from "@/features/actuality/components/formModify/FormModify";
+
+import Link from "next/link";
 
 export default async function ModifyActuality(){
 
@@ -12,12 +14,14 @@ export default async function ModifyActuality(){
     }
 
     return(<>
+    <section className={styles.card}>
 
         {actualities.data.map((actuality)=>(
-            <section key={actuality.id}>
-            <FormModify actuality={actuality} />
-            </section>
+            <article key={actuality.id} >
+                <Link href={`/admin/modifyActuality/${actuality.id}`}>{actuality.title}</Link>
+            </article>
         ))}
+    </section>
 
     </>)
 }

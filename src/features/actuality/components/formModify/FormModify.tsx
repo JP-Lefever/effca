@@ -1,5 +1,5 @@
 "use client"
-import styles from "@/features/actuality/components/addActuality/addActuality.module.css";
+import styles from "./formModify.module.css"
 import dataForm from "@/assets/data/actuality/actuality.json";
 import dataError from "@/assets/data/errors/errors.json";
 import {useForm} from "react-hook-form";
