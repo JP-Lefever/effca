@@ -1,4 +1,6 @@
 {
   "require" : "Champs requis",
-  "pattern" : "Caractères spéciaux non valides"
+  "pattern" : "Caractères spéciaux non valides",
+  "mail" : "Format d'email incorrect",
+  "phone" : "Numéro telephone invalide"
 }
