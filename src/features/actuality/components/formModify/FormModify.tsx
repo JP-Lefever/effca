@@ -13,7 +13,7 @@ export default function FormModify({actuality}: {actuality: ActualityProps}) {
 
     const {title, description, date, contact, mail, phone, photo, id} = actuality;
 
-    const photoUrl = photo as string;
+
 
     const newDate = new Date(date).toISOString().split("T")[0];
 
@@ -21,10 +21,10 @@ export default function FormModify({actuality}: {actuality: ActualityProps}) {
 const {register, handleSubmit, formState : {errors}} = useForm<ActualityProps>({defaultValues : {
         title: title,
         description : description,
-        date : newDate,
         contact : contact,
         mail: mail,
-        phone : phone
+        phone : phone,
+        photo : photo
     }});
 
 const onSubmit = async (data : ActualityProps) => {
@@ -40,7 +40,7 @@ const onSubmit = async (data : ActualityProps) => {
     }
 
     const {photo} = data
-    let photoUrl = photo as string;
+    let photoUrl: string = photo as string;
 
     if(photo && typeof photo !== "string" && photo.length >0){
 
@@ -76,8 +76,8 @@ const onSubmit = async (data : ActualityProps) => {
         <section className={styles.section}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
-                    {photoUrl ?
-                    <Image src={photoUrl} alt={title} width={180} height={180}/>
+                    {photo && typeof photo === "string"  ?
+                    <Image src={photo} alt={title} width={180} height={180}/>
                     : <p>Aucune photo ajoutée</p> }
                     <div role="group">
                         <label htmlFor={"photo"}>{dataForm.modifyPhoto}</label>
@@ -106,7 +106,7 @@ const onSubmit = async (data : ActualityProps) => {
                     </div>
                     <div role="group">
                         <label htmlFor={"date"}>{dataForm.date}</label>
-                        <input type={"date"} {...register("date", {required: dataError.require,})}/>
+                        <input type={"date"} defaultValue={newDate} {...register("date", {required: dataError.require,})}/>
                         {errors.date && (<p>{errors.date.message as string}</p>)}
                     </div>
                     <div role="group">

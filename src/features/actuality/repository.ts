@@ -1,10 +1,10 @@
-import { ActualityPropsBD, ResultProps} from "@/features/actuality/type";
+import {ActualityProps, ResultProps} from "@/features/actuality/type";
 import {prisma} from "@/lib/prisma";
 
 
 
 
-export async function createActuality(data : Omit<ActualityPropsBD, "id" | "photo">, photo : string | null) :Promise<ResultProps<ActualityPropsBD>> {
+export async function createActuality(data : Omit<ActualityProps, "id" | "photo">, photo : string | null) :Promise<ResultProps<ActualityProps>> {
 
     const {title, description, date,contact, mail, phone} = data;
 
@@ -27,7 +27,7 @@ export async function createActuality(data : Omit<ActualityPropsBD, "id" | "phot
         }
 }
 
-export async function readAllActualities( ) : Promise<ResultProps<ActualityPropsBD[]>> {
+export async function readAllActualities( ) : Promise<ResultProps<ActualityProps[]>> {
 
     try {
         const actuality = await prisma.actuality.findMany({
@@ -43,7 +43,7 @@ export async function readAllActualities( ) : Promise<ResultProps<ActualityProps
     }
 }
 
-export async function readActuality( id: string) : Promise<ResultProps<ActualityPropsBD>> {
+export async function readActuality( id: string) : Promise<ResultProps<ActualityProps>> {
 
     try {
         const actuality = await prisma.actuality.findUnique({
@@ -61,7 +61,7 @@ export async function readActuality( id: string) : Promise<ResultProps<Actuality
     }
 }
 
-export async function updateActuality(data : Omit<ActualityPropsBD, "id" | "photo">, photo : string | null, id : string) :Promise<ResultProps<ActualityPropsBD>> {
+export async function updateActuality(data : Omit<ActualityProps, "id" | "photo">, photo : string | null, id : string) :Promise<ResultProps<ActualityProps>> {
 
     const {title,description, date,contact, mail, phone} = data
 

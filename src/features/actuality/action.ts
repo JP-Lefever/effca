@@ -1,11 +1,11 @@
 "use server"
 
 
-import {ActualityProps, ActualityPropsBD, ResultProps} from "@/features/actuality/type";
+import {ActualityProps,  ResultProps} from "@/features/actuality/type";
 import {actualitySchema} from "@/features/actuality/schema";
 import {createActuality, readActuality, readAllActualities, updateActuality} from "@/features/actuality/repository";
 
-export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string) : Promise<ResultProps<ActualityPropsBD>> => {
+export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string) : Promise<ResultProps<ActualityProps>> => {
 
     const validData = actualitySchema.safeParse(data)
 
@@ -21,7 +21,7 @@ export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo"
 
         return {success: response.success, data: response.data}
 }
-export const browseActualities = async () : Promise<ResultProps<ActualityPropsBD[]>> => {
+export const browseActualities = async () : Promise<ResultProps<ActualityProps[]>> => {
 
     const response = await readAllActualities()
 
@@ -33,7 +33,7 @@ export const browseActualities = async () : Promise<ResultProps<ActualityPropsBD
 
 }
 
-export const readActualityId = async (id : string) : Promise<ResultProps<ActualityPropsBD>> => {
+export const readActualityId = async (id : string) : Promise<ResultProps<ActualityProps>> => {
 
     const response = await readActuality(id)
 
@@ -45,9 +45,11 @@ export const readActualityId = async (id : string) : Promise<ResultProps<Actuali
 
 }
 
-export const editActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string |null, id : string) : Promise<ResultProps<ActualityPropsBD>> => {
+export const editActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string |null, id : string) : Promise<ResultProps<ActualityProps>> => {
 
     const validData = actualitySchema.safeParse(data)
+
+    console.log(validData.error)
         if(!validData.success) {
             return {success: false, error : "Donnée invalides"}
         }
