@@ -6,12 +6,21 @@ import {useForm} from "react-hook-form";
 import { formProps, PartnerProps} from "@/features/partner/type";
 import {addNewPartner, editPartner} from "@/features/partner/action";
 import {toast} from "react-toastify";
+import {useState} from "react";
+import {createPortal} from "react-dom";
+import ModalDeletePartner from "@/features/partner/components/ModalDeletePartner/ModalDeletePartner";
 
 
 export default function PartnerForm({dataForm, partners} : { dataForm : formProps, partners?: PartnerProps }) {
 
 
-    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify} = dataForm
+    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify, buttonDelete} = dataForm
+
+    const [openDeleteModal, setOpenDeleteModal] = useState(false);
+
+    const toggleDeleteModal = () => {
+        setOpenDeleteModal(!openDeleteModal);
+    }
 
     const {register , handleSubmit, formState: {errors}, reset} = useForm<PartnerProps>({
         defaultValues : {
@@ -123,6 +132,12 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
                         {errors[is_main] && (<p>{errors[is_main]?.message as string}</p>)}
                     </div>
                 <button type="submit">{partners ? buttonModify : buttonAdd}</button>
+                {partners &&
+                <button onClick={toggleDeleteModal} type={"button"}>{buttonDelete}</button>
+                }
+                {openDeleteModal && partners &&
+                    createPortal(<ModalDeletePartner id={partners.id} closeModalAction={toggleDeleteModal}/>, document.body)
+                }
             </fieldset>
         </form>
     </section>

@@ -27,7 +27,11 @@ export  async function readAllPartner() : Promise<ResultProps<PartnerProps[]>> {
 
     try{
 
-        const partners= await prisma.partner.findMany()
+        const partners= await prisma.partner.findMany({
+            orderBy :{
+                name : "asc"
+            }
+        })
 
         return {success : true, data : partners}
     }catch(err){
@@ -57,6 +61,19 @@ export async function updatePartner(data : Omit<PartnerProps, "id" | "photo">, p
         return  {success : false, error : "Une erreur est survenue"}
     }
 
+}
 
+export async function deletePartner(id: string) : Promise<ResultProps<null>> {
 
+    try {
+        await prisma.partner.delete({
+            where : {
+                id : id
+            }
+        })
+        return {success : true , data : null}
+    }catch(err){
+        console.error(err)
+        return  {success : false, error : "Une erreur est survenue"}
+    }
 }

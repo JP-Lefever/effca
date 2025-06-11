@@ -12,6 +12,7 @@ export type formProps = {
     labelFile: string;
     buttonAdd : string;
     buttonModify : string;
+    buttonDelete : string;
 }
 
 export type PartnerProps = {
