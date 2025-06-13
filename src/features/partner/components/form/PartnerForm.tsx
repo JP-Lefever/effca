@@ -38,6 +38,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
         if (typeof photo !== "string" && photo.length >0 &&  photo  ){
             const formData = new FormData
             formData.append("photo", photo[0])
+            formData.append("folder", "partner")
 
             const responseUpload = await fetch("/api/upload", {
                 method : "POST",
@@ -72,6 +73,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
         if (typeof photo !== "string" && photo.length >0 &&  photo  ){
             const formData = new FormData()
             formData.append("photo", photo[0])
+            formData.append("folder", "partner")
 
             const responseUpload = await fetch("/api/upload", {
                 method : "POST",
