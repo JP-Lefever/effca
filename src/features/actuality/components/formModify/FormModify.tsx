@@ -46,6 +46,7 @@ const onSubmit = async (data : ActualityProps) => {
 
         const formData = new FormData();
         formData.append("photo" , photo[0])
+        formData.append("folder", "actuality")
 
         const responseUpload = await fetch("/api/upload", {
             method: "POST",

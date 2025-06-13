@@ -46,6 +46,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
         if (photo && typeof photo !== "string" && photo.length > 0) {
             const formData = new FormData();
             formData.append("photo", photo[0])
+            formData.append("folder", "member")
 
             const responseUpload = await fetch("/api/upload", {
                 method: "POST",
