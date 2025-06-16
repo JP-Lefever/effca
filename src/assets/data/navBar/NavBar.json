@@ -12,6 +12,10 @@
     "items" : ["Sénior"],
     "link" : ["/team/senior"]
   },
+  "logo" : {
+    "title" : "/images/logo.png",
+    "link" : "/"
+  },
   "match" : {
     "title" : "Matchs",
     "link" : "/match"

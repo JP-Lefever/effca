@@ -1,0 +1,63 @@
+.nav{
+    background-color: var(--red-main);
+    height: 8vh;
+}
+
+.ul{
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    padding-top: 2.5vh;
+
+}
+
+.ul li{
+    list-style: none;
+    color : var(--white-main);
+
+}
+
+.link {
+    text-decoration: none;
+    color: var(--white-main);
+    font-size: 1.2em;
+}
+
+.dropDownMenu{
+    font-size: 1.2em;
+    position: relative;
+}
+
+.dropDown{
+    display: none;
+    position: absolute;
+    background-color: rgba(208, 9, 49);
+    width : 8vw;
+    padding: var(--padding-section);
+    border : 1px solid var(--white-main);
+    border-radius: 10px;
+
+}
+
+.dropDownMenuTrigger:hover + .dropDown,
+.dropDown:hover{
+
+    display: block;
+}
+
+
+
+
+.subLink {
+    color : var(--white-main);
+
+    text-decoration: none;
+}
+
+
+.image {
+
+
+position : relative;
+    bottom: 2.5em;
+}
