@@ -15,9 +15,9 @@
     letter-spacing: 8px;
     color :var(--grey-effect);
     position : relative;
-    top : 4vh
+    top : 4vh;
     @media screen and (max-width : 568px) {
-    
+    font-size: 2.5em;
 }
 }
 
@@ -31,7 +31,10 @@
     position : relative;
     color : var(--red-main);
     bottom : 4vh;
-
+    @media screen and (max-width : 568px) {
+        font-size: 1.6em;
+        bottom : 0;
+    }
 }
 
 .container{
@@ -40,6 +43,18 @@
     margin:  auto;
     overflow: hidden;
     border-bottom: 10px solid var(--red-main);
+    @media screen and (max-width : 568px) {
+        width: 90vw;
+        min-height: 100vh;
+    }
+    @media screen and (min-width: 569px) and (max-width : 1024px) {
+        width: 70vw;
+        min-height: 60vh;
+    }
+    @media screen and (min-width: 1024px) and (max-width : 1280px) {
+        width: 60vw;
+        min-height: 60vh;
+    }
 }
 
 .iframe {
