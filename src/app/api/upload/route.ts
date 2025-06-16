@@ -23,7 +23,7 @@ export async function POST(req: Request){
     try {
         const result = await new Promise<CloudinaryUploadResult>((resolve, reject) => {
             cloudinary.uploader.upload_stream({
-                folder : album,
+                folder : `/effca/${album}`,
                 resource_type : "image"
             },
                 (err, result) => {
