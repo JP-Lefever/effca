@@ -1,7 +1,7 @@
 import styles from "./cardActuality.module.css"
 import Image from 'next/image';
 import {ActualityProps} from "@/features/actuality/type";
-import {act} from "react";
+
 
 export default function CardActuality({actuality} : {actuality: ActualityProps }) {
 

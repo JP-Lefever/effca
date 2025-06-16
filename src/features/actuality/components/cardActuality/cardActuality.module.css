@@ -1,15 +1,15 @@
 .section {
     display: flex;
     flex-direction: column;
-
     width: 20vw;
-    min-height: 60vh;
+    min-height: 70vh;
 
     box-shadow:
             0 4px 6px rgba(0, 0, 0, 0.08),
             0 1px 3px rgba(0, 0, 0, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
+    cursor : pointer;
 }
 
 .section:hover {
@@ -38,10 +38,12 @@
     color : var(--red-main);
     letter-spacing : 0.1em
 }
+
 .article p:first-of-type {
     font-style: italic;
     margin-bottom: 0.5em;
 }
-.article p{
+.article p:last-of-type {
  word-break: break-word;
+    font-size: 1.4em;
 }
