@@ -1,12 +1,18 @@
+"use client"
 import styles from "./cardActuality.module.css"
 import Image from 'next/image';
 import {ActualityProps} from "@/features/actuality/type";
+import {useState} from "react";
+import DetailActuality from "@/features/actuality/components/detailActuality/DetailActuality";
+import {createPortal} from "react-dom";
 
 
 export default function CardActuality({actuality} : {actuality: ActualityProps }) {
 
+
+
     const shortPres = (text : string)=>{
-        if (text.length > 120){
+        if (text.length > 110){
            return  text.slice(0, 110) + " ...";
 
 
@@ -14,7 +20,7 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
             return text;
         }
     }
-    console.log(actuality.date);
+
     const formatedDate = (date : Date ) =>{
 
         const newDate = new Date(date);
@@ -25,10 +31,19 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
         return `${day}-${month}-${year}`;
     }
 
+    const [openModal, setOpenModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setOpenModal(true);
+    }
+    const closeModal = () => {
+        setOpenModal(false);
+    }
+
     return (
         <>
 
-            <section className={styles.section}>
+            <button onClick={handleOpenModal} className={styles.section}>
                 <figure className={styles.figure}>
                     <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} fill={true} />
                 </figure>
@@ -37,8 +52,9 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
                     <p>{formatedDate(actuality.date)}</p>
                     <p >{shortPres(actuality.description)}</p>
                 </article>
-            </section>
-
+            </button>
+            {openModal &&
+                createPortal(<DetailActuality closeModalAction={closeModal} actuality={actuality}/>,  document.body)}
 
         </>
     )
