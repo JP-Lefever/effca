@@ -1,0 +1,47 @@
+.section {
+    display: flex;
+    flex-direction: column;
+
+    width: 20vw;
+    min-height: 60vh;
+
+    box-shadow:
+            0 4px 6px rgba(0, 0, 0, 0.08),
+            0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+.section:hover {
+    transform: translateY(-4px);
+    box-shadow:
+            0 10px 15px rgba(0, 0, 0, 0.1),
+            0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.figure{
+    position: relative;
+    width : 20vw;
+    height : 40vh;
+}
+
+.image {
+    object-fit: cover;
+}
+
+
+.article{
+    padding : 1em;
+}
+.article h2{
+    font-family: var(--title-font),sans-serif;
+    color : var(--red-main);
+    letter-spacing : 0.1em
+}
+.article p:first-of-type {
+    font-style: italic;
+    margin-bottom: 0.5em;
+}
+.article p{
+ word-break: break-word;
+}
