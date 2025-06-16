@@ -1,0 +1,23 @@
+.header {
+    background-image: url("/images/equipe.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 90vh;
+    overflow-x: hidden;
+
+}
+.h1{
+    font-family : var(--title-font), sans-serif;
+    text-align: center;
+    position: relative;
+    top: 8vh;
+    color: var(--white-main);
+    letter-spacing: 3px;
+    font-size : 4em;
+@media screen and (max-width: 568px){
+    font-size : 1.8em;
+
+}
+}
