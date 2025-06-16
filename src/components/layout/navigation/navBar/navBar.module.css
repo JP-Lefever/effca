@@ -1,0 +1,106 @@
+.nav{
+    background-color: var(--red-main);
+    height: 8vh;
+    display: flex;
+    align-items: center;
+}
+.navOpen {
+    background-color: var(--red-main);
+    height: 8vh;
+    @media screen and (max-width: 1024px){
+        background-color: var(--red-main);
+        min-height: 100vh;
+    }
+
+}
+.ul{
+    display: flex;
+    gap: 5em;
+    justify-content: center;
+    padding-top: 2.5vh;
+@media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+}
+
+.ul li{
+    list-style: none;
+    color : var(--white-main);
+
+}
+
+.link {
+    text-decoration: none;
+    color: var(--white-main);
+    font-size: 1.2em;
+    @media screen and (max-width: 1024px) {
+        margin-left: 1em;
+    }
+}
+
+.dropDownMenu{
+    font-size: 1.2em;
+    position: relative;
+    @media screen and (max-width: 1024px) {
+        margin-left: 1em;
+    }
+}
+
+.dropDown{
+    display: none;
+    position: absolute;
+    background-color: rgba(208, 9, 49);
+    width : 8vw;
+    padding: var(--padding-section);
+    border : 1px solid var(--white-main);
+    border-radius: 10px;
+    @media screen and (max-width: 1024px) {
+        width : 40vw;
+    }
+}
+
+.dropDownMenuTrigger:hover + .dropDown,
+.dropDown:hover{
+
+    display: block;
+}
+
+.subLink {
+    color : var(--white-main);
+    text-decoration: none;
+}
+
+.imageContainer{
+    @media screen and (max-width: 1024px){
+        display: contents;
+
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.image {
+    position : relative;
+    bottom: 2.5em;
+    @media screen and (max-width: 1024px){
+        position: absolute;
+        top: 50px;
+        right: 0;
+
+    }
+}
+
+.burgerMenu{
+    display: none;
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    @media screen and (max-width: 1024px) {
+       display: block;
+    }
+}

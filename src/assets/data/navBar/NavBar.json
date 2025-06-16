@@ -1,0 +1,31 @@
+{
+  "home" : {
+    "title" : "Accueil",
+    "link" : "/"
+  },
+  "club" : {
+    "title" : "Le club",
+    "link" : "/club"
+  },
+  "team" : {
+    "title" : "Equipes",
+    "items" : ["Sénior"],
+    "link" : ["/team/senior"]
+  },
+  "logo" : {
+    "title" : "/images/logo.png",
+    "link" : "/"
+  },
+  "match" : {
+    "title" : "Matchs",
+    "link" : "/match"
+  },
+  "actuality" : {
+    "title" : "Actualités",
+    "link" : "/actuality"
+  },
+  "partner" : {
+    "title" : "Partenaires",
+    "link" : "/partner"
+  }
+}
