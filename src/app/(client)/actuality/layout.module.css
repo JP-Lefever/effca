@@ -1,9 +1,10 @@
-.section{
+.section {
     display: flex;
-    gap : 1em;
-    margin : 2em;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1em;
+    margin : var(--padding-section);
+
 }
 
 .div {
@@ -41,3 +42,16 @@
         bottom : 2vh;
     }
 }
+
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1000;
+
+}
+

@@ -1,29 +1,19 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255, 255, 255, 0.4);
+
     backdrop-filter: blur(8px);
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100vh;
 }
+
 
 .section {
-    background: white;
-    width: 60vw;
-    max-height: 100vh;
-    overflow-y: auto;
-    border-radius: 12px;
-    padding: 20px;
+    margin:  auto;
+    pointer-events: auto;
+    max-width: 50vw;
+    background: var(--white-main);
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 1010;
+    padding: 1em;
 }
-
 .image {
    width: 100%;
     margin: auto;
@@ -35,4 +25,26 @@
 }
 .p {
     white-space: pre-line;
+    padding: 0.5em;
+}
+
+.section article {
+    margin: var(--padding-section);
+}
+
+.button {
+    cursor: pointer;
+    border : none !important;
+    background : none !important;
+}
+.divButton {
+    background-color: var(--red-main);
+    border : 1px solid var(--red-main);
+}
+
+.anchor{
+    position: absolute;
+    bottom : 0;
+    right : 10vw;
+    scroll-behavior: smooth;
 }
