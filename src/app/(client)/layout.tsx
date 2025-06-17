@@ -1,8 +1,12 @@
+"use client"
 import {ReactNode} from "react";
 import NavBar from "@/components/layout/navigation/navBar/NavBar";
 import Header from "@/components/layout/header/Header";
 
-export default function layoutClient({children}: Readonly<{children: ReactNode}>) {
+
+
+export default function LayoutClient({children}: Readonly<{children: ReactNode}>) {
+
 
 
     return (
@@ -12,6 +16,7 @@ export default function layoutClient({children}: Readonly<{children: ReactNode}>
         <main>
             {children}
         </main>
+
         </>
     )
 }

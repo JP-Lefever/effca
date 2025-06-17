@@ -3,11 +3,13 @@
     padding: 0;
     margin: 0;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
     overflow-x: hidden;
     overflow-y: scroll;
-    scroll-behavior: smooth;
+
 }
 
 :root{

@@ -3,7 +3,7 @@ import styles from "./adminLayout.module.css"
 import NavAdmin from "@/components/layout/navigation/NavAdmin/NavAdmin";
 
 
-export default function layoutAdmin({children}: Readonly<{children: ReactNode}>) {
+export default function LayoutAdmin({children}: Readonly<{children: ReactNode}>) {
 
     return (
         <>
