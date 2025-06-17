@@ -2795,16 +2795,25 @@ export namespace Prisma {
   export type CategoryMinAggregateOutputType = {
     id: string | null
     label: string | null
+    training1: string | null
+    training2: string | null
+    training3: string | null
   }
 
   export type CategoryMaxAggregateOutputType = {
     id: string | null
     label: string | null
+    training1: string | null
+    training2: string | null
+    training3: string | null
   }
 
   export type CategoryCountAggregateOutputType = {
     id: number
     label: number
+    training1: number
+    training2: number
+    training3: number
     _all: number
   }
 
@@ -2812,16 +2821,25 @@ export namespace Prisma {
   export type CategoryMinAggregateInputType = {
     id?: true
     label?: true
+    training1?: true
+    training2?: true
+    training3?: true
   }
 
   export type CategoryMaxAggregateInputType = {
     id?: true
     label?: true
+    training1?: true
+    training2?: true
+    training3?: true
   }
 
   export type CategoryCountAggregateInputType = {
     id?: true
     label?: true
+    training1?: true
+    training2?: true
+    training3?: true
     _all?: true
   }
 
@@ -2900,6 +2918,9 @@ export namespace Prisma {
   export type CategoryGroupByOutputType = {
     id: string
     label: string
+    training1: string
+    training2: string | null
+    training3: string | null
     _count: CategoryCountAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
@@ -2922,6 +2943,9 @@ export namespace Prisma {
   export type CategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     label?: boolean
+    training1?: boolean
+    training2?: boolean
+    training3?: boolean
     members?: boolean | Category$membersArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
@@ -2929,19 +2953,28 @@ export namespace Prisma {
   export type CategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     label?: boolean
+    training1?: boolean
+    training2?: boolean
+    training3?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     label?: boolean
+    training1?: boolean
+    training2?: boolean
+    training3?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectScalar = {
     id?: boolean
     label?: boolean
+    training1?: boolean
+    training2?: boolean
+    training3?: boolean
   }
 
-  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "label", ExtArgs["result"]["category"]>
+  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "label" | "training1" | "training2" | "training3", ExtArgs["result"]["category"]>
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     members?: boolean | Category$membersArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -2957,6 +2990,9 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       label: string
+      training1: string
+      training2: string | null
+      training3: string | null
     }, ExtArgs["result"]["category"]>
     composites: {}
   }
@@ -3383,6 +3419,9 @@ export namespace Prisma {
   interface CategoryFieldRefs {
     readonly id: FieldRef<"Category", 'String'>
     readonly label: FieldRef<"Category", 'String'>
+    readonly training1: FieldRef<"Category", 'String'>
+    readonly training2: FieldRef<"Category", 'String'>
+    readonly training3: FieldRef<"Category", 'String'>
   }
     
 
@@ -4858,6 +4897,8 @@ export namespace Prisma {
     id: string | null
     firstname: string | null
     lastname: string | null
+    tel: string | null
+    mail: string | null
     photo: string | null
     is_admin: boolean | null
     positionId: string | null
@@ -4869,6 +4910,8 @@ export namespace Prisma {
     id: string | null
     firstname: string | null
     lastname: string | null
+    tel: string | null
+    mail: string | null
     photo: string | null
     is_admin: boolean | null
     positionId: string | null
@@ -4880,6 +4923,8 @@ export namespace Prisma {
     id: number
     firstname: number
     lastname: number
+    tel: number
+    mail: number
     photo: number
     is_admin: number
     positionId: number
@@ -4893,6 +4938,8 @@ export namespace Prisma {
     id?: true
     firstname?: true
     lastname?: true
+    tel?: true
+    mail?: true
     photo?: true
     is_admin?: true
     positionId?: true
@@ -4904,6 +4951,8 @@ export namespace Prisma {
     id?: true
     firstname?: true
     lastname?: true
+    tel?: true
+    mail?: true
     photo?: true
     is_admin?: true
     positionId?: true
@@ -4915,6 +4964,8 @@ export namespace Prisma {
     id?: true
     firstname?: true
     lastname?: true
+    tel?: true
+    mail?: true
     photo?: true
     is_admin?: true
     positionId?: true
@@ -4999,6 +5050,8 @@ export namespace Prisma {
     id: string
     firstname: string
     lastname: string
+    tel: string | null
+    mail: string | null
     photo: string | null
     is_admin: boolean
     positionId: string | null
@@ -5027,6 +5080,8 @@ export namespace Prisma {
     id?: boolean
     firstname?: boolean
     lastname?: boolean
+    tel?: boolean
+    mail?: boolean
     photo?: boolean
     is_admin?: boolean
     positionId?: boolean
@@ -5041,6 +5096,8 @@ export namespace Prisma {
     id?: boolean
     firstname?: boolean
     lastname?: boolean
+    tel?: boolean
+    mail?: boolean
     photo?: boolean
     is_admin?: boolean
     positionId?: boolean
@@ -5055,6 +5112,8 @@ export namespace Prisma {
     id?: boolean
     firstname?: boolean
     lastname?: boolean
+    tel?: boolean
+    mail?: boolean
     photo?: boolean
     is_admin?: boolean
     positionId?: boolean
@@ -5069,6 +5128,8 @@ export namespace Prisma {
     id?: boolean
     firstname?: boolean
     lastname?: boolean
+    tel?: boolean
+    mail?: boolean
     photo?: boolean
     is_admin?: boolean
     positionId?: boolean
@@ -5076,7 +5137,7 @@ export namespace Prisma {
     memberFunctionId?: boolean
   }
 
-  export type MembersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstname" | "lastname" | "photo" | "is_admin" | "positionId" | "categoryId" | "memberFunctionId", ExtArgs["result"]["members"]>
+  export type MembersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstname" | "lastname" | "tel" | "mail" | "photo" | "is_admin" | "positionId" | "categoryId" | "memberFunctionId", ExtArgs["result"]["members"]>
   export type MembersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     position?: boolean | Members$positionArgs<ExtArgs>
     category?: boolean | Members$categoryArgs<ExtArgs>
@@ -5104,6 +5165,8 @@ export namespace Prisma {
       id: string
       firstname: string
       lastname: string
+      tel: string | null
+      mail: string | null
       photo: string | null
       is_admin: boolean
       positionId: string | null
@@ -5538,6 +5601,8 @@ export namespace Prisma {
     readonly id: FieldRef<"Members", 'String'>
     readonly firstname: FieldRef<"Members", 'String'>
     readonly lastname: FieldRef<"Members", 'String'>
+    readonly tel: FieldRef<"Members", 'String'>
+    readonly mail: FieldRef<"Members", 'String'>
     readonly photo: FieldRef<"Members", 'String'>
     readonly is_admin: FieldRef<"Members", 'Boolean'>
     readonly positionId: FieldRef<"Members", 'String'>
@@ -11111,7 +11176,10 @@ export namespace Prisma {
 
   export const CategoryScalarFieldEnum: {
     id: 'id',
-    label: 'label'
+    label: 'label',
+    training1: 'training1',
+    training2: 'training2',
+    training3: 'training3'
   };
 
   export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
@@ -11129,6 +11197,8 @@ export namespace Prisma {
     id: 'id',
     firstname: 'firstname',
     lastname: 'lastname',
+    tel: 'tel',
+    mail: 'mail',
     photo: 'photo',
     is_admin: 'is_admin',
     positionId: 'positionId',
@@ -11317,12 +11387,18 @@ export namespace Prisma {
     NOT?: CategoryWhereInput | CategoryWhereInput[]
     id?: StringFilter<"Category"> | string
     label?: StringFilter<"Category"> | string
+    training1?: StringFilter<"Category"> | string
+    training2?: StringNullableFilter<"Category"> | string | null
+    training3?: StringNullableFilter<"Category"> | string | null
     members?: MembersListRelationFilter
   }
 
   export type CategoryOrderByWithRelationInput = {
     id?: SortOrder
     label?: SortOrder
+    training1?: SortOrder
+    training2?: SortOrderInput | SortOrder
+    training3?: SortOrderInput | SortOrder
     members?: MembersOrderByRelationAggregateInput
   }
 
@@ -11332,12 +11408,18 @@ export namespace Prisma {
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
     label?: StringFilter<"Category"> | string
+    training1?: StringFilter<"Category"> | string
+    training2?: StringNullableFilter<"Category"> | string | null
+    training3?: StringNullableFilter<"Category"> | string | null
     members?: MembersListRelationFilter
   }, "id">
 
   export type CategoryOrderByWithAggregationInput = {
     id?: SortOrder
     label?: SortOrder
+    training1?: SortOrder
+    training2?: SortOrderInput | SortOrder
+    training3?: SortOrderInput | SortOrder
     _count?: CategoryCountOrderByAggregateInput
     _max?: CategoryMaxOrderByAggregateInput
     _min?: CategoryMinOrderByAggregateInput
@@ -11349,6 +11431,9 @@ export namespace Prisma {
     NOT?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Category"> | string
     label?: StringWithAggregatesFilter<"Category"> | string
+    training1?: StringWithAggregatesFilter<"Category"> | string
+    training2?: StringNullableWithAggregatesFilter<"Category"> | string | null
+    training3?: StringNullableWithAggregatesFilter<"Category"> | string | null
   }
 
   export type MemberFunctionWhereInput = {
@@ -11398,6 +11483,8 @@ export namespace Prisma {
     id?: StringFilter<"Members"> | string
     firstname?: StringFilter<"Members"> | string
     lastname?: StringFilter<"Members"> | string
+    tel?: StringNullableFilter<"Members"> | string | null
+    mail?: StringNullableFilter<"Members"> | string | null
     photo?: StringNullableFilter<"Members"> | string | null
     is_admin?: BoolFilter<"Members"> | boolean
     positionId?: StringNullableFilter<"Members"> | string | null
@@ -11412,6 +11499,8 @@ export namespace Prisma {
     id?: SortOrder
     firstname?: SortOrder
     lastname?: SortOrder
+    tel?: SortOrderInput | SortOrder
+    mail?: SortOrderInput | SortOrder
     photo?: SortOrderInput | SortOrder
     is_admin?: SortOrder
     positionId?: SortOrderInput | SortOrder
@@ -11429,6 +11518,8 @@ export namespace Prisma {
     NOT?: MembersWhereInput | MembersWhereInput[]
     firstname?: StringFilter<"Members"> | string
     lastname?: StringFilter<"Members"> | string
+    tel?: StringNullableFilter<"Members"> | string | null
+    mail?: StringNullableFilter<"Members"> | string | null
     photo?: StringNullableFilter<"Members"> | string | null
     is_admin?: BoolFilter<"Members"> | boolean
     positionId?: StringNullableFilter<"Members"> | string | null
@@ -11443,6 +11534,8 @@ export namespace Prisma {
     id?: SortOrder
     firstname?: SortOrder
     lastname?: SortOrder
+    tel?: SortOrderInput | SortOrder
+    mail?: SortOrderInput | SortOrder
     photo?: SortOrderInput | SortOrder
     is_admin?: SortOrder
     positionId?: SortOrderInput | SortOrder
@@ -11460,6 +11553,8 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Members"> | string
     firstname?: StringWithAggregatesFilter<"Members"> | string
     lastname?: StringWithAggregatesFilter<"Members"> | string
+    tel?: StringNullableWithAggregatesFilter<"Members"> | string | null
+    mail?: StringNullableWithAggregatesFilter<"Members"> | string | null
     photo?: StringNullableWithAggregatesFilter<"Members"> | string | null
     is_admin?: BoolWithAggregatesFilter<"Members"> | boolean
     positionId?: StringNullableWithAggregatesFilter<"Members"> | string | null
@@ -11755,40 +11850,61 @@ export namespace Prisma {
   export type CategoryCreateInput = {
     id?: string
     label: string
+    training1: string
+    training2?: string | null
+    training3?: string | null
     members?: MembersCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateInput = {
     id?: string
     label: string
+    training1: string
+    training2?: string | null
+    training3?: string | null
     members?: MembersUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
+    training1?: StringFieldUpdateOperationsInput | string
+    training2?: NullableStringFieldUpdateOperationsInput | string | null
+    training3?: NullableStringFieldUpdateOperationsInput | string | null
     members?: MembersUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
+    training1?: StringFieldUpdateOperationsInput | string
+    training2?: NullableStringFieldUpdateOperationsInput | string | null
+    training3?: NullableStringFieldUpdateOperationsInput | string | null
     members?: MembersUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryCreateManyInput = {
     id?: string
     label: string
+    training1: string
+    training2?: string | null
+    training3?: string | null
   }
 
   export type CategoryUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
+    training1?: StringFieldUpdateOperationsInput | string
+    training2?: NullableStringFieldUpdateOperationsInput | string | null
+    training3?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CategoryUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
+    training1?: StringFieldUpdateOperationsInput | string
+    training2?: NullableStringFieldUpdateOperationsInput | string | null
+    training3?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type MemberFunctionCreateInput = {
@@ -11834,6 +11950,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     position?: Player_positionCreateNestedOneWithoutMembersInput
@@ -11845,6 +11963,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     positionId?: string | null
@@ -11856,6 +11976,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     position?: Player_positionUpdateOneWithoutMembersNestedInput
@@ -11867,6 +11989,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     positionId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11878,6 +12002,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     positionId?: string | null
@@ -11889,6 +12015,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
   }
@@ -11897,6 +12025,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     positionId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12222,19 +12352,66 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type CategoryCountOrderByAggregateInput = {
     id?: SortOrder
     label?: SortOrder
+    training1?: SortOrder
+    training2?: SortOrder
+    training3?: SortOrder
   }
 
   export type CategoryMaxOrderByAggregateInput = {
     id?: SortOrder
     label?: SortOrder
+    training1?: SortOrder
+    training2?: SortOrder
+    training3?: SortOrder
   }
 
   export type CategoryMinOrderByAggregateInput = {
     id?: SortOrder
     label?: SortOrder
+    training1?: SortOrder
+    training2?: SortOrder
+    training3?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type MemberFunctionCountOrderByAggregateInput = {
@@ -12250,21 +12427,6 @@ export namespace Prisma {
   export type MemberFunctionMinOrderByAggregateInput = {
     id?: SortOrder
     label?: SortOrder
-  }
-
-  export type StringNullableFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -12287,15 +12449,12 @@ export namespace Prisma {
     isNot?: MemberFunctionWhereInput | null
   }
 
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
-  }
-
   export type MembersCountOrderByAggregateInput = {
     id?: SortOrder
     firstname?: SortOrder
     lastname?: SortOrder
+    tel?: SortOrder
+    mail?: SortOrder
     photo?: SortOrder
     is_admin?: SortOrder
     positionId?: SortOrder
@@ -12307,6 +12466,8 @@ export namespace Prisma {
     id?: SortOrder
     firstname?: SortOrder
     lastname?: SortOrder
+    tel?: SortOrder
+    mail?: SortOrder
     photo?: SortOrder
     is_admin?: SortOrder
     positionId?: SortOrder
@@ -12318,29 +12479,13 @@ export namespace Prisma {
     id?: SortOrder
     firstname?: SortOrder
     lastname?: SortOrder
+    tel?: SortOrder
+    mail?: SortOrder
     photo?: SortOrder
     is_admin?: SortOrder
     positionId?: SortOrder
     categoryId?: SortOrder
     memberFunctionId?: SortOrder
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    mode?: QueryMode
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -12564,6 +12709,10 @@ export namespace Prisma {
     connect?: MembersWhereUniqueInput | MembersWhereUniqueInput[]
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type MembersUpdateManyWithoutCategoryNestedInput = {
     create?: XOR<MembersCreateWithoutCategoryInput, MembersUncheckedCreateWithoutCategoryInput> | MembersCreateWithoutCategoryInput[] | MembersUncheckedCreateWithoutCategoryInput[]
     connectOrCreate?: MembersCreateOrConnectWithoutCategoryInput | MembersCreateOrConnectWithoutCategoryInput[]
@@ -12650,10 +12799,6 @@ export namespace Prisma {
     create?: XOR<MemberFunctionCreateWithoutMembersInput, MemberFunctionUncheckedCreateWithoutMembersInput>
     connectOrCreate?: MemberFunctionCreateOrConnectWithoutMembersInput
     connect?: MemberFunctionWhereUniqueInput
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -12826,11 +12971,6 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -12857,6 +12997,11 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -12896,6 +13041,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     category?: CategoryCreateNestedOneWithoutMembersInput
@@ -12906,6 +13053,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     categoryId?: string | null
@@ -12945,6 +13094,8 @@ export namespace Prisma {
     id?: StringFilter<"Members"> | string
     firstname?: StringFilter<"Members"> | string
     lastname?: StringFilter<"Members"> | string
+    tel?: StringNullableFilter<"Members"> | string | null
+    mail?: StringNullableFilter<"Members"> | string | null
     photo?: StringNullableFilter<"Members"> | string | null
     is_admin?: BoolFilter<"Members"> | boolean
     positionId?: StringNullableFilter<"Members"> | string | null
@@ -12956,6 +13107,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     position?: Player_positionCreateNestedOneWithoutMembersInput
@@ -12966,6 +13119,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     positionId?: string | null
@@ -13002,6 +13157,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     position?: Player_positionCreateNestedOneWithoutMembersInput
@@ -13012,6 +13169,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     positionId?: string | null
@@ -13062,11 +13221,17 @@ export namespace Prisma {
   export type CategoryCreateWithoutMembersInput = {
     id?: string
     label: string
+    training1: string
+    training2?: string | null
+    training3?: string | null
   }
 
   export type CategoryUncheckedCreateWithoutMembersInput = {
     id?: string
     label: string
+    training1: string
+    training2?: string | null
+    training3?: string | null
   }
 
   export type CategoryCreateOrConnectWithoutMembersInput = {
@@ -13124,11 +13289,17 @@ export namespace Prisma {
   export type CategoryUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
+    training1?: StringFieldUpdateOperationsInput | string
+    training2?: NullableStringFieldUpdateOperationsInput | string | null
+    training3?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CategoryUncheckedUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
+    training1?: StringFieldUpdateOperationsInput | string
+    training2?: NullableStringFieldUpdateOperationsInput | string | null
+    training3?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type MemberFunctionUpsertWithoutMembersInput = {
@@ -13243,6 +13414,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     categoryId?: string | null
@@ -13253,6 +13426,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     category?: CategoryUpdateOneWithoutMembersNestedInput
@@ -13263,6 +13438,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     categoryId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13273,6 +13450,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     categoryId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13283,6 +13462,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     positionId?: string | null
@@ -13293,6 +13474,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     position?: Player_positionUpdateOneWithoutMembersNestedInput
@@ -13303,6 +13486,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     positionId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13313,6 +13498,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     positionId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13323,6 +13510,8 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    tel?: string | null
+    mail?: string | null
     photo?: string | null
     is_admin?: boolean
     positionId?: string | null
@@ -13333,6 +13522,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     position?: Player_positionUpdateOneWithoutMembersNestedInput
@@ -13343,6 +13534,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     positionId?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13353,6 +13546,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    tel?: NullableStringFieldUpdateOperationsInput | string | null
+    mail?: NullableStringFieldUpdateOperationsInput | string | null
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     positionId?: NullableStringFieldUpdateOperationsInput | string | null
