@@ -12,6 +12,17 @@
     position: relative;
     cursor : pointer;
     text-decoration: none;
+    @media screen and (max-width: 568px){
+        width: 90vw;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px){
+        width: 45vw;
+
+    }
+    @media screen and (min-width: 1025px) and (max-width: 1280px){
+        width: 30vw;
+        min-height: 48vw;
+    }
 }
 
 .section:hover {
@@ -26,6 +37,16 @@
     position: relative;
     width : 20vw;
     height : 45vh;
+    @media screen and (max-width: 568px){
+        width: 90vw;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px){
+        width: 45vw;
+    }
+    @media screen and (min-width: 1025px) and (max-width: 1280px){
+        width: 30vw;
+
+    }
 }
 
 .image {
@@ -39,7 +60,8 @@
 .article h2{
     font-family: var(--title-font),sans-serif;
     color : var(--red-main);
-    letter-spacing : 0.1em
+    letter-spacing : 0.1em;
+    word-break: break-all;
 }
 
 .article p:first-of-type {
