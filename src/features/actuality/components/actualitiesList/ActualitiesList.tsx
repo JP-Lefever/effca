@@ -10,7 +10,6 @@ export default function ActualitiesList({actualities} : {actualities: ActualityP
         <section className={styles.section}>
             { actualities.map(actuality => (
                 <article key={actuality.id}>
-
                     <CardActuality actuality={actuality}/>
                 </article>
             ))}

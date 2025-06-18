@@ -16,9 +16,11 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
         <>
 
             <Link href={`/actuality/${actuality.id}`}  className={styles.section}>
+                {actuality.photo !== "" && actuality.photo !== null &&
                 <figure className={styles.figure}>
                     <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} fill={true} />
                 </figure>
+                }
                 <article className={styles.article}>
                     <h2 className={styles.h2}>{actuality.title}</h2>
                     <p>{formatedDate(actuality.date)}</p>
