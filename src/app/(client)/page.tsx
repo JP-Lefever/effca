@@ -36,7 +36,7 @@ export default async function HomePage() {
             </article>
             <Link className={styles.linkActu} href="/actuality">{dataTitle.buttonActu}</Link>
         </section>
-        <section className={styles.sectionActu}>
+        <section className={styles.sectionPartner}>
             <article className={styles.div} >
                 <h1 className={styles.h1}>{dataTitle.partner}</h1>
                 <h1 className={styles.h1bActu}>{dataTitle.partner}</h1>
@@ -44,7 +44,7 @@ export default async function HomePage() {
             <article>
                 <PartnerList/>
             </article>
-            <Link className={styles.linkActu} href="/partners">{dataTitle.buttonPartner}</Link>
+            <Link className={styles.linkPartner} href="/partners">{dataTitle.buttonPartner}</Link>
         </section>
     </>)
 }

@@ -106,3 +106,36 @@
 
         }
 }
+
+.sectionPartner{
+    min-height:60vh;
+    position: relative;
+
+}
+
+.linkPartner{
+    text-decoration: none;
+    border : 1px solid var(--red-main);
+    padding : 1em 2em;
+    border-radius : var(--border-radius-button);
+    background-color: var(--red-main);
+    color : var(--white-main);
+    font-size: 1.4em;
+    position: absolute;
+    top : 7vh;
+    right : 4vh;
+    text-transform : uppercase;
+    @media screen and (max-width: 1024px) {
+
+        position: absolute;
+        top: auto;
+        bottom: 2vh;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1em;
+        width: 80vw;
+        border-color : var(--red-main);
+        text-align: center;
+
+    }
+}
