@@ -8,7 +8,7 @@ import {createCategory, readCategories} from "@/features/category/repository";
 export const addCategory = async (data : Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> => {
 
     const validData = categorySchema.safeParse(data);
-
+    console.log(validData.error);
     if (!validData.success) {
         return {success: false, error: "Une erreur est survenue."};
     }

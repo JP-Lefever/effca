@@ -130,7 +130,8 @@ exports.Prisma.CategoryScalarFieldEnum = {
   label: 'label',
   training1: 'training1',
   training2: 'training2',
-  training3: 'training3'
+  training3: 'training3',
+  photo: 'photo'
 };
 
 exports.Prisma.MemberFunctionScalarFieldEnum = {

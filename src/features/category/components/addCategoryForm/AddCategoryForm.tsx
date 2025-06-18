@@ -14,12 +14,24 @@ export default function AddCategoryForm() {
 
     const onSubmit = async (data : CategoryProps) =>{
 
-        const response = await addCategory(data)
+        const validData = (data : string |null | undefined)=>{
+            return data === "" || data === undefined ? null : data
+        }
+
+        const formatedData = {
+            label : data.label,
+            training1 : data.training1,
+            training2 : validData(data.training2),
+            training3 : validData(data.training3)
+        }
+
+
+        const response = await addCategory(formatedData)
 
         if(response.success){
             toast.success(`La catégorie ${response.data.label} a bien été ajoutée`)
             reset()
-        }else{toast.error("Erreur lors de l'ajout du membre")}
+        }else{toast.error("Erreur lors de l'ajout de la categorie")}
     }
 
     return (<>
@@ -28,15 +40,42 @@ export default function AddCategoryForm() {
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
             <legend>{dataCategory.legend}</legend>
-            <label htmlFor={"label"}>{dataCategory.category}</label>
-            <input type={"text"} placeholder={dataCategory.example.join(', ')} {...register("label", { required: dataError.require, pattern:{
-                value : /^[\p{L}0-9_\-\s]+$/u,
-                message: dataError.pattern
-                } })} />
+                <div role={"group"}>
+                    <label htmlFor={"label"}>{dataCategory.category}</label>
+                    <input type={"text"} placeholder={dataCategory.example.join(', ')} {...register("label", { required: dataError.require, pattern:{
+                        value : /^[\p{L}0-9_\-\s]+$/u,
+                        message: dataError.pattern
+                        } })} />
+                    {errors.label && (<p>{errors.label.message as string}</p>)}
+                </div>
+                <div role="group">
+                    <label htmlFor={"training1"}>{dataCategory.training1}</label>
+                    <input type={"text"} placeholder={dataCategory.trainingEx} {...register("training1", { required: dataError.require, pattern:{
+                            value : /^[\p{L}0-9_:\-\s]+$/u,
+                            message: dataError.pattern
+                        } })} />
+                    {errors.training1 && (<p>{errors.training1.message as string}</p>)}
+                </div>
+                <div role="group">
+                    <label htmlFor={"training2"}>{dataCategory.training2}</label>
+                    <input type={"text"} placeholder={dataCategory.trainingEx} {...register("training2", {  pattern:{
+                            value : /^[\p{L}0-9_:\-\s]+$/u,
+                            message: dataError.pattern
+                        } })} />
+                    {errors.training2 && (<p>{errors.training2.message as string}</p>)}
+                </div>
+                <div role="group">
+                    <label htmlFor={"training3"}>{dataCategory.training3}</label>
+                    <input type={"text"} placeholder={dataCategory.trainingEx} {...register("training3", {  pattern:{
+                            value : /^[\p{L}0-9_:\-\s]+$/u,
+                            message: dataError.pattern
+                        } })} />
+                    {errors.training3 && (<p>{errors.training3.message as string}</p>)}
+                </div>
             <button className={styles.button} type={"submit"}>{dataCategory.button}</button>
-            {errors.label && (<p>{errors.label.message as string}</p>)}
             </fieldset>
         </form>
+       <p>{dataCategory.option}</p>
     </section>
     </>)
 }

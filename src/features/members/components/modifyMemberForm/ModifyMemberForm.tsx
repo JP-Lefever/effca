@@ -20,12 +20,14 @@ import DeleteMemberModal from "@/features/members/components/deleteMemberModal/D
 export default function ModifyMemberForm({member, memberFunction, positions, categories}: {member: MemberProps, memberFunction: RoleProps[], positions : PlayerPositionProps[], categories : CategoryProps[]}) {
 
 
-    const {id, firstname, lastname, categoryId, memberFunctionId, positionId, photo} = member;
+    const {id, firstname, lastname, categoryId, memberFunctionId, positionId , tel, mail, photo} = member;
 
     const {register, handleSubmit } = useForm<MemberProps>({defaultValues:{
             firstname: firstname,
             lastname : lastname,
             categoryId: categoryId,
+            tel : tel,
+            mail : mail,
             memberFunctionId : memberFunctionId,
             positionId : positionId,
             photo : photo
@@ -39,7 +41,20 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
 
     const onSubmitModify = async (data : MemberProps) => {
 
-        const {photo, ...rest} = data
+        const validData = (data : string |null)=>{
+            return data === "" ? null : data
+        }
+
+        const {photo} = data
+        const rest = {
+            firstname: data.firstname,
+            lastname: data.lastname,
+            tel: validData(data.tel),
+            mail: validData(data.mail),
+            categoryId: validData(data.categoryId),
+            positionId: validData(data.positionId),
+            memberFunctionId: validData(data.memberFunctionId),
+        }
 
         let photoUrl : string  = photo as string
 
@@ -97,6 +112,8 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
                 }
                 <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("firstname")}/>
                 <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("lastname")}/>
+                <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("tel")}/>
+                <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"email"} {...register("mail")}/>
                 <select className={modify ? styles.readOnly : styles.input} disabled={modify} {...register("categoryId")}>
                     <option value={""}>{dataMember.optionCategory}</option>
                     {categories.map((category) =>(

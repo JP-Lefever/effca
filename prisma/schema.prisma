@@ -27,6 +27,7 @@ model Category{
   training1 String
   training2 String?
   training3 String?
+  photo String?
   members Members[]
 
 }

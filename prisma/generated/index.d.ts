@@ -2798,6 +2798,7 @@ export namespace Prisma {
     training1: string | null
     training2: string | null
     training3: string | null
+    photo: string | null
   }
 
   export type CategoryMaxAggregateOutputType = {
@@ -2806,6 +2807,7 @@ export namespace Prisma {
     training1: string | null
     training2: string | null
     training3: string | null
+    photo: string | null
   }
 
   export type CategoryCountAggregateOutputType = {
@@ -2814,6 +2816,7 @@ export namespace Prisma {
     training1: number
     training2: number
     training3: number
+    photo: number
     _all: number
   }
 
@@ -2824,6 +2827,7 @@ export namespace Prisma {
     training1?: true
     training2?: true
     training3?: true
+    photo?: true
   }
 
   export type CategoryMaxAggregateInputType = {
@@ -2832,6 +2836,7 @@ export namespace Prisma {
     training1?: true
     training2?: true
     training3?: true
+    photo?: true
   }
 
   export type CategoryCountAggregateInputType = {
@@ -2840,6 +2845,7 @@ export namespace Prisma {
     training1?: true
     training2?: true
     training3?: true
+    photo?: true
     _all?: true
   }
 
@@ -2921,6 +2927,7 @@ export namespace Prisma {
     training1: string
     training2: string | null
     training3: string | null
+    photo: string | null
     _count: CategoryCountAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
@@ -2946,6 +2953,7 @@ export namespace Prisma {
     training1?: boolean
     training2?: boolean
     training3?: boolean
+    photo?: boolean
     members?: boolean | Category$membersArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
@@ -2956,6 +2964,7 @@ export namespace Prisma {
     training1?: boolean
     training2?: boolean
     training3?: boolean
+    photo?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2964,6 +2973,7 @@ export namespace Prisma {
     training1?: boolean
     training2?: boolean
     training3?: boolean
+    photo?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectScalar = {
@@ -2972,9 +2982,10 @@ export namespace Prisma {
     training1?: boolean
     training2?: boolean
     training3?: boolean
+    photo?: boolean
   }
 
-  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "label" | "training1" | "training2" | "training3", ExtArgs["result"]["category"]>
+  export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "label" | "training1" | "training2" | "training3" | "photo", ExtArgs["result"]["category"]>
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     members?: boolean | Category$membersArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
@@ -2993,6 +3004,7 @@ export namespace Prisma {
       training1: string
       training2: string | null
       training3: string | null
+      photo: string | null
     }, ExtArgs["result"]["category"]>
     composites: {}
   }
@@ -3422,6 +3434,7 @@ export namespace Prisma {
     readonly training1: FieldRef<"Category", 'String'>
     readonly training2: FieldRef<"Category", 'String'>
     readonly training3: FieldRef<"Category", 'String'>
+    readonly photo: FieldRef<"Category", 'String'>
   }
     
 
@@ -11179,7 +11192,8 @@ export namespace Prisma {
     label: 'label',
     training1: 'training1',
     training2: 'training2',
-    training3: 'training3'
+    training3: 'training3',
+    photo: 'photo'
   };
 
   export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
@@ -11390,6 +11404,7 @@ export namespace Prisma {
     training1?: StringFilter<"Category"> | string
     training2?: StringNullableFilter<"Category"> | string | null
     training3?: StringNullableFilter<"Category"> | string | null
+    photo?: StringNullableFilter<"Category"> | string | null
     members?: MembersListRelationFilter
   }
 
@@ -11399,6 +11414,7 @@ export namespace Prisma {
     training1?: SortOrder
     training2?: SortOrderInput | SortOrder
     training3?: SortOrderInput | SortOrder
+    photo?: SortOrderInput | SortOrder
     members?: MembersOrderByRelationAggregateInput
   }
 
@@ -11411,6 +11427,7 @@ export namespace Prisma {
     training1?: StringFilter<"Category"> | string
     training2?: StringNullableFilter<"Category"> | string | null
     training3?: StringNullableFilter<"Category"> | string | null
+    photo?: StringNullableFilter<"Category"> | string | null
     members?: MembersListRelationFilter
   }, "id">
 
@@ -11420,6 +11437,7 @@ export namespace Prisma {
     training1?: SortOrder
     training2?: SortOrderInput | SortOrder
     training3?: SortOrderInput | SortOrder
+    photo?: SortOrderInput | SortOrder
     _count?: CategoryCountOrderByAggregateInput
     _max?: CategoryMaxOrderByAggregateInput
     _min?: CategoryMinOrderByAggregateInput
@@ -11434,6 +11452,7 @@ export namespace Prisma {
     training1?: StringWithAggregatesFilter<"Category"> | string
     training2?: StringNullableWithAggregatesFilter<"Category"> | string | null
     training3?: StringNullableWithAggregatesFilter<"Category"> | string | null
+    photo?: StringNullableWithAggregatesFilter<"Category"> | string | null
   }
 
   export type MemberFunctionWhereInput = {
@@ -11853,6 +11872,7 @@ export namespace Prisma {
     training1: string
     training2?: string | null
     training3?: string | null
+    photo?: string | null
     members?: MembersCreateNestedManyWithoutCategoryInput
   }
 
@@ -11862,6 +11882,7 @@ export namespace Prisma {
     training1: string
     training2?: string | null
     training3?: string | null
+    photo?: string | null
     members?: MembersUncheckedCreateNestedManyWithoutCategoryInput
   }
 
@@ -11871,6 +11892,7 @@ export namespace Prisma {
     training1?: StringFieldUpdateOperationsInput | string
     training2?: NullableStringFieldUpdateOperationsInput | string | null
     training3?: NullableStringFieldUpdateOperationsInput | string | null
+    photo?: NullableStringFieldUpdateOperationsInput | string | null
     members?: MembersUpdateManyWithoutCategoryNestedInput
   }
 
@@ -11880,6 +11902,7 @@ export namespace Prisma {
     training1?: StringFieldUpdateOperationsInput | string
     training2?: NullableStringFieldUpdateOperationsInput | string | null
     training3?: NullableStringFieldUpdateOperationsInput | string | null
+    photo?: NullableStringFieldUpdateOperationsInput | string | null
     members?: MembersUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
@@ -11889,6 +11912,7 @@ export namespace Prisma {
     training1: string
     training2?: string | null
     training3?: string | null
+    photo?: string | null
   }
 
   export type CategoryUpdateManyMutationInput = {
@@ -11897,6 +11921,7 @@ export namespace Prisma {
     training1?: StringFieldUpdateOperationsInput | string
     training2?: NullableStringFieldUpdateOperationsInput | string | null
     training3?: NullableStringFieldUpdateOperationsInput | string | null
+    photo?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CategoryUncheckedUpdateManyInput = {
@@ -11905,6 +11930,7 @@ export namespace Prisma {
     training1?: StringFieldUpdateOperationsInput | string
     training2?: NullableStringFieldUpdateOperationsInput | string | null
     training3?: NullableStringFieldUpdateOperationsInput | string | null
+    photo?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type MemberFunctionCreateInput = {
@@ -12378,6 +12404,7 @@ export namespace Prisma {
     training1?: SortOrder
     training2?: SortOrder
     training3?: SortOrder
+    photo?: SortOrder
   }
 
   export type CategoryMaxOrderByAggregateInput = {
@@ -12386,6 +12413,7 @@ export namespace Prisma {
     training1?: SortOrder
     training2?: SortOrder
     training3?: SortOrder
+    photo?: SortOrder
   }
 
   export type CategoryMinOrderByAggregateInput = {
@@ -12394,6 +12422,7 @@ export namespace Prisma {
     training1?: SortOrder
     training2?: SortOrder
     training3?: SortOrder
+    photo?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -13224,6 +13253,7 @@ export namespace Prisma {
     training1: string
     training2?: string | null
     training3?: string | null
+    photo?: string | null
   }
 
   export type CategoryUncheckedCreateWithoutMembersInput = {
@@ -13232,6 +13262,7 @@ export namespace Prisma {
     training1: string
     training2?: string | null
     training3?: string | null
+    photo?: string | null
   }
 
   export type CategoryCreateOrConnectWithoutMembersInput = {
@@ -13292,6 +13323,7 @@ export namespace Prisma {
     training1?: StringFieldUpdateOperationsInput | string
     training2?: NullableStringFieldUpdateOperationsInput | string | null
     training3?: NullableStringFieldUpdateOperationsInput | string | null
+    photo?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CategoryUncheckedUpdateWithoutMembersInput = {
@@ -13300,6 +13332,7 @@ export namespace Prisma {
     training1?: StringFieldUpdateOperationsInput | string
     training2?: NullableStringFieldUpdateOperationsInput | string | null
     training3?: NullableStringFieldUpdateOperationsInput | string | null
+    photo?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type MemberFunctionUpsertWithoutMembersInput = {

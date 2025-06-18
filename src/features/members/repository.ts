@@ -5,9 +5,9 @@ const validData = (data : string |null)=>{
     return data === "" ? null : data
 }
 
-export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "photo">, photo : string | null) : Promise<ResultProps<Omit<MemberProps, "categoryId">>> {
+export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "photo">, photo : string | null) : Promise<ResultProps<MemberProps>> {
 
-    const {firstname, lastname, positionId, categoryId, memberFunctionId} = data;
+    const {firstname, lastname, positionId, categoryId, memberFunctionId, tel, mail} = data;
 
 
 
@@ -20,6 +20,8 @@ export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "
                 photo : photo ,
                 categoryId: validData(categoryId),
                 memberFunctionId : validData(memberFunctionId),
+                tel : validData(tel),
+                mail : validData(mail),
             }
         })
 
