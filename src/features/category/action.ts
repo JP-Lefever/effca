@@ -5,15 +5,15 @@ import {createCategory, readCategories} from "@/features/category/repository";
 
 
 
-export const addCategory = async (data : Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> => {
+export const addCategory = async (data : Omit<CategoryProps, "id" |"photo">, photo : string |null) : Promise<ResultProps<CategoryProps>> => {
 
     const validData = categorySchema.safeParse(data);
-    console.log(validData.error);
+
     if (!validData.success) {
         return {success: false, error: "Une erreur est survenue."};
     }
 
-    const response = await createCategory(validData.data);
+    const response = await createCategory(validData.data, photo);
 
     if(!response.success) {
         return {success: false, error : response.error};

@@ -25,8 +25,30 @@ export default function AddCategoryForm() {
             training3 : validData(data.training3)
         }
 
+        const {photo} = data
+        let photoUrl : string | null = null
 
-        const response = await addCategory(formatedData)
+        if(photo && photo.length>0){
+
+            const formData = new FormData()
+            formData.append("photo" , photo[0])
+            formData.append("folder", "Catégories")
+
+            const responseUpload = await fetch("/api/upload", {
+                method: "POST",
+                body: formData,
+            })
+
+            const result = await responseUpload.json()
+                if(!result.success){
+                    return toast.error("Une erreur est survenue lors de l'upload de l'image")
+                }
+
+            photoUrl = result.url
+
+        }
+
+        const response = await addCategory(formatedData, photoUrl)
 
         if(response.success){
             toast.success(`La catégorie ${response.data.label} a bien été ajoutée`)
@@ -71,6 +93,10 @@ export default function AddCategoryForm() {
                             message: dataError.pattern
                         } })} />
                     {errors.training3 && (<p>{errors.training3.message as string}</p>)}
+                </div>
+                <div role="group">
+                    <label htmlFor={"photo"}>{dataCategory.photo}</label>
+                    <input type={"file"}  {...register("photo")} />
                 </div>
             <button className={styles.button} type={"submit"}>{dataCategory.button}</button>
             </fieldset>

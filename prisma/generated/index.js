@@ -227,6 +227,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -237,7 +238,7 @@ const config = {
   },
   "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String    @id @default(uuid())\n  label   String\n  members Members[]\n}\n\nmodel Category {\n  id        String    @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Members[]\n}\n\nmodel MemberFunction {\n  id      String    @id @default(uuid())\n  label   String\n  members Members[]\n}\n\nmodel Members {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  position         Player_position? @relation(fields: [positionId], references: [id])\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n\nmodel Album {\n  id    String  @id @default(uuid())\n  title String\n  media Media[]\n}\n\nmodel Media {\n  id    String   @id @default(uuid())\n  title String\n  place String?\n  photo String\n  date  DateTime\n  album Album[]\n}\n",
   "inlineSchemaHash": "774af75d339ffc1e1a6bf1d6f6731b566cf053c679cca49b1042cd296470b601",
-  "copyEngine": false
+  "copyEngine": true
 }
 
 const fs = require('fs')
@@ -274,3 +275,9 @@ const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
+// file annotations for bundling tools to include these files
+path.join(__dirname, "query_engine-windows.dll.node");
+path.join(process.cwd(), "prisma/generated/query_engine-windows.dll.node")
+// file annotations for bundling tools to include these files
+path.join(__dirname, "schema.prisma");
+path.join(process.cwd(), "prisma/generated/schema.prisma")

@@ -5,7 +5,7 @@ const validData = (data : string |null | undefined)=>{
     return data === "" || data === undefined ? null : data
 }
 
-export async function createCategory(category: Omit<CategoryProps, "id">) : Promise<ResultProps<CategoryProps>> {
+export async function createCategory(category: Omit<CategoryProps, "id" |"photo">, photo : string | null) : Promise<ResultProps<CategoryProps>> {
     try {
 
         const newCategory = await prisma.category.create({
@@ -14,6 +14,7 @@ export async function createCategory(category: Omit<CategoryProps, "id">) : Prom
                 training1 : category.training1,
                 training2 : validData(category.training2),
                 training3 : validData(category.training3),
+                photo : photo,
             }
         })
 
