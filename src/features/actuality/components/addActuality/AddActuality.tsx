@@ -21,11 +21,11 @@ export default function AddActuality() {
             description : data.description,
             date : data.date,
             contact : data.contact === "" || data.contact === undefined ? null : data.contact,
-            mail : data.mail === "" || data.contact === undefined ? null : data.mail,
-            phone : data.phone === "" || data.contact === undefined ? null : data.phone,
+            mail : data.mail === "" || data.mail === undefined ? null : data.mail,
+            phone : data.phone === "" || data.phone === undefined ? null : data.phone,
 
         }
-
+    console.log(rest.phone)
         const {photo} = data
         let photoUrl = null
 
