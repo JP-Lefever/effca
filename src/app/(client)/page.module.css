@@ -1,3 +1,8 @@
+
+.sectionMatch{
+    min-height:100vh;
+}
+
 .div {
     margin : 0 0 2em 0;
     border-top : 3px solid var(--red-main);
@@ -18,7 +23,6 @@
     }
 }
 
-
 .h1b {
 
     font-family: var(--title-font), sans-serif;
@@ -32,4 +36,55 @@
         font-size: 2.5em;
         bottom : 2vh;
     }
+}
+.h1bActu {
+
+    font-family: var(--title-font), sans-serif;
+
+    font-size: 4em;
+    letter-spacing: 8px;
+    position : relative;
+    color : var(--black-text);
+    bottom : 4vh;
+    @media screen and (max-width : 568px) {
+        font-size: 2.5em;
+        bottom : 2vh;
+    }
+}
+.sectionPhoto{
+    background-image: url("/images/photo_victoire.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+
+}
+.sectionActu{
+    position: relative;
+    padding-bottom: 10vh;
+    background:
+            linear-gradient(
+                    140deg,
+                    var(--white-main) 0%,
+                    var(--white-main) 20%,
+                    var(--red-main) 20%,
+                    var(--red-main) 95%,
+                    var(--white-main) 95%,
+                    var(--white-main) 100%
+            );
+
+}
+
+.linkActu{
+    text-decoration: none;
+    border : 1px solid var(--white-main);
+    padding : 1em 2em;
+    border-radius : var(--border-radius-button);
+    background-color: var(--white-main);
+    color : var(--black-text);
+    font-size: 1.4em;
+    position: absolute;
+    top : 7vh;
+    right : 4vh;
 }

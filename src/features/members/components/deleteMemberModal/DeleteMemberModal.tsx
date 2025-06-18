@@ -1,6 +1,6 @@
 import styles from "./deleteMemberModal.module.css"
 import confirmData from "@/assets/data/member/member.json"
-import {OnClickButton } from "@/components/ui/buttons/Buttons";
+import {Button } from "@/components/ui/buttons/Buttons";
 import {deleteMember} from "@/features/members/action";
 import {toast} from "react-toastify";
 import {redirect} from "next/navigation";
@@ -24,8 +24,8 @@ export default function DeleteMemberModal({id, closeModalAction } : {id: string,
             <article>
                 <p>{confirmData.delete}</p>
                 <div role = "group">
-                <OnClickButton className={styles.validate} onClick={ onClickDelete} name = {"oui"}/>
-                <OnClickButton className={styles.cancel} onClick={ closeModalAction} name = {"non"}/>
+                <Button className={styles.validate} onClick={ onClickDelete} name = {"oui"}/>
+                <Button className={styles.cancel} onClick={ closeModalAction} name = {"non"}/>
                 </div>
             </article>
         </section>
