@@ -6,6 +6,7 @@ import MatchWidget from "@/components/ui/widgets/Match";
 import ActualitiesList from "@/features/actuality/components/actualitiesList/ActualitiesList";
 import {readAllActualities} from "@/features/actuality/repository";
 import Link from "next/link";
+import Header from "@/components/layout/header/Header";
 
 export default async function HomePage() {
 
@@ -20,6 +21,8 @@ export default async function HomePage() {
     const limitActualities = actualities.data.slice(0,4);
 
     return (<>
+
+        <Header/>
         <section className={styles.sectionMatch}>
             <article className={styles.div} >
                 <h1 className={styles.h1}>{dataTitle.result}</h1>

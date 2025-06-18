@@ -12,7 +12,7 @@ export default function LayoutClient({children}: Readonly<{children: ReactNode}>
     return (
         <>
         <NavBar/>
-        <Header/>
+
         <main>
             {children}
         </main>

@@ -1,6 +1,7 @@
 
 .sectionMatch{
     min-height:100vh;
+
 }
 
 .div {
@@ -61,8 +62,9 @@
 
 }
 .sectionActu{
+
     position: relative;
-    padding-bottom: 10vh;
+    min-height:100vh;
     background:
             linear-gradient(
                     140deg,
@@ -73,7 +75,9 @@
                     var(--white-main) 95%,
                     var(--white-main) 100%
             );
-
+    @media screen and (max-width: 1280px) {
+        padding-bottom: 15vh;
+    }
 }
 
 .linkActu{
@@ -87,4 +91,18 @@
     position: absolute;
     top : 7vh;
     right : 4vh;
+    text-transform : uppercase;
+    @media screen and (max-width: 1024px) {
+
+            position: absolute;
+            top: auto;
+            bottom: 2vh;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1em;
+            width: 80vw;
+            border-color : var(--red-main);
+            text-align: center;
+
+        }
 }
