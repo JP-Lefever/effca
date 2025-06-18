@@ -18,9 +18,9 @@ export default function ModifyHistoryForm({data}: {data: HistoryProps}) {
 
 
 
-    const onSubmit = async (data : HistoryProps) => {
+    const onSubmit = async (dataForm : HistoryProps) => {
 
-        const response = await editHistoryClub(data, id)
+        const response = await editHistoryClub(dataForm, id)
 
         if(response.success){
             toast.success("L'histoire du club a bien été modifiée")

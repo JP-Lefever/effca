@@ -6,7 +6,7 @@
     width : 15vw;
     align-items: center;
     justify-content: space-around;
-    min-height: 45vh;
+    min-height: 57vh;
     border: 2px solid var(--red-main);
     padding : 1em 0 ;
     background : linear-gradient(130deg, var(--red-main) 0%, var(--red-main) 20%, var(--white-main) 20%,var(--white-main) 100%);
@@ -76,7 +76,7 @@
     text-align : center;
     background-color: transparent;
     border: none;
-    color: var(--red-main);
+    color: var(--black-text);
     appearance: none;
     width: 10vw;
     opacity: 1;

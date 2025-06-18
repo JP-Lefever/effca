@@ -7,23 +7,38 @@ CREATE TABLE "Player_position" (
 );
 
 -- CreateTable
+CREATE TABLE "Category" (
+    "id" TEXT NOT NULL,
+    "label" TEXT NOT NULL,
+    "training1" TEXT NOT NULL,
+    "training2" TEXT,
+    "training3" TEXT,
+
+    CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "MemberFunction" (
+    "id" TEXT NOT NULL,
+    "label" TEXT NOT NULL,
+
+    CONSTRAINT "MemberFunction_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "Members" (
     "id" TEXT NOT NULL,
     "firstname" TEXT NOT NULL,
     "lastname" TEXT NOT NULL,
+    "tel" TEXT,
+    "mail" TEXT,
     "photo" TEXT,
     "is_admin" BOOLEAN NOT NULL DEFAULT false,
     "positionId" TEXT,
+    "categoryId" TEXT,
+    "memberFunctionId" TEXT,
 
     CONSTRAINT "Members_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "Category" (
-    "id" TEXT NOT NULL,
-    "label" TEXT NOT NULL,
-
-    CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -78,14 +93,6 @@ CREATE TABLE "Media" (
 );
 
 -- CreateTable
-CREATE TABLE "_CategoryToMembers" (
-    "A" TEXT NOT NULL,
-    "B" TEXT NOT NULL,
-
-    CONSTRAINT "_CategoryToMembers_AB_pkey" PRIMARY KEY ("A","B")
-);
-
--- CreateTable
 CREATE TABLE "_AlbumToMedia" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -97,19 +104,16 @@ CREATE TABLE "_AlbumToMedia" (
 CREATE INDEX "Members_positionId_idx" ON "Members"("positionId");
 
 -- CreateIndex
-CREATE INDEX "_CategoryToMembers_B_index" ON "_CategoryToMembers"("B");
-
--- CreateIndex
 CREATE INDEX "_AlbumToMedia_B_index" ON "_AlbumToMedia"("B");
 
 -- AddForeignKey
 ALTER TABLE "Members" ADD CONSTRAINT "Members_positionId_fkey" FOREIGN KEY ("positionId") REFERENCES "Player_position"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_CategoryToMembers" ADD CONSTRAINT "_CategoryToMembers_A_fkey" FOREIGN KEY ("A") REFERENCES "Category"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Members" ADD CONSTRAINT "Members_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "Category"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "_CategoryToMembers" ADD CONSTRAINT "_CategoryToMembers_B_fkey" FOREIGN KEY ("B") REFERENCES "Members"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Members" ADD CONSTRAINT "Members_memberFunctionId_fkey" FOREIGN KEY ("memberFunctionId") REFERENCES "MemberFunction"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_AlbumToMedia" ADD CONSTRAINT "_AlbumToMedia_A_fkey" FOREIGN KEY ("A") REFERENCES "Album"("id") ON DELETE CASCADE ON UPDATE CASCADE;

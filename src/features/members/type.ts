@@ -5,6 +5,8 @@ export type MemberProps = {
     firstname : string,
     is_admin : boolean,
     lastname : string,
+    mail : string | null,
+    tel : string| null,
     positionId: string | null,
     categoryId: string | null,
     memberFunctionId : string |null;

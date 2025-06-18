@@ -11,13 +11,27 @@ import {RoleProps} from "@/features/associationRole/type";
 import styles from "./addMemberForm.module.css"
 
 
+
 export default function AddMemberForm({categories, playerPosition ,memberRole} : {categories: CategoryProps[], playerPosition: PlayerPositionProps[], memberRole : RoleProps[]}) {
 
     const {register, handleSubmit, formState:{errors}, reset} = useForm<MemberProps>()
 
     const onSubmit = async (data : MemberProps) => {
+        const validData = (data : string |null)=>{
+            return data === "" ? null : data
+        }
 
-        const { photo, ...rest } = data
+        const rest = {
+            firstname: data.firstname,
+            lastname: data.lastname,
+            tel: validData(data.tel),
+            mail: validData(data.mail),
+            categoryId: validData(data.categoryId),
+            positionId: validData(data.positionId),
+            memberFunctionId: validData(data.memberFunctionId),
+        }
+
+        const { photo } = data
         let photoUrl: string | null  = null
 
         if (photo && photo.length>0) {
@@ -75,8 +89,25 @@ export default function AddMemberForm({categories, playerPosition ,memberRole} :
                         message : dataError.pattern
                     }})} />
                         {errors.lastname && (<p>{errors.lastname.message as string}</p>)}
+                        </div>
+                    <div role="group">
+                        <label htmlFor={"tel"}>{dataMember.tel}</label>
+                        <input type="text" {...register('tel', {pattern : {
+                            value : /^0[0-9]([-. ]?[0-9]{2,}){4,}$/,
+                            message : dataError.pattern
+                        }})}/>
+                        {errors.tel && (<p>{errors.tel.message as string}</p>)}
                     </div>
-
+                <div role="group">
+                    <label htmlFor={"mail"}>{dataMember.mail}</label>
+                    <input type={"email"} {...register("mail", {
+                        pattern : {
+                            value : /^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                            message: dataError.mail
+                        }
+                    })}/>
+                    {errors.mail && (<p>{errors.mail.message as string}</p>)}
+                </div>
                     <div role="group">
                     <label htmlFor={"positionId"}>{dataMember.position}</label>
                     <select {...register('positionId')}>

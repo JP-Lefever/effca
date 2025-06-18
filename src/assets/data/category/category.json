@@ -1,6 +1,12 @@
 {
   "legend" : "Category",
   "category" : "Ajouter une catégorie",
+  "training1" : "Ajouter le jour et l'heure du 1er entrainement",
+  "training2" : "Ajouter le jour et l'heure du 2nd entrainement *",
+  "training3" : "Ajouter le jour et l'heure du 3eme entrainement *",
+  "photo" : "Photo d'équipe de la catégorie",
+  "trainingEx" : "Le Lundi : de 17h30 à 19h00",
   "example" : ["Senior, Jeunes","..."],
-  "button" : "Ajouter"
+  "button" : "Ajouter",
+  "option" : "* Champs non obligatoires"
 }

@@ -127,7 +127,11 @@ exports.Prisma.Player_positionScalarFieldEnum = {
 
 exports.Prisma.CategoryScalarFieldEnum = {
   id: 'id',
-  label: 'label'
+  label: 'label',
+  training1: 'training1',
+  training2: 'training2',
+  training3: 'training3',
+  photo: 'photo'
 };
 
 exports.Prisma.MemberFunctionScalarFieldEnum = {
@@ -139,6 +143,8 @@ exports.Prisma.MembersScalarFieldEnum = {
   id: 'id',
   firstname: 'firstname',
   lastname: 'lastname',
+  tel: 'tel',
+  mail: 'mail',
   photo: 'photo',
   is_admin: 'is_admin',
   positionId: 'positionId',

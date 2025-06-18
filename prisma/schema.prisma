@@ -18,24 +18,33 @@ model Player_position {
   id String @id @default(uuid())
   label String
   members Members[]
+
 }
 
 model Category{
   id String @id @default(uuid())
   label String
+  training1 String
+  training2 String?
+  training3 String?
+  photo String?
   members Members[]
+
 }
 
 model MemberFunction{
   id String @id @default(uuid())
   label String
   members Members[]
+
 }
 
 model Members{
   id String @id @default(uuid())
   firstname String
   lastname String
+  tel String?
+  mail String?
   photo String?
   is_admin Boolean @default(false)
   positionId String?
@@ -48,7 +57,6 @@ model Members{
   @@index([positionId])
 
 }
-
 
 
 
