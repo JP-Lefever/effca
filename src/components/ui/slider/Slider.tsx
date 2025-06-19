@@ -13,7 +13,7 @@ export default function Slider({partners}: {partners: PartnerProps[]}) {
         <>
         <Swiper
         className={styles.swiper}
-        spaceBetween={80}
+        spaceBetween={10}
         slidesPerView={2}
         freeMode={true}
         speed={3000}
@@ -21,6 +21,14 @@ export default function Slider({partners}: {partners: PartnerProps[]}) {
         modules={[Autoplay]}
         autoplay={{delay: 0, pauseOnMouseEnter: true}}
         breakpoints={{
+            768 : {
+                slidesPerView : 2,
+                spaceBetween : 10
+            },
+            1080: {
+                slidesPerView: 3,
+                spaceBetween:10,
+            },
             1480: {
                 slidesPerView : 7,
                 spaceBetween : 30
