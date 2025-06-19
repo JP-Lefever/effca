@@ -9,5 +9,8 @@
   "modifyFile" : "Modifier photo",
   "buttonAdd" : "Ajouter",
   "buttonModify" : "Modifier",
-  "buttonDelete" : "Supprimer"
+  "buttonDelete" : "Supprimer",
+  "title" : "Partenaires",
+  "major" : "Partenaires majeurs",
+  "normal" : "Partenaires officiels"
 }

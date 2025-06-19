@@ -47,10 +47,11 @@ export default async function HomePage() {
         <section className={styles.sectionPartner}>
             <article className={styles.div} >
                 <h1 className={styles.h1}>{dataTitle.partner}</h1>
-                <h1 className={styles.h1bActu}>{dataTitle.partner}</h1>
+                <h1 className={styles.h1b}>{dataTitle.partner}</h1>
             </article>
             <article>
                 <Slider partners={partners.data}/>
+
             </article>
             <Link className={styles.linkPartner} href="/partners">{dataTitle.buttonPartner}</Link>
         </section>

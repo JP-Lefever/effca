@@ -28,7 +28,7 @@ export default function Slider({partners}: {partners: PartnerProps[]}) {
         >
                 {partners.map((partner)=>(
 
-            <SwiperSlide className={styles.slide} key={partner.id}>
+            <SwiperSlide key={partner.id}>
                         <CardPartner partner={partner}/>
             </SwiperSlide>
 

@@ -35,3 +35,18 @@
         bottom : 2vh;
     }
 }
+
+.articlePartner {
+    width : 80vw;
+    margin : 4em auto;
+
+}
+
+.h2{
+    border-bottom: 1px solid var(--red-main);
+    text-align: center;
+    margin : 3em auto;
+    font-size : 2em;
+    padding : 0.5em;
+    color : var(--black-text)
+}

@@ -1,21 +1,16 @@
 import styles from "./partnerList.module.css"
-import {readAllPartner} from "@/features/partner/repository";
+
 import CardPartner from "@/features/partner/components/cardPartner/CardPartner";
+import {PartnerProps} from "@/features/partner/type";
 
-export default async function PartnerList() {
+export default async function PartnerList({partners} :{partners:PartnerProps[]}) {
 
-    const partners = await readAllPartner()
 
-    if(!partners.success){
-        return (
-            <p>Erreur lors du chargement des partenaires</p>
-        )
-    }
 
     return (
         <>
         <section className={styles.section}>
-            {partners.data.map((partner) => (
+            {partners.map((partner) => (
                 <section key={partner.id}>
                     <CardPartner partner = {partner} />
 
