@@ -8,10 +8,18 @@ import ActualitiesList from "@/features/actuality/components/actualitiesList/Act
 import Link from "next/link";
 import Header from "@/components/layout/header/Header";
 import PartnerList from "@/features/partner/components/partnerList/PartnerList";
+import Slider from "@/components/ui/slider/Slider";
+import {readAllPartner} from "@/features/partner/repository";
 
 export default async function HomePage() {
 
+    const partners = await readAllPartner();
 
+    if(!partners.success){
+        return (
+            <p>Une erreur est survenue au chargement des partenaires</p>
+        )
+    }
 
     return (<>
 
@@ -42,7 +50,7 @@ export default async function HomePage() {
                 <h1 className={styles.h1bActu}>{dataTitle.partner}</h1>
             </article>
             <article>
-                <PartnerList/>
+                <Slider partners={partners.data}/>
             </article>
             <Link className={styles.linkPartner} href="/partners">{dataTitle.buttonPartner}</Link>
         </section>
