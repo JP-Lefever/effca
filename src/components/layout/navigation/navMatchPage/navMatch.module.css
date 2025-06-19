@@ -21,3 +21,6 @@
     color: var(--black-text);
     font-size: 1.6em;
 }
+.isActiveLink{
+    color: var(--red-main);
+}
