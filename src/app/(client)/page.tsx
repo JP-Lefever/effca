@@ -1,24 +1,21 @@
-
-
 import styles from "./page.module.css"
 import dataTitle from "@/assets/data/homePage/homePage.json"
 import MatchWidget from "@/components/ui/widgets/Match";
 import ActualitiesList from "@/features/actuality/components/actualitiesList/ActualitiesList";
-import {readAllActualities} from "@/features/actuality/repository";
 import Link from "next/link";
 import Header from "@/components/layout/header/Header";
+import Slider from "@/components/ui/slider/Slider";
+import {readAllPartner} from "@/features/partner/repository";
 
 export default async function HomePage() {
 
-    const actualities = await readAllActualities()
+    const partners = await readAllPartner();
 
-    if(!actualities.success){
+    if(!partners.success){
         return (
-            <p>Erreur lors du chargement des actualités</p>
+            <p>Une erreur est survenue au chargement des partenaires</p>
         )
     }
-
-    const limitActualities = actualities.data.slice(0,4);
 
     return (<>
 
@@ -39,9 +36,20 @@ export default async function HomePage() {
                     <h1 className={styles.h1bActu}>{dataTitle.actu}</h1>
             </article>
             <article>
-                <ActualitiesList actualities={limitActualities}/>
+                <ActualitiesList limit={4}/>
             </article>
             <Link className={styles.linkActu} href="/actuality">{dataTitle.buttonActu}</Link>
+        </section>
+        <section className={styles.sectionPartner}>
+            <article className={styles.div} >
+                <h1 className={styles.h1}>{dataTitle.partner}</h1>
+                <h1 className={styles.h1b}>{dataTitle.partner}</h1>
+            </article>
+            <article>
+                <Slider partners={partners.data}/>
+
+            </article>
+            <Link className={styles.linkPartner} href="/partners">{dataTitle.buttonPartner}</Link>
         </section>
     </>)
 }

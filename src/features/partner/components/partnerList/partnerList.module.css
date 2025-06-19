@@ -1,0 +1,10 @@
+.section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap : 3em;
+@media screen and (max-width: 568px){
+    gap: 1em;
+}
+
+}
