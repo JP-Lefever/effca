@@ -11,7 +11,7 @@
     border-bottom: 10px solid var(--red-main);
     @media screen and (max-width : 568px) {
         width: 90vw;
-        min-height: 99vh;
+        min-height: 130vh;
     }
     @media screen and (min-width: 569px) and (max-width : 1024px) {
         width: 70vw;
@@ -19,7 +19,7 @@
     }
     @media screen and (min-width: 1024px) and (max-width : 1280px) {
         width: 60vw;
-        min-height: 60vh;
+        min-height: 80vh;
     }
 }
 
@@ -29,5 +29,10 @@
     height: 70vh;
 
     border : none;
-
+    @media screen and (max-width : 568px) {
+        height: 160vh;
+    }
+    @media screen and (min-width: 1024px) and (max-width : 1280px) {
+        height: 90vh;
+    }
 }

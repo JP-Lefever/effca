@@ -1,4 +1,4 @@
-import styles from "@/app/(client)/match/page.module.css";
+import styles from "./page.module.css";
 import data from "@/assets/data/matchPage/match.json";
 import NavMatch from "@/components/layout/navigation/navMatchPage/NavMatch";
 import {ReactNode} from "react";
@@ -7,18 +7,15 @@ export default function  matchLayout({children} : { children: ReactNode }) {
 
     return (
         <>
-            <section>
-                <article className={styles.div} >
+
+                <header className={styles.div} >
                     <h1 className={styles.h1}>{data.title}</h1>
                     <h1 className={styles.h1b}>{data.title}</h1>
-                </article>
-            </section>
-            <section>
+                </header>
                 <NavMatch/>
-            </section>
-            <main>
-                {children}
-            </main>
+                <main>
+                    {children}
+                </main>
         </>
     )
 }
