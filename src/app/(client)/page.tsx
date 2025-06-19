@@ -1,13 +1,9 @@
-
-
 import styles from "./page.module.css"
 import dataTitle from "@/assets/data/homePage/homePage.json"
 import MatchWidget from "@/components/ui/widgets/Match";
 import ActualitiesList from "@/features/actuality/components/actualitiesList/ActualitiesList";
-
 import Link from "next/link";
 import Header from "@/components/layout/header/Header";
-import PartnerList from "@/features/partner/components/partnerList/PartnerList";
 import Slider from "@/components/ui/slider/Slider";
 import {readAllPartner} from "@/features/partner/repository";
 
