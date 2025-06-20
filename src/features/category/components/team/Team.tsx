@@ -1,3 +1,4 @@
+
 import styles from "./team.module.css"
 import Image from "next/image"
 import {CategoryProps} from "@/features/category/types";
