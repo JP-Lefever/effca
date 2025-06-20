@@ -29,10 +29,10 @@ export default function Footer() {
                     <figure>
                         <Image src={"/images/logo.png"} alt="Logo club" width={220} height={220} />
                     </figure>
-                    <h2>Entente Fons Fourmagnac Camburat Assier</h2>
-                    <p>Stade de la Dourmelle, Route d'Issepts - 46100 Fons</p>
-                    <p>N° d'affiliation : 527945</p>
-                    <p>2025 &copy; EFFCA, Tous droits réservés</p>
+                    <h2>{"Entente Fons Fourmagnac Camburat Assier"}</h2>
+                    <p>{"Stade de la Dourmelle, Route d'Issepts - 46100 Fons"}</p>
+                    <p>{"N° d'affiliation : 527945"}</p>
+                    <p>{`2025 © EFFCA, Tous droits réservés`}</p>
                 </article>
                 <article className={styles.legi}>
                     <h2>Services</h2>
