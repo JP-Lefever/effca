@@ -13,7 +13,7 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
     const category = await readCategoryById(slug)
     const members = await readMemberByTeam(slug)
     const positionId = await readPositionByLabel("Entraineur")
-
+    console.log(slug)
     if (!category.success) {
         return (
             <p>Auncune equipe trouvée</p>

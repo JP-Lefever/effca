@@ -3,7 +3,7 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
-import styles from "@/components/layout/navigation/navMatchPage/navMatch.module.css";
+import styles from "./navTeam.module.css";
 
 export default function NavTeam() {
 

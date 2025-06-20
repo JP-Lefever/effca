@@ -9,8 +9,8 @@
   },
   "team" : {
     "title" : "Equipes",
-    "items" : ["Sénior", "Vétéran"],
-    "link" : ["/team/senior", "/team/veteran"]
+    "items" : ["Sénior", "Vétéran", "u10"],
+    "link" : ["/team/senior", "/team/veteran", "/team/u10"]
   },
   "logo" : {
     "title" : "/images/logo.png",

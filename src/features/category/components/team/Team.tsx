@@ -24,8 +24,12 @@ export default function Team({category, manager}: {category: CategoryProps, mana
                         <h2 className={styles.h2}>{data.training}</h2>
                         <ul className={styles.ul}>
                             <li>{category.training1}</li>
+                            {category.training2 &&
                             <li>{category.training2}</li>
+                            }
+                            {category.training3 &&
                             <li>{category.training3}</li>
+                            }
                         </ul>
                     </article>
                     <article className={styles.infoMana} role={"group"}>

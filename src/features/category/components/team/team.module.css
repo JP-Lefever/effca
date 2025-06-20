@@ -2,6 +2,12 @@
     display: flex;
     gap : 4em;
     margin : 10vh;
+    @media screen and (max-width: 1024px){
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin : 10vh auto;
+    }
 }
 
 .figure {
@@ -9,7 +15,10 @@
     width: 50vw;
     height: 60vh;
     background-color: var(--red-main);
-
+    @media screen and (max-width: 1024px){
+        width: 90vw;
+        height: 40vh;
+    }
 }
 
 .image {
@@ -29,7 +38,9 @@
     color : var(--red-main);
     font-family : var(--title-font), sans-serif;
     letter-spacing: 0.1em;
-
+    @media screen and (max-width: 568px){
+        font-size: 2.5em;
+    }
 }
 
 .info {
