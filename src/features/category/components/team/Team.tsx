@@ -1,6 +1,7 @@
 
 import styles from "./team.module.css"
 import Image from "next/image"
+import data from "@/assets/data/team/team.json"
 import {CategoryProps} from "@/features/category/types";
 import {MemberProps} from "@/features/members/type";
 
@@ -17,10 +18,10 @@ console.log(category);
                     </figure>
                 </article>
                 <section className={styles.sectionInfo}>
-                        <h1 className={styles.h1}>Equipe {category.label}</h1>
+                        <h1 className={styles.h1}>{data.team} {category.label}</h1>
                 <div className={styles.info} role={"group"}>
                     <article>
-                        <h2 className={styles.h2}>Entrainement</h2>
+                        <h2 className={styles.h2}>{data.training}</h2>
                         <ul className={styles.ul}>
                             <li>{category.training1}</li>
                             <li>{category.training2}</li>
@@ -28,18 +29,18 @@ console.log(category);
                         </ul>
                     </article>
                     <article className={styles.infoMana} role={"group"}>
-                        <h2 className={styles.h2}>Responsable de la catégorie</h2>
+                        <h2 className={styles.h2}>{data.manager}</h2>
                         <ul className={styles.ul}>
                             <li className={styles.manager}>
-                                <h4>Nom :</h4>
+                                <h4>{data.name}</h4>
                                 <p>{manager.firstname} {manager.lastname}</p>
                             </li>
                             <li className={styles.manager}>
-                                <h4>Email :</h4>
+                                <h4>{data.mail}</h4>
                                 <p>{manager.mail}</p>
                             </li>
                             <li className={styles.manager}>
-                                <h4>Téléphone :</h4>
+                                <h4>{data.phone}</h4>
                                 <p>{manager.tel}</p>
                             </li>
                         </ul>

@@ -11,7 +11,7 @@ const pathname = usePathname()
 const splitUrl = pathname.split("/")
 const slug = splitUrl[2]
 const baseUrl = `/team/${slug}`
-console.log(pathname)
+
 
     const navItems = [
         { title: "Équipe", href: baseUrl },

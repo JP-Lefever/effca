@@ -1,7 +1,7 @@
 
 import {ReactNode} from "react";
 import NavTeam from "@/components/layout/navigation/NavTeam/NavTeam";
-import styles from "@/app/(client)/actuality/layout.module.css";
+import styles from "./layout.module.css";
 
 export default function  teamLayout({children} : { children: ReactNode }) {
 
