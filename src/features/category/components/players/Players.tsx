@@ -23,11 +23,10 @@ export default function Players({playersByPositions}:  PlayersByPosProps) {
                         <h1 className={styles.h1}>{player.pos}</h1>
                         <h1 className={clsx(styles.h1c, i%2===0 ? styles.h1b : styles.h1c) }>{player.pos}</h1>
                     </article>
-                    <article className={styles.card}>
-                        {player.players.map((player)=>(
-                            <article key={player.id}>
-
-                             <CardPlayer player={player}/>
+                    <article className={clsx(styles.card, i%2===0 ? styles.card : styles.cardB )}>
+                        {player.players.map((player, i)=>(
+                            <article  key={player.id}>
+                                <CardPlayer player={player} i={i}/>
                             </article>
                         ))}
                     </article>
