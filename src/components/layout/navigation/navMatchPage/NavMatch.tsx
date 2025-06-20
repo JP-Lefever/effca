@@ -8,7 +8,7 @@ import {usePathname} from "next/navigation";
 export default function NavMatch() {
 
     const pathname = usePathname()
-    console.log("pathname:", JSON.stringify(pathname));
+
     return (
         <>
             <nav className={styles.nav}>

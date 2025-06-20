@@ -9,7 +9,7 @@ export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo"
 
     const validData = actualitySchema.safeParse(data)
 
-console.log(validData.error);
+
         if(!validData.success) {
             return {success : false, error : "Données invalides"}
         }
@@ -49,7 +49,7 @@ export const editActuality = async (data : Omit<ActualityProps, "id" | "photo">,
 
     const validData = actualitySchema.safeParse(data)
 
-    console.log(validData.error)
+
         if(!validData.success) {
             return {success: false, error : "Donnée invalides"}
         }

@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "./layout.module.css";
 import data from "@/assets/data/matchPage/match.json";
 import NavMatch from "@/components/layout/navigation/navMatchPage/NavMatch";
 import {ReactNode} from "react";

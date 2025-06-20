@@ -35,3 +35,23 @@ export async function readPosition() : Promise<ResultProps<PlayerPositionProps[]
 
 
 }
+
+export async function readPositionByName (label : string) : Promise<ResultProps<PlayerPositionProps>>{
+
+    try {
+        const positionId = await prisma.player_position.findFirst({
+            where : {
+                label : label
+            }
+        })
+        if(!positionId){
+            return {success : false , error : "Aucun poste trouvé"}
+        }
+        return {success : true , data : positionId}
+    }catch (err){
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
+
+
+}
