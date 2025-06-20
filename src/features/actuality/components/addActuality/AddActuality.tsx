@@ -25,7 +25,7 @@ export default function AddActuality() {
             phone : data.phone === "" || data.phone === undefined ? null : data.phone,
 
         }
-    console.log(rest.phone)
+
         const {photo} = data
         let photoUrl = null
 

@@ -35,9 +35,9 @@ export const readAllCategories = async() : Promise<ResultProps<CategoryProps[]>>
 export const readCategoryById = async (label: string) : Promise<ResultProps<CategoryProps>> =>{
 
     const response = await readCategory(label)
-
     if(!response.success){
         return {success: false, error : response.error}
     }
+
     return {success : response.success, data : response.data}
 }

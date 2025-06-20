@@ -16,7 +16,7 @@ export const addPlayerPosition = async (data : Omit<PlayerPositionProps, "id">) 
     if(!response.success){
         return {success : response.success, error : response.error }
     }
-    console.log(response)
+
     return {success : response.success, data: response.data}
 
 

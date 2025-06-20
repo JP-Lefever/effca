@@ -51,7 +51,7 @@ export async function readCategories(): Promise<ResultProps<CategoryProps[]>> {
 }
 
 export async function readCategory(label : string) : Promise<ResultProps<CategoryProps>> {
-    console.log(label.toLowerCase());
+
     try{
         const team = await prisma.category.findFirst({
             where : {

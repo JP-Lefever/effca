@@ -23,7 +23,7 @@ export async function readHistory (): Promise<ResultProps<HistoryProps>> {
 
     try {
        const history =  await prisma.club.findMany()
-        console.log(history)
+
         return {success: true, data : history[0]}
     }catch(err) {
         console.error(err)

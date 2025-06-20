@@ -15,7 +15,7 @@ export async function createAssociationRole(data : Omit<RoleProps, "id">) : Prom
 
         return {success : true, data : newRole}
     }catch(err){
-        console.log(err)
+        console.error(err)
         return {success : false, error : "Une erreur est survenue"}
     }
 }
@@ -28,7 +28,7 @@ export async function readAllRole() : Promise<ResultProps<RoleProps[]>> {
 
         return {success : true, data : roles}
     }catch(err){
-        console.log(err)
+        console.error(err)
         return {success : false, error : "Une erreur est survenue"}
     }
 }
