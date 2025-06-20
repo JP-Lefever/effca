@@ -72,13 +72,13 @@ export async function updateMembers(data: Omit<MemberProps, "id" | "is_admin" | 
     }
 }
 
-export async function readMemberByPosition(category : string, position : string) : Promise<ResultProps<MemberProps>> {
+export async function readMemberByCategory(category : string) : Promise<ResultProps<MemberProps[]>> {
 
     try {
-        const member = await prisma.members.findFirst({
+        const member = await prisma.members.findMany({
             where: {
                 categoryId : category,
-                positionId : position
+
             }
         })
 

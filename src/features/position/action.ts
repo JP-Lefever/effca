@@ -33,7 +33,7 @@ export const readAllPosition = async () : Promise<ResultProps<PlayerPositionProp
 
 }
 
-export const readPositionByLabel= async (label : string) : Promise<ResultProps<PlayerPositionProps>> => {
+export const readPositionByLabel= async (label : string) : Promise<ResultProps<string>> => {
 
     const response = await readPositionByName(label)
 
@@ -41,5 +41,5 @@ export const readPositionByLabel= async (label : string) : Promise<ResultProps<P
         return {success : response.success, error : response.error}
     }
 
-    return {success: response.success, data : response.data}
+    return {success: response.success, data : response.data.id}
 }

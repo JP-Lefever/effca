@@ -7,7 +7,7 @@ import {MemberProps} from "@/features/members/type";
 
 export default function Team({category, manager}: {category: CategoryProps, manager : MemberProps}) {
 
-console.log(category);
+
 
     return (
         <>
