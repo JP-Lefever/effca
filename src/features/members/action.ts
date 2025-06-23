@@ -8,10 +8,11 @@ import {
     updateMembers,
     readAllMembers,
     DestroyMember,
-    readMemberByCategory, readMemberByPosition
+    readMemberByCategory, readMemberByPosition, readMemberByRole
 } from "@/features/members/repository";
 import {readCategoryById} from "@/features/category/action";
 import {readPositionByLabel} from "@/features/position/action";
+import {readRoleByLabel} from "@/features/associationRole/action";
 
 
 export const addNewMember = async (data : Omit<MemberProps,"id" | "is_admin" | "photo">, photo : string |null) : Promise<ResultProps<Omit<MemberProps,"categoryId">>> =>{
@@ -93,6 +94,19 @@ export const readMemberByPos = async (category : string, position : string) : Pr
     }
 
     const response = await readMemberByPosition(findCategoryByLabel.data.id, findPositionByLabel.data);
+
+    if(!response.success) {
+        return {success : response.success, error : response.error}
+    }
+    return {success : response.success, data : response.data}
+
+}
+
+export const readMemberRole = async () : Promise<ResultProps<MemberProps[]>> => {
+
+
+
+    const response = await readMemberByRole();
 
     if(!response.success) {
         return {success : response.success, error : response.error}

@@ -2,13 +2,13 @@ import styles from "./modifyMember.module.css"
 import ModifyMemberForm from "@/features/members/components/modifyMemberForm/ModifyMemberForm";
 import {MemberProps} from "@/features/members/type";
 import {readCategories} from "@/features/category/repository";
-import {readAllMemberRole} from "@/features/associationRole/action";
+import {readAllRole} from "@/features/associationRole/action";
 import {readAllPosition} from "@/features/position/action";
 
 export default async function ModifyMembers({members}: {members: MemberProps[]}) {
 
     const categories = await readCategories()
-    const memberFunction = await readAllMemberRole()
+    const memberFunction = await readAllRole()
     const positions = await readAllPosition()
 
     if(!categories.success || !memberFunction.success || !positions.success){

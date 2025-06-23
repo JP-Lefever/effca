@@ -115,6 +115,31 @@ export async function readMemberByPosition(category : string, position : string)
     }
 }
 
+export async function readMemberByRole() : Promise<ResultProps<MemberProps[]>> {
+
+    try {
+        const member = await prisma.members.findMany({
+            where: {
+                memberFunctionId : {
+                    not : null
+                }
+
+            }
+        })
+
+
+
+        if (!member) {
+            return {success : false, error : "Aucun membre trouvé"}
+        }
+
+        return {success : true, data : member}
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "une erreur est survenue"}
+    }
+}
+
 export async function DestroyMember(id : string) : Promise<ResultProps<null>> {
 
     try {
