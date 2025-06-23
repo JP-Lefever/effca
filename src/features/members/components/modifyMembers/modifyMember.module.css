@@ -1,0 +1,10 @@
+.sectionCard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    @media screen and (max-width: 568px) {
+        display: flex;
+        flex-direction: column;
+    }
+}

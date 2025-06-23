@@ -1,0 +1,46 @@
+{
+  "members": {
+    "title": "Membres/joueurs",
+    "items": [
+      "Ajouter un membre/joueur du club",
+      "Ajouter une catégorie",
+      "Ajouter un poste",
+      "Ajouter un role dans l'asso",
+      "Modifier/supprimer un membre"
+    ],
+    "links" : ["/admin/addMember" , "/admin/addCategory", "/admin/addPosition", "/admin/addRole", "/admin/modifyMember"]
+  },
+  "club": {
+    "title": "Club",
+    "items": [
+      "Ajouter l'histoire du club",
+      "Modifier l'histoire du club"
+    ],
+    "links" : ["/admin/addHistory" , "/admin/modifyHistory"]
+  },
+  "partner": {
+    "title": "Partenaires",
+    "items": [
+      "Ajouter un partenaire",
+      "Modifier/supprimer un partenaire"
+    ],
+    "links" : ["/admin/addPartner" , "/admin/modifyPartner"]
+  },
+  "actuality": {
+    "title": "Actualités",
+    "items": [
+      "Ajouter une actualitée",
+      "Modifier/supprimer actualitée"
+    ],
+    "links" : ["/admin/addActuality" , "/admin/modifyActuality"]
+  },
+  "photo": {
+    "title": "Photo",
+    "items": [
+      "Ajouter un Album",
+      "Ajouter une photo",
+      "Modifier/supprimer photo"
+    ],
+    "links" : ["/admin/addAlbum" , "/admin/addPhoto", "/admin/modifyPhoto"]
+  }
+}

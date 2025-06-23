@@ -1,0 +1,71 @@
+.section{
+    display: flex;
+    gap : 4em;
+    margin : 10vh;
+    @media screen and (max-width: 1024px){
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        margin : 10vh auto;
+    }
+}
+
+.figure {
+    position: relative;
+    width: 50vw;
+    height: 60vh;
+    background-color: var(--red-main);
+    @media screen and (max-width: 1024px){
+        width: 90vw;
+        height: 40vh;
+    }
+}
+
+.image {
+    object-fit: contain;
+    border : solid 1px var(--red-main);
+
+}
+
+.sectionInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.h1 {
+    font-size: 3em;
+    color : var(--red-main);
+    font-family : var(--title-font), sans-serif;
+    letter-spacing: 0.1em;
+    @media screen and (max-width: 568px){
+        font-size: 2.5em;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.ul{
+    list-style: none;
+    padding-left: 1em;
+    line-height: 2em;
+    font-size: 1.5em;
+}
+
+.manager {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.infoMana{
+    line-height: 2em;
+}
+
+.h2 {
+    margin-bottom: 1em;
+}

@@ -1,0 +1,39 @@
+.nav {
+    width: 20vw;
+    margin : 4em auto;
+    border-bottom : solid var(--red-main) 3px;
+    padding : 0.5em 2em;
+    @media screen and (max-width: 568px) {
+        width: 60vw;
+        padding : 0.5em 0.5em;
+        font-size: 0.8em;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px) {
+        width: 40vw;
+        padding : 0.5em 0.5em;
+    }
+    @media screen and (min-width: 1025px) and (max-width: 1280px) {
+        width: 25vw;
+        padding : 0.5em 0.5em;
+    }
+}
+
+.ul {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.li {
+    list-style: none;
+
+}
+
+.link{
+    text-decoration: none;
+    color: var(--black-text);
+    font-size: 1.6em;
+}
+.isActiveLink{
+    color: var(--red-main);
+}

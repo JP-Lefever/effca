@@ -1,0 +1,119 @@
+.overlay {
+
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    min-height: 100vh;
+}
+
+
+.section {
+    margin:  auto;
+    pointer-events: auto;
+    max-width: 60vw;
+    background: var(--white-main);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    padding: 1em;
+    @media screen and (max-width: 1280px){
+        max-width: 90vw;
+    }
+}
+
+.image {
+   width: 100%;
+    margin: auto;
+    @media screen and (max-width: 568px){
+        height: 40vh;
+    }
+}
+
+.h2{
+    color: var(--red-main);
+    font-family : var(--title-font), sans-serif;
+    text-align: center;
+    font-size: 3em;
+    @media screen and (max-width: 568px){
+        font-size: 2em;
+    }
+}
+
+.h2head{
+    color: var(--red-main);
+    font-family : var(--title-font), sans-serif;
+    text-align: center;
+    font-size: 5em;
+    border-bottom : 3px solid var(--red-main);
+    margin-bottom: var(--padding-section);
+    word-break: break-word;
+    letter-spacing: 0.1em;
+    @media screen and (max-width: 568px){
+        font-size: 3em;
+    }
+}
+
+.h3{
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.h3contact{
+    color: var(--red-main);
+    font-size: 1.6em;
+    text-decoration: underline;
+    text-align: center;
+    margin : var(--padding-section);
+    @media screen and (max-width: 568px){
+        text-align: left;
+
+    }
+}
+.p {
+    white-space: pre-line;
+    padding: 0.5em;
+
+}
+
+.pList{
+    white-space: pre-line;
+    padding: 0.5em;
+    font-size: 1.4em;
+}
+
+.section article {
+    margin: var(--padding-section);
+}
+.section article ul  {
+    padding-left: 2em;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width: 568px){
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+
+.section article ul li {
+
+display: flex;
+align-items: center;
+    gap: 0.5em;
+
+}
+
+.button {
+    cursor: pointer;
+    border : none !important;
+    background : none !important;
+}
+.divButton {
+    background-color: var(--red-main);
+    border : 1px solid var(--red-main);
+}
+
+.anchor{
+    position: absolute;
+    bottom : 0;
+    right : 10vw;
+    scroll-behavior: smooth;
+}

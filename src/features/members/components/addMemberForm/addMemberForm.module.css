@@ -1,0 +1,54 @@
+
+
+.section fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--padding-section);
+    gap : 1em;
+    font-size: 1.2em;
+    border: 2px solid var(--red-main);
+}
+
+
+.section button {
+    background-color: var(--red-main);
+    width: 20vw;
+    padding: 0.2em;
+    border-radius: var(--border-radius-button);
+    border: none;
+    color: var(--white-main);
+    font-family: var(--title-font),sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    @media screen and (max-width: 1024px)  {
+        width : 100%;
+    }
+}
+.section label {
+    font-size: 1.4em;
+}
+
+.section input{
+    width : 100%;
+    min-height: 5vh;
+    font-family: var(--paragraph-font),sans-serif;
+    font-size: 1.2em;
+    margin-top : 0.5em;
+}
+
+.section p {
+    color: var(--red-main);
+}
+
+
+.section select{
+    display: flex;
+    flex-direction: column;
+    width : 100%;
+    min-height: 5vh;
+    font-family: var(--paragraph-font),sans-serif;
+    font-size: 1.2em;
+    margin-top : 0.5em;
+}
