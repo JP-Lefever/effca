@@ -17,7 +17,7 @@ export default function Organigramme({members, role} : { members : MemberProps[]
 
     if(!presidentId || !secretaireGeneralId ||  !treasurerId || !secretaireAdjointId || !treasurerAdjointId || !coachGeneralId || !directionComity){
         return (
-            <p>Aucun président trouvé</p>
+            <p>Aucun membre trouvé</p>
         )
     }
 
@@ -27,7 +27,7 @@ export default function Organigramme({members, role} : { members : MemberProps[]
     const treasurer = members.find(member => member.memberFunctionId?.includes((treasurerId.id)))
     const treasurerAdjoint = members.find(member => member.memberFunctionId?.includes((treasurerAdjointId.id)))
     const coachGeneral = members.find(member => member.memberFunctionId?.includes((coachGeneralId.id)))
-    console.log(president)
+
     return (
         <>
             <section className={styles.section}>
