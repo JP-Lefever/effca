@@ -41,7 +41,7 @@ export default function NavBar(){
             </li>
             <li className={styles.imageContainer} >
                 <Link className={styles.link} href={dataNav.logo.link}>
-                    <Image className={styles.image} src={dataNav.logo.title} alt={"Logo club"} width={200} height={200}/>
+                    <Image className={styles.image} src={dataNav.logo.title} alt={"Logo club"} priority width={200} height={200}/>
                 </Link>
             </li>
             <li>
