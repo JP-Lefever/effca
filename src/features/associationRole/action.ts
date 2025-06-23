@@ -1,7 +1,7 @@
 "use server"
 import {ResultProps, RoleProps} from "@/features/associationRole/type";
 import {associationRoleSchema} from "@/features/associationRole/schema";
-import {createAssociationRole, readAllRole} from "@/features/associationRole/repository";
+import {createAssociationRole, readRole} from "@/features/associationRole/repository";
 
 
 export const addNewRole = async (data : Omit<RoleProps, "id">) : Promise<ResultProps<RoleProps>> =>{
@@ -22,9 +22,9 @@ export const addNewRole = async (data : Omit<RoleProps, "id">) : Promise<ResultP
 
 }
 
-export const readAllMemberRole = async () : Promise<ResultProps<RoleProps[]>> =>{
+export const readAllRole = async () : Promise<ResultProps<RoleProps[]>> =>{
 
-    const response = await readAllRole()
+    const response = await readRole()
 
     if(!response.success){
         return {success : response.success, error :response.error}
@@ -32,3 +32,4 @@ export const readAllMemberRole = async () : Promise<ResultProps<RoleProps[]>> =>
     }
         return {success : response.success, data : response.data}
 }
+

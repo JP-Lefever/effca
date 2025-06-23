@@ -1,13 +1,13 @@
 import AddMemberForm from "@/features/members/components/addMemberForm/AddMemberForm";
 import {readAllCategories} from "@/features/category/action";
 import {readAllPosition} from "@/features/position/action";
-import {readAllMemberRole} from "@/features/associationRole/action";
+import {readAllRole} from "@/features/associationRole/action";
 
 export  default async function AddMemberPage() {
 
     const categories = await readAllCategories()
     const playerPosition = await readAllPosition()
-    const memberRole = await readAllMemberRole()
+    const memberRole = await readAllRole()
 
 
     if(!categories.success || !playerPosition.success || !memberRole.success) {

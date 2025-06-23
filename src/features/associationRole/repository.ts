@@ -20,7 +20,7 @@ export async function createAssociationRole(data : Omit<RoleProps, "id">) : Prom
     }
 }
 
-export async function readAllRole() : Promise<ResultProps<RoleProps[]>> {
+export async function readRole() : Promise<ResultProps<RoleProps[]>> {
 
     try {
 
@@ -32,3 +32,4 @@ export async function readAllRole() : Promise<ResultProps<RoleProps[]>> {
         return {success : false, error : "Une erreur est survenue"}
     }
 }
+
