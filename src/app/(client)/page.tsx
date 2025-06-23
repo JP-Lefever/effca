@@ -4,8 +4,8 @@ import MatchWidget from "@/components/ui/widgets/Match";
 import ActualitiesList from "@/features/actuality/components/actualitiesList/ActualitiesList";
 import Link from "next/link";
 import Header from "@/components/layout/header/Header";
-import Slider from "@/components/ui/slider/Slider";
 import {readAllPartner} from "@/features/partner/repository";
+import Slider from "@/components/ui/slider/Slider";
 
 export default async function HomePage() {
 
