@@ -12,7 +12,7 @@ import {
 } from "@/features/members/repository";
 import {readCategoryById} from "@/features/category/action";
 import {readPositionByLabel} from "@/features/position/action";
-import {readRoleByLabel} from "@/features/associationRole/action";
+
 
 
 export const addNewMember = async (data : Omit<MemberProps,"id" | "is_admin" | "photo">, photo : string |null) : Promise<ResultProps<Omit<MemberProps,"categoryId">>> =>{

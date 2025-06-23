@@ -33,22 +33,3 @@ export async function readRole() : Promise<ResultProps<RoleProps[]>> {
     }
 }
 
-export async function readRoleById(label : string) : Promise<ResultProps<RoleProps>> {
-
-    try {
-
-        const roles = await prisma.memberFunction.findFirst({
-            where: {
-                label : label
-            }
-        })
-        if (!roles) {
-            return {success : false, error : "Aucun membre trouvé"}
-        }
-
-        return {success : true, data : roles}
-    }catch(err){
-        console.error(err)
-        return {success : false, error : "Une erreur est survenue"}
-    }
-}
