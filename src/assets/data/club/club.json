@@ -3,5 +3,7 @@
   "history" : "Ajouter l'histoire du club",
   "button" : "Ajouter",
   "modifyHistory" : "Modifier l'histoire du club",
-  "buttonModify" : "modifier"
+  "buttonModify" : "modifier",
+  "title" : "L'histoire",
+  "organigramme" : "Organigramme"
 }
