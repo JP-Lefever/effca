@@ -1,5 +1,5 @@
 import styles from "./players.module.css"
-import {MemberProps} from "@/features/members/type";
+import {MemberProps} from "@/features/users/type";
 import CardPlayer from "@/features/team/components/cardPlayer/CardPlayer";
 import clsx from "clsx";
 

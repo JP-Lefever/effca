@@ -1,6 +1,6 @@
 
 import Players from "@/features/team/components/players/Players";
-import {readMemberByPos} from "@/features/members/action";
+import {readMemberByPos} from "@/features/users/action";
 import {readAllPosition} from "@/features/position/action";
 
 export default async function PlayersPage(props : {params : Promise<{ slug: string }>}){

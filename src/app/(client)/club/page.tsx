@@ -5,7 +5,7 @@ import data from "@/assets/data/club/club.json";
 import Organigramme from "@/features/club/components/organigramme/Organigramme";
 
 import {readAllRole} from "@/features/associationRole/action";
-import {readMemberRole} from "@/features/members/action";
+import {readMemberRole} from "@/features/users/action";
 
 export default async function ClubPage(){
 

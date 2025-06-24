@@ -1,0 +1,103 @@
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width : 15vw;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 57vh;
+    border: 2px solid var(--red-main);
+    padding : 1em 0 ;
+    background : linear-gradient(130deg, var(--red-main) 0%, var(--red-main) 20%, var(--white-main) 20%,var(--white-main) 100%);
+    @media screen and (max-width: 568px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 568px) and (max-width: 1024px) {
+        width: 40vw;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1280px) {
+        width: 25vw;
+    }
+}
+
+.form fieldset {
+    display: flex;
+    flex-direction: column;
+    width : 10vw;
+    border : none;
+   gap: 0.5em;
+    margin : 1em;
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+    }
+
+}
+
+.imageWrapper {
+    position: relative;
+    width : 8vw;
+    height : 15vh;
+    @media screen and (max-width: 568px) {
+        width : 30vw;
+        height : 15vh;
+    }
+    @media screen and (min-width: 568px) and (max-width: 1024px) {
+        width : 30vw;
+        height : 15vh;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1280px) {
+        width : 15vw;
+        height : 15vh;
+    }
+}
+
+.image {
+    object-fit: cover;
+
+}
+
+.labelFile {
+    cursor: pointer;
+    border : solid 1px var(--red-main);
+    text-align : center;
+    font-size : 1.2em;
+    border-color : black;
+}
+.input {
+    font-family : var(--paragraph-font),sans-serif;
+    font-size : 1.2em;
+    text-align : center;
+}
+
+.readOnly {
+    font-family : var(--paragraph-font),sans-serif;
+    font-size : 1.2em;
+    text-align : center;
+    background-color: transparent;
+    border: none;
+    color: var(--black-text);
+    appearance: none;
+    width: 10vw;
+    opacity: 1;
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+    }
+}
+.form div {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+.button {
+    border-color: var(--black-dark);
+    background-color: transparent;
+    width : 4vw;
+    margin-top : 1em;
+    padding : 0.4em;
+    @media screen and (max-width: 1024px) {
+        width: 100%;
+    }
+
+}
+

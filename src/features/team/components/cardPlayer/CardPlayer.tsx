@@ -1,6 +1,6 @@
 import styles from "./cardPlayer.module.css"
 import Image from "next/image"
-import {MemberProps} from "@/features/members/type";
+import {MemberProps} from "@/features/users/type";
 
 
 export default function CardPlayer({player, i} : {player : MemberProps, i:number}) {

@@ -1,6 +1,6 @@
 import styles from "./organigramme.module.css";
 import data from "@/assets/data/club/club.json"
-import {MemberProps} from "@/features/members/type";
+import {MemberProps} from "@/features/users/type";
 import {RoleProps} from "@/features/associationRole/type";
 
 
