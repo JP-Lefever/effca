@@ -1,4 +1,5 @@
 "use client"
+import styles from "./loginForm.module.css"
 import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
 
@@ -8,11 +9,11 @@ export default function LoginForm() {
     const {register, handleSubmit, formState : {errors}} = useForm();
 
     return (
-        <>
-            <form>
-                <legend>Connexion</legend>
-                <fieldset>
-                    <div role="group">
+        <section className={styles.section}>
+            <form className={styles.form}>
+                <fieldset className={styles.fieldset}>
+                    <legend className={styles.legend}>Connexion</legend>
+                    <div className={styles.div} role="group">
                         <label htmlFor={"email"}>Email</label>
                         <input type="email"  {...register("email", {required : dataError.require,
                             pattern : {
@@ -20,8 +21,9 @@ export default function LoginForm() {
                                 message: dataError.mail
                             }
                         })} />
+                        {errors.email && (<p>{errors.email.message as string}</p>)}
                     </div>
-                    <div role="group">
+                    <div className={styles.div} role="group">
                         <label htmlFor={"password"}>Mot de passe</label>
                         <input type="password"  {...register("password", {required : dataError.require,
                         pattern : {
@@ -29,11 +31,13 @@ export default function LoginForm() {
                             message : dataError.password
                         }
                         })}/>
+                        {errors.password && (<p>{errors.password.message as string}</p>)}
                     </div>
+                    <button className={styles.button} type="submit">Se connecter</button>
                 </fieldset>
 
             </form>
 
-        </>
+        </section>
     )
 }
