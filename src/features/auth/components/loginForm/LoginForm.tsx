@@ -43,7 +43,7 @@ export default function LoginForm() {
                     <legend className={styles.legend}>Connexion</legend>
                     <div className={styles.div} role="group">
                         <label htmlFor={"email"}>Email</label>
-                        <input type="email"  {...register("email", {
+                        <input type="email" placeholder={"mail@mail.com"}  {...register("email", {
                             required: dataError.require,
                             pattern: {
                                 value: /^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,

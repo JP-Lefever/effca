@@ -47,6 +47,7 @@
     margin : 5vh auto;
     cursor: pointer;
 }
+
 .divLogout{
     border : 2px solid var(--white-main);
     padding : 1em 2em;
