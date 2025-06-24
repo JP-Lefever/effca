@@ -12,7 +12,7 @@ export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "
 
 
     try {
-        const newMember = await prisma.members.create({
+        const newMember = await prisma.users.create({
             data : {
                 firstname : firstname,
                 lastname : lastname,
@@ -35,7 +35,7 @@ export async function createMember(data : Omit<MemberProps,"id" | "is_admin" | "
 export async function readAllMembers() : Promise<ResultProps<MemberProps[]>> {
 
     try {
-        const members = await prisma.members.findMany({
+        const members = await prisma.users.findMany({
             orderBy : {
                     firstname: "asc",
     }
@@ -53,7 +53,7 @@ export async function updateMembers(data: Omit<MemberProps, "id" | "is_admin" | 
     const {firstname, lastname, positionId, categoryId, memberFunctionId} = data;
 
     try {
-        const memberModify = await prisma.members.update({
+        const memberModify = await prisma.users.update({
             data : {
                 firstname : firstname,
                 lastname : lastname,
@@ -75,7 +75,7 @@ export async function updateMembers(data: Omit<MemberProps, "id" | "is_admin" | 
 export async function readMemberByCategory(category : string) : Promise<ResultProps<MemberProps[]>> {
 
     try {
-        const member = await prisma.members.findMany({
+        const member = await prisma.users.findMany({
             where: {
                 categoryId : category,
 
@@ -96,7 +96,7 @@ export async function readMemberByCategory(category : string) : Promise<ResultPr
 export async function readMemberByPosition(category : string, position : string) : Promise<ResultProps<MemberProps[]>> {
 
     try {
-        const member = await prisma.members.findMany({
+        const member = await prisma.users.findMany({
             where: {
                 categoryId : category,
                 positionId : position
@@ -118,7 +118,7 @@ export async function readMemberByPosition(category : string, position : string)
 export async function readMemberByRole() : Promise<ResultProps<MemberProps[]>> {
 
     try {
-        const member = await prisma.members.findMany({
+        const member = await prisma.users.findMany({
             where: {
                 memberFunctionId : {
                     not : null
@@ -126,8 +126,6 @@ export async function readMemberByRole() : Promise<ResultProps<MemberProps[]>> {
 
             }
         })
-
-
 
         if (!member) {
             return {success : false, error : "Aucun membre trouvé"}
@@ -143,7 +141,7 @@ export async function readMemberByRole() : Promise<ResultProps<MemberProps[]>> {
 export async function DestroyMember(id : string) : Promise<ResultProps<null>> {
 
     try {
-         await prisma.members.delete({
+         await prisma.users.delete({
             where : {
                 id : id
             }
