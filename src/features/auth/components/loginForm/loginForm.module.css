@@ -7,7 +7,7 @@
 }
 
 .form {
-    transform : translateY( 50%);
+    transform : translateY( 20%);
     width: 25vw;
     margin : auto;
 
@@ -33,12 +33,28 @@
     font-size: 1.5em;
 }
 
+
 .div input {
     height: 4vh;
     border-radius : 5px;
     margin-bottom: 1em;
 }
 
+.divPass {
+    display: flex;
+    justify-content: center;
+    gap: 0.2em;
+}
+
+.inputPass{
+    width : 100%;
+}
+
+.buttonSee{
+    border: none;
+    background-color: transparent;
+    height: 4vh;
+}
 .button {
     display: block;
     margin : 3vh auto;
