@@ -10,7 +10,7 @@ import {
     DestroyMember,
     readMemberByCategory, readMemberByPosition, readMemberByRole
 } from "@/features/members/repository";
-import {readCategoryById} from "@/features/category/action";
+import {readCategoryById} from "@/features/team/action";
 import {readPositionByLabel} from "@/features/position/action";
 
 

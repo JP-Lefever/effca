@@ -1,9 +1,9 @@
 "use server"
 
 
-import {HistoryProps, ResultProps} from "@/features/history/type";
-import {historySchema} from "@/features/history/schema";
-import {createHistory, readHistory, updateHistory} from "@/features/history/repository";
+import {HistoryProps, ResultProps} from "@/features/club/type";
+import {historySchema} from "@/features/club/schema";
+import {createHistory, readHistory, updateHistory} from "@/features/club/repository";
 
 export  const createHistoryClub =  async (data : Omit<HistoryProps, "id">) : Promise<ResultProps<null>> =>{
 

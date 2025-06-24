@@ -3,8 +3,8 @@ import styles from "./addHistoryForm.module.css"
 import data from "@/assets/data/club/club.json"
 import error from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
-import {HistoryProps} from "@/features/history/type";
-import {createHistoryClub} from "@/features/history/action";
+import {HistoryProps} from "@/features/club/type";
+import {createHistoryClub} from "@/features/club/action";
 import {toast} from "react-toastify";
 
 export default function AddHistoryForm() {

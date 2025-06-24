@@ -5,7 +5,7 @@ import {MemberProps} from "@/features/members/type";
 
 export default function CardPlayer({player, i} : {player : MemberProps, i:number}) {
 
-console.log(i)
+
     return (
         <>
         <section  >

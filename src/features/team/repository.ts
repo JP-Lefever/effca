@@ -1,5 +1,5 @@
 import {prisma} from "@/lib/prisma"
-import {CategoryProps, ResultProps} from "@/features/category/types";
+import {CategoryProps, ResultProps} from "@/features/team/types";
 
 const validData = (data : string |null | undefined)=>{
     return data === "" || data === undefined ? null : data

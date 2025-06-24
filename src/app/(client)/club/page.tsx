@@ -1,8 +1,8 @@
-import {readHistory} from "@/features/history/repository";
-import ClubHistory from "@/features/history/components/clubHistory/ClubHistory";
+import {readHistory} from "@/features/club/repository";
+import ClubHistory from "@/features/club/components/clubHistory/ClubHistory";
 import styles from "./page.module.css";
 import data from "@/assets/data/club/club.json";
-import Organigramme from "@/features/history/components/organigramme/Organigramme";
+import Organigramme from "@/features/club/components/organigramme/Organigramme";
 
 import {readAllRole} from "@/features/associationRole/action";
 import {readMemberRole} from "@/features/members/action";
@@ -13,7 +13,7 @@ export default async function ClubPage(){
     const role = await readAllRole()
     const members = await readMemberRole();
 
-console.log(role)
+
     if(!history.success){
 
         return (

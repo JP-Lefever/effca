@@ -1,4 +1,4 @@
-import {HistoryProps, ResultProps} from "@/features/history/type";
+import {HistoryProps, ResultProps} from "@/features/club/type";
 import {prisma} from "@/lib/prisma";
 
 

@@ -1,6 +1,6 @@
 import styles from "./players.module.css"
 import {MemberProps} from "@/features/members/type";
-import CardPlayer from "@/features/category/components/cardPlayer/CardPlayer";
+import CardPlayer from "@/features/team/components/cardPlayer/CardPlayer";
 import clsx from "clsx";
 
 type PlayerProps = {

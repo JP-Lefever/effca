@@ -1,7 +1,7 @@
 "use server"
-import {CategoryProps, ResultProps} from "@/features/category/types";
-import {categorySchema} from "@/features/category/schema";
-import {createCategory, readCategories, readCategory} from "@/features/category/repository";
+import {CategoryProps, ResultProps} from "@/features/team/types";
+import {categorySchema} from "@/features/team/schema";
+import {createCategory, readCategories, readCategory} from "@/features/team/repository";
 
 
 

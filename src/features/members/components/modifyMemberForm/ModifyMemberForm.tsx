@@ -6,7 +6,7 @@ import {useForm} from "react-hook-form";
 import Image from "next/image";
 import {RoleProps} from "@/features/associationRole/type";
 import {PlayerPositionProps} from "@/features/position/type";
-import {CategoryProps} from "@/features/category/types";
+import {CategoryProps} from "@/features/team/types";
 import {useState} from "react";
 import { FilePenLine, CircleCheckBig, Trash2 } from 'lucide-react';
 import {editMember} from "@/features/members/action";

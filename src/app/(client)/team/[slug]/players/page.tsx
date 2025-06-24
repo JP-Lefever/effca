@@ -1,5 +1,5 @@
 
-import Players from "@/features/category/components/players/Players";
+import Players from "@/features/team/components/players/Players";
 import {readMemberByPos} from "@/features/members/action";
 import {readAllPosition} from "@/features/position/action";
 

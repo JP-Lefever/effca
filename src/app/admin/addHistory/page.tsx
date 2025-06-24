@@ -1,4 +1,4 @@
-import AddHistoryForm from "@/features/history/components/addHistoryForm/addHistoryForm";
+import AddHistoryForm from "@/features/club/components/addHistoryForm/addHistoryForm";
 
 export default function AddHistoryPage() {
 

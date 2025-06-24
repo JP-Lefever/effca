@@ -1,7 +1,7 @@
 import styles from "./modifyMember.module.css"
 import ModifyMemberForm from "@/features/members/components/modifyMemberForm/ModifyMemberForm";
 import {MemberProps} from "@/features/members/type";
-import {readCategories} from "@/features/category/repository";
+import {readCategories} from "@/features/team/repository";
 import {readAllRole} from "@/features/associationRole/action";
 import {readAllPosition} from "@/features/position/action";
 

@@ -3,8 +3,8 @@ import styles from "./addCategoryForm.module.css"
 import dataCategory from "@/assets/data/category/category.json"
 import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
-import {CategoryProps} from "@/features/category/types";
-import {addCategory} from "@/features/category/action";
+import {CategoryProps} from "@/features/team/types";
+import {addCategory} from "@/features/team/action";
 import {toast} from "react-toastify";
 
 

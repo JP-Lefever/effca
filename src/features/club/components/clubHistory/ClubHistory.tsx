@@ -1,5 +1,5 @@
 import styles from "./clubHistory.module.css"
-import {HistoryProps} from "@/features/history/type";
+import {HistoryProps} from "@/features/club/type";
 import data from "@/assets/data/club/club.json"
 
 

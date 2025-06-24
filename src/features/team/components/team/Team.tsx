@@ -2,7 +2,7 @@
 import styles from "./team.module.css"
 import Image from "next/image"
 import data from "@/assets/data/team/team.json"
-import {CategoryProps} from "@/features/category/types";
+import {CategoryProps} from "@/features/team/types";
 import {MemberProps} from "@/features/members/type";
 
 export default function Team({category, manager}: {category: CategoryProps, manager : MemberProps}) {
