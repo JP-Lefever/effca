@@ -1,6 +1,6 @@
 import {prisma} from "@/lib/prisma";
 import {ResultProps, UserProps} from "@/features/auth/type";
-import {MemberProps} from "@/features/users/type";
+
 
 
 export async function readUserByMail(email : string) : Promise<ResultProps<UserProps>>{
