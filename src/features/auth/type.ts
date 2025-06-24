@@ -12,4 +12,10 @@ export type UserProps = {
     memberFunctionId : string |null;
     photo: string | null | FileList
 }
+
+export type LoginProps = {
+    email : string,
+    password: string,
+}
+
 export type ResultProps<T> = | {success : true, data : T} | {success : false, error : string}

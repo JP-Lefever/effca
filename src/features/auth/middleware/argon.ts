@@ -1,8 +1,8 @@
 import argon from "argon2";
 
 
-export const verifyPassword = async (password: string, dbPassword : string) => {
+export const verifyPassword = async (dbPassword : string, password: string ) => {
 
-    return argon.verify(dbPassword, password)
+    return await argon.verify(dbPassword, password)
 
 }

@@ -26,8 +26,9 @@ export const authOptions = {
 
                     const user = await readUserByEmail(email)
                     if(!user.success) throw new Error(user.error)
-
+                    console.log(user.data.password )
                     const validPassword = await verifyPassword(user.data.password as string, password)
+                    console.log(validPassword)
                     if(!validPassword) throw new Error("Email ou mot de passe incorrect")
 
                     return {
