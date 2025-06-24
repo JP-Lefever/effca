@@ -44,7 +44,7 @@ export async function readAllActualities( ) : Promise<ResultProps<ActualityProps
 }
 
 export async function readActuality( id: string) : Promise<ResultProps<ActualityProps>> {
-    console.log(id)
+
     try {
         const actuality = await prisma.actuality.findUnique({
             where : {

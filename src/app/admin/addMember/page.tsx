@@ -1,5 +1,5 @@
-import AddMemberForm from "@/features/members/components/addMemberForm/AddMemberForm";
-import {readAllCategories} from "@/features/category/action";
+import AddMemberForm from "@/features/users/components/addMemberForm/AddMemberForm";
+import {readAllCategories} from "@/features/team/action";
 import {readAllPosition} from "@/features/position/action";
 import {readAllRole} from "@/features/associationRole/action";
 

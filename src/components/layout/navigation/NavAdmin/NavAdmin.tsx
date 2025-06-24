@@ -3,7 +3,9 @@ import styles from "./navAdmin.module.css"
 import dataNav from "@/assets/data/navBar/navAdmin.json"
 import {useState} from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, LogOut  } from 'lucide-react';
+
+import {signOut} from "next-auth/react";
 
 
 
@@ -25,8 +27,11 @@ export default function NavAdmin() {
 
     return (
         <nav className={styles.nav}>
-            <button className={styles.buttonMenu} type={"button"} onClick={toggleMenu}>{openMenu ? <ChevronLeft  color={"white"}/> :  <ChevronRight  color={"white"}/>}</button>
+
+                <button className={styles.buttonMenu} type={"button"} onClick={toggleMenu}>{openMenu ? <ChevronLeft  color={"white"}/> :  <ChevronRight  color={"white"}/>}</button>
+
             {openMenu &&
+                <section>
             <ul>
                 {Object.entries(dataNav).map(([key,value])=>{
                     const typeKey = key as keyof typeof dataNav;
@@ -47,7 +52,14 @@ export default function NavAdmin() {
                     )
                 })}
             </ul>
-            }
+            <button className={styles.buttonLogout} type={"button"} onClick={()=>signOut()}>
+                <div className={styles.divLogout}>
+                    <p><LogOut color={"white"}/>
+                    </p><p>Deconnexion</p>
+                </div>
+            </button>
+        </section>
+}
         </nav>
     )
 }

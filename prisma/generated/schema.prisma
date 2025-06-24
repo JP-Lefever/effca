@@ -15,28 +15,28 @@ datasource db {
 }
 
 model Player_position {
-  id      String    @id @default(uuid())
+  id      String  @id @default(uuid())
   label   String
-  members Members[]
+  members Users[]
 }
 
 model Category {
-  id        String    @id @default(uuid())
+  id        String  @id @default(uuid())
   label     String
   training1 String
   training2 String?
   training3 String?
   photo     String?
-  members   Members[]
+  members   Users[]
 }
 
 model MemberFunction {
-  id      String    @id @default(uuid())
+  id      String  @id @default(uuid())
   label   String
-  members Members[]
+  members Users[]
 }
 
-model Members {
+model Users {
   id               String           @id @default(uuid())
   firstname        String
   lastname         String
@@ -44,6 +44,7 @@ model Members {
   mail             String?
   photo            String?
   is_admin         Boolean          @default(false)
+  password         String?
   positionId       String?
   categoryId       String?
   memberFunctionId String?
@@ -75,19 +76,4 @@ model Actuality {
   phone       String?
   mail        String?
   photo       String?
-}
-
-model Album {
-  id    String  @id @default(uuid())
-  title String
-  media Media[]
-}
-
-model Media {
-  id    String   @id @default(uuid())
-  title String
-  place String?
-  photo String
-  date  DateTime
-  album Album[]
 }

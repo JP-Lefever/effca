@@ -1,5 +1,5 @@
-import ModifyHistoryForm from "@/features/history/components/modifyHistoryForm/ModifyHistoryForm";
-import {readHistoryClub} from "@/features/history/action";
+import ModifyHistoryForm from "@/features/club/components/modifyHistoryForm/ModifyHistoryForm";
+import {readHistoryClub} from "@/features/club/action";
 
 
 export default async function ModifyHistoryPage(){

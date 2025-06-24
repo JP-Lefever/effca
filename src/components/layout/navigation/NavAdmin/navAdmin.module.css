@@ -40,3 +40,15 @@
     margin-bottom : 3em;
 
 }
+.buttonLogout{
+    background-color: var(--red-main);
+    border : none;
+    display: block;
+    margin : 5vh auto;
+    cursor: pointer;
+}
+
+.divLogout{
+    border : 2px solid var(--white-main);
+    padding : 1em 2em;
+}
