@@ -1,5 +1,6 @@
 import styles from "./footer.module.css"
 import Image from "next/image"
+import Link from "next/link";
 
 export default function Footer() {
 
@@ -39,6 +40,7 @@ export default function Footer() {
                     <p>Contact</p>
                     <p>Mentions légales</p>
                     <p>Politique de cookies</p>
+                    <Link className={styles.link} href={"/admin"}>Admin</Link>
                 </article>
             </section>
             <section>
