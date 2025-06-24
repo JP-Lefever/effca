@@ -62,3 +62,8 @@
     text-decoration: none;
     color: var(--red-main);
 }
+
+.link{
+    text-decoration: none;
+    color: var(--white-main);
+}

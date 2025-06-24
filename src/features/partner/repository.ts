@@ -1,6 +1,6 @@
 import {prisma} from "@/lib/prisma";
 import {PartnerProps} from "@/features/partner/type";
-import {ResultProps} from "@/features/history/type";
+import {ResultProps} from "@/features/club/type";
 
 
 export  async function createPartner(data : Omit<PartnerProps, "id" |"photo">, photo: string ) : Promise<ResultProps<PartnerProps>> {

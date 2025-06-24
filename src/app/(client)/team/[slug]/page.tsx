@@ -1,7 +1,7 @@
-import Team from "@/features/category/components/team/Team";
-import {readCategoryById} from "@/features/category/action";
+import Team from "@/features/team/components/team/Team";
+import {readCategoryById} from "@/features/team/action";
 
-import {readMemberByTeam} from "@/features/members/action";
+import {readMemberByTeam} from "@/features/users/action";
 import {readPositionByLabel} from "@/features/position/action";
 
 export default async function  TeamDetailPage(props : {params : Promise<{slug : string}>}) {
@@ -13,7 +13,7 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
     const category = await readCategoryById(slug)
     const members = await readMemberByTeam(slug)
     const positionId = await readPositionByLabel("Entraineur")
-    console.log(slug)
+
     if (!category.success) {
         return (
             <p>Auncune equipe trouvée</p>

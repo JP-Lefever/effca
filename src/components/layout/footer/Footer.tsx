@@ -1,5 +1,6 @@
 import styles from "./footer.module.css"
 import Image from "next/image"
+import Link from "next/link";
 
 export default function Footer() {
 
@@ -27,7 +28,7 @@ export default function Footer() {
                 </article>
                 <article className={styles.info}>
                     <figure>
-                        <Image src={"/images/logo.png"} alt="Logo club" width={220} height={220} />
+                        <Image src={"/images/logo.webp"} alt="Logo club" width={220} height={220} />
                     </figure>
                     <h2>{"Entente Fons Fourmagnac Camburat Assier"}</h2>
                     <p>{"Stade de la Dourmelle, Route d'Issepts - 46100 Fons"}</p>
@@ -39,6 +40,7 @@ export default function Footer() {
                     <p>Contact</p>
                     <p>Mentions légales</p>
                     <p>Politique de cookies</p>
+                    <Link className={styles.link} href={"/admin"}>Admin</Link>
                 </article>
             </section>
             <section>

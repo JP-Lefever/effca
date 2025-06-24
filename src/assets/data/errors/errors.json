@@ -2,5 +2,6 @@
   "require" : "Champs requis",
   "pattern" : "Caractères spéciaux non valides",
   "mail" : "Format d'email incorrect",
-  "phone" : "Numéro telephone invalide"
+  "phone" : "Numéro telephone invalide",
+  "password" : "Au moins 1 majuscule, 1 minuscule et un caractère spécial"
 }

@@ -1,6 +1,6 @@
 
-import {readMembers} from "@/features/members/action";
-import ModifyMembers from "@/features/members/components/modifyMembers/ModifyMembers";
+import {readMembers} from "@/features/users/action";
+import ModifyMembers from "@/features/users/components/modifyMembers/ModifyMembers";
 
 export default async function ModifyMemberPage() {
 

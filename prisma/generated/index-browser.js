@@ -139,7 +139,7 @@ exports.Prisma.MemberFunctionScalarFieldEnum = {
   label: 'label'
 };
 
-exports.Prisma.MembersScalarFieldEnum = {
+exports.Prisma.UsersScalarFieldEnum = {
   id: 'id',
   firstname: 'firstname',
   lastname: 'lastname',
@@ -147,6 +147,7 @@ exports.Prisma.MembersScalarFieldEnum = {
   mail: 'mail',
   photo: 'photo',
   is_admin: 'is_admin',
+  password: 'password',
   positionId: 'positionId',
   categoryId: 'categoryId',
   memberFunctionId: 'memberFunctionId'
@@ -175,19 +176,6 @@ exports.Prisma.ActualityScalarFieldEnum = {
   photo: 'photo'
 };
 
-exports.Prisma.AlbumScalarFieldEnum = {
-  id: 'id',
-  title: 'title'
-};
-
-exports.Prisma.MediaScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  place: 'place',
-  photo: 'photo',
-  date: 'date'
-};
-
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -208,12 +196,10 @@ exports.Prisma.ModelName = {
   Player_position: 'Player_position',
   Category: 'Category',
   MemberFunction: 'MemberFunction',
-  Members: 'Members',
+  Users: 'Users',
   Club: 'Club',
   Partner: 'Partner',
-  Actuality: 'Actuality',
-  Album: 'Album',
-  Media: 'Media'
+  Actuality: 'Actuality'
 };
 
 /**
