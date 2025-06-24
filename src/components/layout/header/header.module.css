@@ -6,7 +6,10 @@
     background-position: center center;
     height: 90vh;
     overflow-x: hidden;
+    @media screen and (max-width: 568px){
+        background-attachment: scroll;
 
+    }
 }
 .h1{
     font-family : var(--title-font), sans-serif;
