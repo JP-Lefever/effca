@@ -3,7 +3,7 @@ import Image from "next/image"
 import {MemberProps} from "@/features/users/type";
 
 
-export default function CardPlayer({player, i} : {player : MemberProps, i:number}) {
+export default function CardPlayer({player} : {player : MemberProps}) {
 
 
     return (
