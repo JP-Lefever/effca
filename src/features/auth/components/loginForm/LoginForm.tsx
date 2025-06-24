@@ -32,6 +32,7 @@ export default function LoginForm() {
         if(response?.ok){
             toast.success("Bienvenue sur Admin EFFCA ")
             router.push("/admin")
+
         }
 
     }
