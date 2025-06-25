@@ -60,7 +60,7 @@
     background-position: center;
     height: 100vh;
     @media screen and (max-width: 568px){
-        background-attachment: scroll;
+       display: none;
 
     }
 }
@@ -79,6 +79,18 @@
                     var(--white-main) 100%
             );
     @media screen and (max-width: 1280px) {
+        background:
+                linear-gradient(
+                        140deg,
+                        var(--red-main) 0%,
+                        var(--red-main) 20%,
+                        var(--white-main) 20%,
+                        var(--white-main) 30%,
+                        var(--red-main) 30%,
+                        var(--red-main) 95%,
+                        var(--white-main) 95%,
+                        var(--white-main) 100%
+                );
         padding-bottom: 15vh;
     }
 }
