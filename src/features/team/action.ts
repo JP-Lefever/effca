@@ -1,7 +1,7 @@
 "use server"
 import {CategoryProps, ResultProps} from "@/features/team/types";
 import {categorySchema} from "@/features/team/schema";
-import {createCategory, readCategories, readCategory, updateCategory} from "@/features/team/repository";
+import {createCategory, deleteCategory, readCategories, readCategory, updateCategory} from "@/features/team/repository";
 
 
 
@@ -58,4 +58,14 @@ export const editCategory = async (data : Omit<CategoryProps, "id" |"photo">, ph
     return {success : response.success, data : response.data}
 
 
+}
+
+export const destroyCategory = async (id: string) : Promise<ResultProps<string>> =>{
+
+    const response = await deleteCategory(id)
+
+    if(!response.success){
+        return {success: response.success, error : response.error};
+    }
+    return {success : response.success, data : response.data}
 }

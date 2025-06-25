@@ -7,6 +7,9 @@ import {CategoryProps} from "@/features/team/types";
 import Image from "next/image";
 import {toast} from "react-toastify";
 import {editCategory} from "@/features/team/action";
+import {useState} from "react";
+import {createPortal} from "react-dom";
+import DeleteTeamModal from "@/features/team/components/deleteTeamModal/DeleteTeamModal";
 
 export default function FormModifyTeam({team} : {team : CategoryProps}){
 
@@ -21,6 +24,12 @@ export default function FormModifyTeam({team} : {team : CategoryProps}){
         photo : photo
 
         }});
+
+    const [openModal, setOpenModal] = useState(false);
+
+    const handleModal = ()=>{
+        setOpenModal(!openModal);
+    }
 
     const onModifySubmit = async (data : CategoryProps)=> {
 
@@ -114,10 +123,13 @@ export default function FormModifyTeam({team} : {team : CategoryProps}){
                         </div>
 
                         <button className={styles.button} type={"submit"}>{dataCategory.modifyButton}</button>
-                        <button className={styles.button} type={"submit"}>{dataCategory.deleteButton}</button>
+                        <button className={styles.button} type={"button"} onClick={handleModal}>{dataCategory.deleteButton}</button>
                     </fieldset>
                 </form>
                 <p>{dataCategory.option}</p>
+                {openModal && (
+                    createPortal(<DeleteTeamModal id={id} closeModalAction={handleModal}/>, document.body)
+                )}
             </section>
         </>
     )

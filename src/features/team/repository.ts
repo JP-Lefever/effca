@@ -99,3 +99,19 @@ export async function updateCategory(data : Omit<CategoryProps, "id" |"photo">, 
     }
 
 }
+
+export async function deleteCategory(id: string) : Promise<ResultProps<string>> {
+
+    try {
+        await prisma.category.delete({
+            where : {
+                id : id
+            }
+        })
+
+        return {success : true, data : "L'équipe a bien été supprimée"}
+    }catch(err) {
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue" }
+    }
+}
