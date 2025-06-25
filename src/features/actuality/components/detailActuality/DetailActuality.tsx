@@ -3,7 +3,7 @@ import styles from "./detailActuality.module.css"
 import {ActualityProps} from "@/features/actuality/type";
 import Image from "next/image"
 import {useRouter} from "next/navigation";
-import {X, SquareArrowUp,User, Phone, AtSign } from "lucide-react"
+import {SquareArrowUp,User, Phone, AtSign } from "lucide-react"
 import {formatedDate} from "@/assets/helpers/formatedDate";
 
 export default function DetailActuality({actuality }: {actuality: ActualityProps}) {
