@@ -1,6 +1,6 @@
 import {prisma} from "@/lib/prisma"
 import {CategoryProps, ResultProps} from "@/features/team/types";
-import {string} from "zod";
+
 
 const validData = (data : string |null | undefined)=>{
     return data === "" || data === undefined ? null : data
