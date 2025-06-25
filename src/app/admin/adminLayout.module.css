@@ -1,9 +1,10 @@
 .sectionLayout {
     display: flex;
-    min-height: 100vh;
+    height: fit-content;
 }
 .aside{
-    min-height: 100dvh;
+    background-color: var(--red-main);
+    min-height: 100vh;
 }
 .main{
     flex: 1;

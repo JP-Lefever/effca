@@ -55,7 +55,7 @@ export default function NavAdmin() {
             <button className={styles.buttonLogout} type={"button"} onClick={()=>signOut()}>
                 <div className={styles.divLogout}>
                     <p><LogOut color={"white"}/>
-                    </p><p>Deconnexion</p>
+                    </p><p className={styles.logout}>Deconnexion</p>
                 </div>
             </button>
         </section>
