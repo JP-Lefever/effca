@@ -1,7 +1,6 @@
-
-
 .div {
     margin : 2em 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,6 +9,7 @@
         margin : 1em 0;
     }
 }
+
 .h1 {
     font-family: var(--title-font), sans-serif;
     font-size: var(--title-size-h1);
@@ -17,8 +17,12 @@
     color :var(--grey-effect);
     position : relative;
     top : 4vh;
-    @media screen and (max-width : 568px) {
-        font-size: var(--title-size-h1-resp);
+
+    @media screen and (max-width : 375px) {
+        font-size: 2.5em;
+    }
+    @media screen and (min-width: 376px) and (max-width : 568px) {
+        font-size: 3em;
     }
 }
 
@@ -33,29 +37,11 @@
     color : var(--red-main);
     bottom : 4vh;
     @media screen and (max-width : 568px) {
+        font-size: 2em;
+        bottom : 2vh;
+    }
+    @media screen and (min-width: 376px) and (max-width : 568px) {
         font-size: var(--title-size-h1b-resp);
         bottom : 2vh;
     }
-}
-
-.articlePartner {
-    width : 80vw;
-    margin : 4em auto;
-    @media screen and (max-width : 568px) {
-        margin : 1em auto;
-        width : 95vw;
-    }
-}
-
-.h2{
-    border-bottom: 1px solid var(--red-main);
-    text-align: center;
-    margin : 3em auto;
-    font-size : 2em;
-    padding : 0.5em;
-    color : var(--black-text);
-    @media screen and (max-width : 568px) {
-    margin : 1em auto;
-
-}
 }
