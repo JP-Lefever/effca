@@ -1,7 +1,7 @@
 "use server"
 import {CategoryProps, ResultProps} from "@/features/team/types";
 import {categorySchema} from "@/features/team/schema";
-import {createCategory, readCategories, readCategory} from "@/features/team/repository";
+import {createCategory, readCategories, readCategory, updateCategory} from "@/features/team/repository";
 
 
 
@@ -40,4 +40,22 @@ export const readCategoryById = async (label: string) : Promise<ResultProps<Cate
     }
 
     return {success : response.success, data : response.data}
+}
+
+export const editCategory = async (data : Omit<CategoryProps, "id" |"photo">, photo : string, id:string) : Promise<ResultProps<CategoryProps>> =>{
+
+    const validData = categorySchema.safeParse(data);
+    console.log(validData.error)
+    if (!validData.success) {
+        return {success: false, error : "Données invalides"};
+    }
+
+    const response = await updateCategory(validData.data, photo, id);
+
+    if(!response.success){
+        return  {success :response.success, error : response.error}
+    }
+    return {success : response.success, data : response.data}
+
+
 }

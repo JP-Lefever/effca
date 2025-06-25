@@ -1,14 +1,21 @@
 {
+  "team" : {
+    "title" : "Equipes",
+    "items" : [
+      "Ajouter une equipe/catégorie",
+      "Modifier/supprimer une equipe"
+    ],
+    "links" : [ "/admin/addTeam", "/admin/modifyTeam"]
+  },
   "members": {
-    "title": "Membres/joueurs",
+    "title": "Joueurs / Membres",
     "items": [
-      "Ajouter un membre/joueur du club",
-      "Ajouter une catégorie",
       "Ajouter un poste",
-      "Ajouter un role dans l'asso",
+      "Ajouter un role associatif",
+      "Ajouter un joueur/membre du club",
       "Modifier/supprimer un membre"
     ],
-    "links" : ["/admin/addMember" , "/admin/addCategory", "/admin/addPosition", "/admin/addRole", "/admin/modifyMember"]
+    "links" : [ "/admin/addPosition", "/admin/addRole","/admin/addMember" , "/admin/modifyMember"]
   },
   "club": {
     "title": "Club",
