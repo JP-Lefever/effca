@@ -1,12 +1,19 @@
 {
-  "legend" : "Category",
+  "legend" : "Equipe / Category",
   "category" : "Ajouter une catégorie",
   "training1" : "Ajouter le jour et l'heure du 1er entrainement",
   "training2" : "Ajouter le jour et l'heure du 2nd entrainement *",
   "training3" : "Ajouter le jour et l'heure du 3eme entrainement *",
   "photo" : "Photo d'équipe de la catégorie",
   "trainingEx" : "Le Lundi : de 17h30 à 19h00",
-  "example" : ["Senior, Jeunes","..."],
+  "example" : ["Senior", "Vétéran","u10","..."],
   "button" : "Ajouter",
-  "option" : "* Champs non obligatoires"
+  "option" : "* Champs non obligatoires",
+  "modifyCat" : "Modifier la catégorie",
+  "modifyTraining" : "Modifier le jour et l'heure de l'entrainement 1",
+  "modifyTraining2" : "Modifier le jour et l'heure de l'entrainement 2 *",
+  "modifyTraining3" : "Modifier le jour et l'heure de l'entrainement 3 *",
+  "modifyPhoto" : "Modifier la photo d'équipe *",
+  "modifyButton" : "Modifier",
+  "deleteButton" : "Supprimer"
 }
