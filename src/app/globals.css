@@ -20,5 +20,8 @@ body{
     --black-dark : #000000FF;
     --padding-section : 1em;
     --border-radius-button : 20px;
-
+    --title-size-h1 : 6em;
+    --title-size-h1b : 4em;
+    --title-size-h1-resp : 3.5em;
+    --title-size-h1b-resp : 2.5em;
 }
