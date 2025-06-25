@@ -5,8 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { AlignJustify, X } from 'lucide-react';
 import {useState} from "react";
+import {CategoryProps} from "@/features/team/types";
 
-export default function NavBar(){
+export default function NavBar({team} : {team : CategoryProps[]}){
 
     const [openMenu, setOpenMenu] = useState(false)
 
@@ -33,9 +34,9 @@ export default function NavBar(){
                 {dataNav.team.title} <span>&#9660;</span>
                 </p>
                 <ul className={styles.dropDown}>
-                        {dataNav.team.items.map((item, index) => (
+                        {team.map((item, index) => (
                     <li className={styles.liDropdown} key={index}>
-                            <Link className={styles.subLink} onClick={toggleMenu} href={dataNav.team.link[index]}>{item}</Link>
+                            <Link className={styles.subLink} onClick={toggleMenu} href={`/team/${item.label}`}>{item.label}</Link>
                     </li>
                         ))}
                 </ul>
