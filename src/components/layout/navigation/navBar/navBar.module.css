@@ -1,28 +1,48 @@
-.nav{
-    background-color: var(--red-main);
-    height: 8vh;
-    display: flex;
-    align-items: center;
-}
-.navOpen {
-    background-color: var(--red-main);
-    height: 8vh;
-    @media screen and (max-width: 1024px){
-        background-color: var(--red-main);
-        min-height: 100vh;
-    }
 
+.nav {
+    background-color: var(--red-main);
+    padding: 1rem;
+    height: 8vh;
+    position: relative;
+    @media screen and (max-width: 1024px){
+        height: fit-content;
+    }
 }
-.ul{
+
+.burgerButton {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    @media screen and (max-width: 1024px){
+        display: block;
+
+    }
+}
+
+.navList {
     display: flex;
     gap: 5em;
+    list-style: none;
     justify-content: center;
-    padding-top: 2.5vh;
-@media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1024px){
+        display: none;
+        gap: 1.5em;
+    }
+}
+
+.navMobileOpen {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2em;
-}
+    justify-content: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--red-main);
+    padding: 1rem;
+    z-index: 100;
 }
 
 .ul li{
@@ -43,6 +63,7 @@
 .dropDownMenu{
     font-size: 1.2em;
     position: relative;
+    color: var(--white-main);
     @media screen and (max-width: 1024px) {
         margin-left: 1em;
     }
@@ -51,14 +72,29 @@
 .dropDown{
     display: none;
     position: absolute;
-    background-color: rgba(208, 9, 49);
+    background-color: var(--red-main);
     width : 8vw;
-    padding: var(--padding-section);
-    border : 1px solid var(--white-main);
-    border-radius: 10px;
+    padding: 0.5em;
+    border: 1px solid var(--white-main);
+    border-radius: 5px;
+    list-style: none;
+    z-index: 10;
+
     @media screen and (max-width: 1024px) {
         width : 40vw;
     }
+}
+
+
+.liDropdown{
+    padding : 0.2em 0.5em;
+
+}
+
+.liDropdown:hover{
+    background-color: var(--white-main);
+    color: var(--red-main);
+
 }
 
 .dropDownMenuTrigger:hover + .dropDown,
@@ -70,37 +106,40 @@
 .subLink {
     color : var(--white-main);
     text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.subLink:hover {
+    color: var(--red-main);
 }
 
 .imageContainer{
     @media screen and (max-width: 1024px){
-        display: contents;
-
         width: 0;
         height: 0;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
+
     }
 }
 
 .image {
     position : relative;
-    bottom: 2.5em;
+    bottom: 2em;
     @media screen and (max-width: 1024px){
         position: absolute;
-        top: 50px;
+
+        top: 0;
         right: 0;
 
     }
 }
 
-.burgerMenu{
-    display: none;
-    background-color: transparent;
-    border: none;
-    padding: 1em;
-    @media screen and (max-width: 1024px) {
-       display: block;
-    }
-}
+/*.burgerMenu{*/
+/*    display: none;*/
+/*    background-color: transparent;*/
+/*    border: none;*/
+/*    padding: 1em;*/
+/*    @media screen and (max-width: 1024px) {*/
+/*       display: block;*/
+/*    }*/
+/*}*/
