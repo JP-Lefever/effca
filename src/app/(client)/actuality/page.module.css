@@ -1,11 +1,3 @@
-.section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    margin : var(--padding-section);
-
-}
 
 .div {
     margin : 2em 0;
@@ -45,13 +37,4 @@
 
 
 
-.modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    pointer-events: none;
-    z-index: 1000;
-
-}
 

@@ -1,4 +1,4 @@
-import styles from "@/app/(client)/actuality/layout.module.css";
+import styles from "./actualitiesList.module.css";
 import CardActuality from "@/features/actuality/components/cardActuality/CardActuality";
 
 
