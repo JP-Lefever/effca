@@ -8,7 +8,7 @@
     "links" : [ "/admin/addTeam", "/admin/modifyTeam"]
   },
   "members": {
-    "title": "Joueurs / Membres",
+    "title": "Joueurs/Membres",
     "items": [
       "Ajouter un poste",
       "Ajouter un role associatif",

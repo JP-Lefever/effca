@@ -6,7 +6,7 @@
   "training3" : "Ajouter le jour et l'heure du 3eme entrainement *",
   "photo" : "Photo d'équipe de la catégorie",
   "trainingEx" : "Le Lundi : de 17h30 à 19h00",
-  "example" : ["Senior, Jeunes","..."],
+  "example" : ["Senior", "Vétéran","u10","..."],
   "button" : "Ajouter",
   "option" : "* Champs non obligatoires",
   "modifyCat" : "Modifier la catégorie",

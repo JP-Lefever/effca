@@ -1,5 +1,11 @@
 .section {
     width: 30vw;
+    @media screen and (max-width: 1024px){
+        width: 100%;
+    }
+    @media screen and (min-width: 1025px) and (max-width: 1280px){
+        width: 40vw;
+    }
 }
 .section legend {
     text-transform: uppercase;
@@ -49,6 +55,9 @@
     height: 20vh;
     position: relative;
     margin: auto;
+    @media screen and (max-width: 1280px){
+        width: 100%;
+    }
 }
 
 .image {
