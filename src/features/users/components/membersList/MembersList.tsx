@@ -13,7 +13,7 @@ export default function MembersList({members, categories, memberFunction, positi
 
 
     const [filter, setFilter] = useState<string>("");
-    // const categoryList = [...new Set(categories.map((c)=> c.label))];
+
 
     const filteredMembers = members.filter((member)=> member.categoryId?.includes(filter))
 
