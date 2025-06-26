@@ -1,7 +1,7 @@
 
 
 .div {
-    margin : 2em 0;
+    margin : 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,6 @@
 .h1b {
 
     font-family: var(--title-font), sans-serif;
-
     font-size: var(--title-size-h1b);
     letter-spacing: 8px;
     position : relative;
@@ -40,7 +39,7 @@
 
 .articlePartner {
     width : 80vw;
-    margin : 4em auto;
+    margin :  auto;
     @media screen and (max-width : 568px) {
         margin : 1em auto;
         width : 95vw;

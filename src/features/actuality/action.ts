@@ -3,7 +3,13 @@
 
 import {ActualityProps,  ResultProps} from "@/features/actuality/type";
 import {actualitySchema} from "@/features/actuality/schema";
-import {createActuality, readActuality, readAllActualities, updateActuality} from "@/features/actuality/repository";
+import {
+    createActuality,
+    destroyActuality,
+    readActuality,
+    readAllActualities,
+    updateActuality
+} from "@/features/actuality/repository";
 
 export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo">, photo : string) : Promise<ResultProps<ActualityProps>> => {
 
@@ -61,4 +67,14 @@ export const editActuality = async (data : Omit<ActualityProps, "id" | "photo">,
 
         return {success: response.success, data: response.data}
 
+}
+
+export const deleteActuality = async (id: string) : Promise<ResultProps<string>> => {
+
+    const response = await destroyActuality(id)
+
+    if(!response.success) {
+        return {success : response.success, error : response.error}
+    }
+    return {success: response.success, data: response.data}
 }

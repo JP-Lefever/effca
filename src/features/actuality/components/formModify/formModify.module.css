@@ -22,6 +22,7 @@
     font-family: var(--title-font),sans-serif;
     letter-spacing: 0.1em;
     font-size: 1.2em;
+    cursor: pointer;
     @media screen and (max-width: 1024px)  {
         width : 100%;
     }

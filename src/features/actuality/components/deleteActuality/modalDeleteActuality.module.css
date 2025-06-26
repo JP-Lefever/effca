@@ -1,0 +1,50 @@
+.section {
+    position : fixed;
+    top: 0;
+    left : 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section article {
+    background-color: var(--white-main);
+    padding : 3em;
+    border: solid 2px var(--red-main) ;
+}
+.section article p {
+    font-size: 1.4em;
+}
+
+.section div {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    padding-top: 2em;
+
+}
+
+.validate {
+    font-family: var(--paragraph-font), sans-serif;
+    padding : 0.2em 1.5em;
+    font-size: 1.4em;
+    background-color: green;
+    color : var(--white-main);
+    border : none;
+    cursor: pointer;
+}
+
+.cancel {
+    font-family: var(--paragraph-font), sans-serif;
+    padding : 0.2em 1.5em;
+    font-size: 1.4em;
+    background-color: var(--red-main);
+    color : var(--white-main);
+    border : none;
+    cursor: pointer;
+}
