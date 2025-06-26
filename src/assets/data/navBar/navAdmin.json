@@ -42,12 +42,3 @@
     "links" : ["/admin/addActuality" , "/admin/modifyActuality"]
   }
 }
-//  "photo": {
-//    "title": "Photo",
-//    "items": [
-//      "Ajouter un Album",
-//      "Ajouter une photo",
-//      "Modifier/supprimer photo"
-//    ],
-//    "links" : ["/admin/addAlbum" , "/admin/addPhoto", "/admin/modifyPhoto"]
-//  }
