@@ -17,7 +17,7 @@ export default function FilterMember({categoryList, setFilterAction} : {category
     return (
         <>
             <section className={styles.section}>
-                <h2 className={styles.h2}>Filter les joueurs par équipe</h2>
+                <h2 className={styles.h2}>Filtrer les joueurs par équipe</h2>
                 <select className={styles.select} onChange={selectFilter}>
                     <option className={styles.option} value={""}>Voir tous les joueurs</option>
                         {categoryList.map((c)=> (
