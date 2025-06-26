@@ -1,9 +1,9 @@
-import styles from "./modifyActuality.module.css"
+import styles from "./actualityList.module.css"
 import {browseActualities} from "@/features/actuality/action";
 
 import Link from "next/link";
 
-export default async function ModifyActuality(){
+export default async function ActualityList(){
 
     const actualities = await browseActualities()
 

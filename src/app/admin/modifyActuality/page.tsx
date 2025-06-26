@@ -1,11 +1,11 @@
-import ModifyActuality from "@/features/actuality/components/modifyActuality/ModifyActuality";
+import ActualityList from "@/features/actuality/components/modifyActuality/ActualityList";
 
 export default function ModifyActualityPage() {
 
 
     return(<>
 
-        <ModifyActuality/>
+        <ActualityList/>
 
     </>)
 }
