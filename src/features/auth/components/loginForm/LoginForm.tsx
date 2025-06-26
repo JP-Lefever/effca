@@ -4,8 +4,7 @@ import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
 import {LoginProps} from "@/features/auth/type";
 import {signIn} from "next-auth/react";
-import {toast} from "react-toastify";
-import {useRouter} from "next/navigation";
+
 import { useState} from "react";
 import { Eye, EyeOff  } from 'lucide-react';
 
@@ -13,7 +12,7 @@ import { Eye, EyeOff  } from 'lucide-react';
 export default function LoginForm() {
 
     const {register, handleSubmit, formState : {errors}} = useForm<LoginProps>();
-    const router = useRouter();
+
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const handleVisiblePass = ()=>{
         setIsVisible(!isVisible);
