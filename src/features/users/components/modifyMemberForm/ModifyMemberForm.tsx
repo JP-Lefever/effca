@@ -20,6 +20,8 @@ import DeleteMemberModal from "@/features/users/components/deleteMemberModal/Del
 export default function ModifyMemberForm({member, memberFunction, positions, categories}: {member: MemberProps, memberFunction: RoleProps[], positions : PlayerPositionProps[], categories : CategoryProps[]}) {
 
 
+
+
     const {id, firstname, lastname, categoryId, memberFunctionId, positionId , tel, mail, photo} = member;
 
     const {register, handleSubmit } = useForm<MemberProps>({defaultValues:{
@@ -82,6 +84,7 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
         if(responseModifyMember.success) {
             toast.success(`${responseModifyMember.data.firstname} a bien été modifié`)
             setModify(!modify)
+            location.reload()
         }
     }
 
@@ -112,8 +115,8 @@ export default function ModifyMemberForm({member, memberFunction, positions, cat
                 }
                 <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("firstname")}/>
                 <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("lastname")}/>
-                <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("tel")}/>
-                <input className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"email"} {...register("mail")}/>
+                <input placeholder={"tel"} className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"text"} {...register("tel")}/>
+                <input placeholder={"Email"} className={modify ? styles.readOnly : styles.input} readOnly={modify} disabled={modify} type={"email"} {...register("mail")}/>
                 <select className={modify ? styles.readOnly : styles.input} disabled={modify} {...register("categoryId")}>
                     <option value={""}>{dataMember.optionCategory}</option>
                     {categories.map((category) =>(

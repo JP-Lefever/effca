@@ -1,11 +1,20 @@
 
 import {readMembers} from "@/features/users/action";
-import ModifyMembers from "@/features/users/components/modifyMembers/ModifyMembers";
+import MembersList from "@/features/users/components/membersList/MembersList";
+import {readCategories} from "@/features/team/repository";
+import {readAllRole} from "@/features/associationRole/action";
+import {readAllPosition} from "@/features/position/action";
 
 export default async function ModifyMemberPage() {
 
     const members = await readMembers();
+    const categories = await readCategories()
+    const memberFunction = await readAllRole()
+    const positions = await readAllPosition()
 
+    if(!categories.success || !memberFunction.success || !positions.success){
+        return <p>Erreur lors du chargement des categories</p>
+    }
 
     if(!members.success){
         return <p>Erreur lors du chargement des membres</p>
@@ -13,6 +22,6 @@ export default async function ModifyMemberPage() {
 
     return(<>
 
-    <ModifyMembers members={members.data} />
+    <MembersList members={members.data} categories={categories.data} memberFunction={memberFunction.data} positions={positions.data} />
     </>)
 }
