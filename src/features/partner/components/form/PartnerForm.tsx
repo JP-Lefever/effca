@@ -106,7 +106,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
     <section className={partners ? styles.sectionModify : styles.section}>
         <form onSubmit={handleSubmit(partners ? onSubmitEditPartner : onSubmitNewPartner)}>
             <fieldset >
-                <legend>{legendName}</legend>
+                <legend>{partners ? partners.name : legendName}</legend>
                 {partners && typeof partners.photo === "string" && (
                     <Image className={styles.image} src = {partners.photo } alt={partners.name} width ={120} height ={120} />
                 )}

@@ -22,18 +22,14 @@ export default function LoginForm() {
 
     const onSubmit = async (data : LoginProps): Promise<void> => {
 
-        const response = await signIn("credentials", {
-            redirect : false,
+         await signIn("credentials", {
             email: data.email,
-            password: data.password
+            password: data.password,
+            redirect : true,
+            callbackUrl : "/admin",
         }
         )
-        console.log(response)
-        if(response?.ok){
-            toast.success("Bienvenue sur Admin EFFCA ")
-            router.push("/admin")
 
-        }
 
     }
 

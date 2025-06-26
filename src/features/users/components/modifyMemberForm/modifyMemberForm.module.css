@@ -95,6 +95,7 @@
     width : 4vw;
     margin-top : 1em;
     padding : 0.4em;
+    cursor: pointer;
     @media screen and (max-width: 1024px) {
         width: 100%;
     }
