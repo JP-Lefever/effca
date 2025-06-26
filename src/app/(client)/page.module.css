@@ -1,6 +1,10 @@
 
 .sectionMatch{
     min-height:100vh;
+    position:relative;
+    @media screen and (max-width: 568px){
+        padding-bottom:5vh;
+    }
 
 }
 
@@ -41,7 +45,6 @@
 .h1bActu {
 
     font-family: var(--title-font), sans-serif;
-
     font-size: var(--title-size-h1b);
     letter-spacing: 8px;
     position : relative;
@@ -65,7 +68,7 @@
     }
 }
 .sectionActu{
-
+    border-bottom : 1px solid var(--red-main);
     position: relative;
     min-height:100vh;
     background:
