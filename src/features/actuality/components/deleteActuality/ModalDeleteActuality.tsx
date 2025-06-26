@@ -1,22 +1,22 @@
-import styles from "./deleteTeamModal.module.css"
-import confirmData from "@/assets/data/category/category.json"
+import styles from "./modalDeleteActuality.module.css"
+import confirmData from "@/assets/data/actuality/actuality.json"
 import {Button } from "@/components/ui/buttons/Buttons";
-
 import {toast} from "react-toastify";
-import {redirect} from "next/navigation";
-import {destroyCategory} from "@/features/team/action";
+
+import {deleteActuality} from "@/features/actuality/action";
 
 
-export default function DeleteTeamModal({id, closeModalAction } : {id: string, closeModalAction : () => void} ) {
+export default function ModalDeleteActuality({id, closeModalAction } : {id: string, closeModalAction : () => void} ) {
 
     const onClickDelete = async () => {
 
-         const response = await destroyCategory(id)
+        const response = await deleteActuality(id)
 
         if (response.success) {
             toast.success(response.data)
-            redirect("/admin/modifyTeam")
-        } else { toast.error("Une erreur est survenue lors de la suppression du joueur") }
+            closeModalAction()
+            window.location.reload();
+        } else { toast.error(response.error) }
     }
 
     return (<>

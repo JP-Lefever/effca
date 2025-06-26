@@ -1,11 +1,20 @@
-import ActualityList from "@/features/actuality/components/modifyActuality/ActualityList";
+import ActualityList from "@/features/actuality/components/actualityListAdmin/ActualityList";
+import {browseActualities} from "@/features/actuality/action";
 
-export default function ModifyActualityPage() {
+export default async function ModifyActualityPage() {
 
+    const actualities = await browseActualities()
+
+
+    if (!actualities.success){
+        return (
+            <p>Erreur lors du chargement des actualités</p>
+        )
+    }
 
     return(<>
 
-        <ActualityList/>
+        <ActualityList actualities={actualities.data} />
 
     </>)
 }

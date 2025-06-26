@@ -10,5 +10,6 @@
   "options" : "* Champs optionnels",
   "button" : "Ajouter",
   "modifyPhoto" : "Modifier la photo de l'évènement",
-  "modifyButton" : "Modifier"
+  "modifyButton" : "Modifier",
+  "delete" : "Etes vous sur de vouloir supprimer l'actualité ?"
 }
