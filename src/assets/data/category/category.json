@@ -15,5 +15,6 @@
   "modifyTraining3" : "Modifier le jour et l'heure de l'entrainement 3 *",
   "modifyPhoto" : "Modifier la photo d'équipe *",
   "modifyButton" : "Modifier",
-  "deleteButton" : "Supprimer"
+  "deleteButton" : "Supprimer",
+  "delete" : "Etes vous sur de vouloir supprimer l'équipe ?"
 }

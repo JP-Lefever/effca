@@ -90,3 +90,18 @@ export async function updateActuality(data : Omit<ActualityProps, "id" | "photo"
     }
 
 }
+
+export async function destroyActuality(id: string) : Promise<ResultProps<string>> {
+
+    try {
+        await prisma.actuality.delete({
+            where : {
+                id: id
+            }
+        })
+        return {success : true, data : "L'actualité a bien été supprimée"}
+    } catch(err){
+        console.error(err)
+        return {success : false, error : "Une erreur est survenue"}
+    }
+}
