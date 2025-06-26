@@ -4,8 +4,7 @@ import dataError from "@/assets/data/errors/errors.json"
 import {useForm} from "react-hook-form";
 import {LoginProps} from "@/features/auth/type";
 import {signIn} from "next-auth/react";
-import {toast} from "react-toastify";
-import {useRouter} from "next/navigation";
+
 import { useState} from "react";
 import { Eye, EyeOff  } from 'lucide-react';
 
@@ -13,7 +12,7 @@ import { Eye, EyeOff  } from 'lucide-react';
 export default function LoginForm() {
 
     const {register, handleSubmit, formState : {errors}} = useForm<LoginProps>();
-    const router = useRouter();
+
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const handleVisiblePass = ()=>{
         setIsVisible(!isVisible);
@@ -22,18 +21,14 @@ export default function LoginForm() {
 
     const onSubmit = async (data : LoginProps): Promise<void> => {
 
-        const response = await signIn("credentials", {
-            redirect : false,
+         await signIn("credentials", {
             email: data.email,
-            password: data.password
+            password: data.password,
+            redirect : true,
+            callbackUrl : "/admin",
         }
         )
-        console.log(response)
-        if(response?.ok){
-            toast.success("Bienvenue sur Admin EFFCA ")
-            router.push("/admin")
 
-        }
 
     }
 

@@ -1,0 +1,22 @@
+.section {
+    display: flex;
+    gap: 1em;
+    margin: var(--padding-section);
+    @media screen and (max-width: 568px){
+        display: flex;
+        flex-direction: column;
+    }
+}
+.h2{
+    @media screen and (max-width: 568px){
+        font-size: 1.2em;
+    }
+}
+.select{
+    border : none;
+    border-bottom: 2px solid var(--black-text);
+    font-family: var(--paragraph-font), sans-serif;
+    letter-spacing: 0.1em;
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
