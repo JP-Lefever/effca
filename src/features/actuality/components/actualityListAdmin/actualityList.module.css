@@ -21,6 +21,7 @@
     border: 1px solid var(--black-text); /* Bordure grise claire */
     padding: 0.5em;
     text-align: center;
+    letter-spacing: 0.1em;
 }
 
 .table thead {

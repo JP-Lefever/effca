@@ -1,6 +1,7 @@
 "use client"
 import styles from "./actualityList.module.css"
 import { FilePenLine, Trash2 } from 'lucide-react';
+import data from "@/assets/data/actuality/actuality.json"
 import Link from "next/link";
 import {formatedDate} from "@/assets/helpers/formatedDate";
 import {ActualityProps} from "@/features/actuality/type";
@@ -20,14 +21,14 @@ export default function ActualityList({actualities} : {actualities: ActualityPro
 
             <table className={styles.table}>
                 <caption>
-                    Liste des évènements
+                    {data.tableName}
                 </caption>
                 <thead>
                 <tr>
-                    <th>Intitulé de l'évènement</th>
-                    <th>Date de l'évènement</th>
-                    <th>Modifier</th>
-                    <th>Supprimer</th>
+                    <th>{data.cols1}</th>
+                    <th>{data.cols2}</th>
+                    <th>{data.cols3}</th>
+                    <th>{data.cols4}</th>
                 </tr>
                 </thead>
             {actualities.map((actuality)=>(

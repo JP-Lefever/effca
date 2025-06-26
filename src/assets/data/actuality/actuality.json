@@ -11,5 +11,10 @@
   "button" : "Ajouter",
   "modifyPhoto" : "Modifier la photo de l'évènement",
   "modifyButton" : "Modifier",
-  "delete" : "Etes vous sur de vouloir supprimer l'actualité ?"
+  "delete" : "Etes vous sur de vouloir supprimer l'actualité ?",
+  "tableName" : "Liste des évènements",
+  "cols1" : "Intitulé de l'évènement",
+  "cols2" : "Date de l'évènement",
+  "cols3" : "Modifier",
+  "cols4" : "Supprimer"
 }
