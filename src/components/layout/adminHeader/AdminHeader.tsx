@@ -13,7 +13,7 @@ export default function AdminHeader() {
             </section>
             <section>
                 <figure>
-                    <Image src={"/images/logo.webp"} alt="logo" width={480} height={480}/>
+                    <Image className={styles.image} src={"/images/logo.webp"} alt="logo" width={480} height={480}/>
                 </figure>
             </section>
         </header>

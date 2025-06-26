@@ -6,9 +6,8 @@
     justify-content: center;
     width: 100%;
     @media screen and (max-width: 568px){
-
-        text-align: center;
-        margin: auto;
+        width: 100%;
+        align-items: center
     }
     @media screen and (min-width: 569px) and (max-width : 1024px) {
         text-align: center;
@@ -23,7 +22,7 @@
     position : relative;
     top : 4vh;
     @media screen and (max-width : 568px) {
-        font-size: var(--title-size-h1-resp);
+        font-size: 2.3em;
     }
 
 }
@@ -39,8 +38,18 @@
     color : var(--red-main);
     bottom : 4vh;
     @media screen and (max-width : 568px) {
-        font-size: var(--title-size-h1b-resp);
+        font-size: 1.8em;
+        bottom : 0;
+    }
+    @media screen and (min-width: 569px) and (max-width : 1024px) {
         bottom : 2vh;
     }
 
+}
+
+.image {
+    @media screen and (max-width: 568px) {
+        width : 80vw;
+        height : auto;
+    }
 }
