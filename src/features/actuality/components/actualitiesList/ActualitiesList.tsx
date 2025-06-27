@@ -1,8 +1,7 @@
 import styles from "./actualitiesList.module.css";
 import CardActuality from "@/features/actuality/components/cardActuality/CardActuality";
-
-
 import {readAllActualities} from "@/features/actuality/repository";
+import {notFound} from "next/navigation";
 
 export default async function ActualitiesList({limit} : {limit?: number}) {
     const actualities = await readAllActualities()
@@ -10,7 +9,7 @@ export default async function ActualitiesList({limit} : {limit?: number}) {
 
     if (!actualities.success){
         return (
-            <p>Une erreur est survenue</p>
+            notFound()
         )
     }
 

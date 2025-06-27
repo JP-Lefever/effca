@@ -3,6 +3,7 @@ import {readCategoryById} from "@/features/team/action";
 
 import {readMemberByTeam} from "@/features/users/action";
 import {readPositionByLabel} from "@/features/position/action";
+import {notFound} from "next/navigation";
 
 export default async function  TeamDetailPage(props : {params : Promise<{slug : string}>}) {
 
@@ -14,21 +15,12 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
     const members = await readMemberByTeam(slug)
     const positionId = await readPositionByLabel("Entraineur")
 
-    if (!category.success) {
+    if (!category.success || !members.success || !positionId.success) {
         return (
-            <p>Auncune equipe trouvée</p>
+            notFound()
         )
     }
-    if (!members.success ) {
-        return (
-            <p>Auncun entraineur trouvé</p>
-        )
-    }
-    if (!positionId.success ) {
-        return (
-            <p>Auncun entraineur trouvé2</p>
-        )
-    }
+  
 
     const manager = members.data.filter((member)=>  member.positionId === positionId.data)
 

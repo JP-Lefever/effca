@@ -6,6 +6,7 @@ import Organigramme from "@/features/club/components/organigramme/Organigramme";
 
 import {readAllRole} from "@/features/associationRole/action";
 import {readMemberRole} from "@/features/users/action";
+import {notFound} from "next/navigation";
 
 export default async function ClubPage(){
 
@@ -14,24 +15,13 @@ export default async function ClubPage(){
     const members = await readMemberRole();
 
 
-    if(!history.success){
+    if(!history.success || ! members.success || !role.success){
 
         return (
-            <p>Données introuvables</p>
+            notFound()
         )
     }
-    if(!members.success){
 
-        return (
-            <p>Données introuvables</p>
-        )
-    }
-    if(!role.success){
-
-        return (
-            <p>Données introuvables</p>
-        )
-    }
 
 
 

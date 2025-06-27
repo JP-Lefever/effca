@@ -1,5 +1,6 @@
 import {readActualityId} from "@/features/actuality/action";
 import DetailActuality from "@/features/actuality/components/detailActuality/DetailActuality";
+import {notFound} from "next/navigation";
 
 
 export default async function actualityPage(props : {params : Promise<{id: string}>}) {
@@ -10,7 +11,7 @@ export default async function actualityPage(props : {params : Promise<{id: strin
 
     if(!actuality.success){
         return (
-            <p>Une erreur est survenue</p>
+            notFound()
         )
     }
 

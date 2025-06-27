@@ -6,6 +6,7 @@ import Link from "next/link";
 import Header from "@/components/layout/header/Header";
 import {readAllPartner} from "@/features/partner/repository";
 import Slider from "@/components/ui/slider/Slider";
+import {notFound} from "next/navigation";
 
 
 export default async function HomePage() {
@@ -14,7 +15,7 @@ export default async function HomePage() {
 
     if(!partners.success){
         return (
-            <p>Une erreur est survenue au chargement des partenaires</p>
+            notFound()
         )
     }
 
