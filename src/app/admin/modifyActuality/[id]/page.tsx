@@ -1,5 +1,6 @@
 import FormModify from "@/features/actuality/components/formModify/FormModify";
 import {readActualityId} from "@/features/actuality/action";
+import {notFound} from "next/navigation";
 
 export default async function  actualityDetailPage(props : {params : Promise<{id: string}>}) {
 
@@ -10,7 +11,7 @@ export default async function  actualityDetailPage(props : {params : Promise<{id
 
     if (!actuality.success) {
         return (
-            <p>Une erreur est survenue lors du chargement de la page</p>
+            notFound()
         )
     }
 

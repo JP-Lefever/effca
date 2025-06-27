@@ -2,6 +2,7 @@ import PartnerList from "@/features/partner/components/partnerList/PartnerList";
 import styles from "./page.module.css";
 import data from "@/assets/data/partner/partner.json";
 import {readAllPartner} from "@/features/partner/repository";
+import {notFound} from "next/navigation";
 
 export default async function PartnersPage() {
 
@@ -9,7 +10,7 @@ export default async function PartnersPage() {
 
     if(!partners.success){
         return (
-            <p>Erreur lors du chargement des partenaires</p>
+            notFound()
         )
     }
 

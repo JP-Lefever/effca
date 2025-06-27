@@ -1,5 +1,6 @@
 import ActualityList from "@/features/actuality/components/actualityListAdmin/ActualityList";
 import {browseActualities} from "@/features/actuality/action";
+import {notFound} from "next/navigation";
 
 export default async function ModifyActualityPage() {
 
@@ -8,7 +9,7 @@ export default async function ModifyActualityPage() {
 
     if (!actualities.success){
         return (
-            <p>Erreur lors du chargement des actualités</p>
+            notFound()
         )
     }
 
