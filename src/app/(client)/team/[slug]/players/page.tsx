@@ -2,6 +2,7 @@
 import Players from "@/features/team/components/players/Players";
 import {readMemberByPos} from "@/features/users/action";
 import {readAllPosition} from "@/features/position/action";
+import {notFound} from "next/navigation";
 
 export default async function PlayersPage(props : {params : Promise<{ slug: string }>}){
 
@@ -12,7 +13,7 @@ export default async function PlayersPage(props : {params : Promise<{ slug: stri
 
     if (!position.success){
         return (
-            <p> Aucun joueurs trouvé</p>
+            notFound()
         )
     }
     const customOrder = ["Gardien", "Defenseur", "Milieu", "Attaquant", "Entraineur"];

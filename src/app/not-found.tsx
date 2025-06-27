@@ -11,7 +11,7 @@ export default function NotFound(){
                 <article className={styles.article}>
                     <h1 className={styles.h1}>404 - Page Non trouvée</h1>
                     <Link className={styles.link} href={"/"}>{"Cliquez ici pour revenir à l'accueil"}</Link>
-                    <Link href={"/"}><Image src={"/images/logo.webp"} alt="logo" height={480} width={480} /></Link>
+                    <Link  href={"/"}><Image className={styles.image} src={"/images/logo.webp"} alt="logo" height={480} width={480} /></Link>
                 </article>
             </section>
         </>

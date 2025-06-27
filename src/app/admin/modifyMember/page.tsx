@@ -4,6 +4,7 @@ import MembersList from "@/features/users/components/membersList/MembersList";
 import {readCategories} from "@/features/team/repository";
 import {readAllRole} from "@/features/associationRole/action";
 import {readAllPosition} from "@/features/position/action";
+import {notFound} from "next/navigation";
 
 export default async function ModifyMemberPage() {
 
@@ -12,13 +13,11 @@ export default async function ModifyMemberPage() {
     const memberFunction = await readAllRole()
     const positions = await readAllPosition()
 
-    if(!categories.success || !memberFunction.success || !positions.success){
-        return <p>Erreur lors du chargement des categories</p>
+    if(!categories.success || !memberFunction.success || !positions.success || !members.success) {
+        return notFound()
     }
 
-    if(!members.success){
-        return <p>Erreur lors du chargement des membres</p>
-    }
+
 
     return(<>
 

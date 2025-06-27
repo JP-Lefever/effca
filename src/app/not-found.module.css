@@ -10,16 +10,32 @@
     align-items: center;
     background-color: var(--black-text);
     transform : translateY(20%);
+    @media screen and (max-width: 1024px){
+        text-align: center;
+    }
 }
 .h1 {
     color : var(--white-main);
     font-size: var(--title-size-h1);
     font-family: var(--title-font), sans-serif;
     letter-spacing: 0.1em;
+    @media screen and (max-width: 568px){
+        font-size: var(--title-size-h1-resp);
+    }
 }
 
 .link {
     text-decoration: none;
     color: var(--white-main);
     font-size: var(--title-size-h1b-resp);
+    @media screen and (max-width: 568px){
+        font-size: 1.5em
+    }
+}
+
+.image {
+    @media screen and (max-width: 568px){
+        width: 15em;
+        height: auto;
+    }
 }

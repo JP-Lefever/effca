@@ -2,6 +2,7 @@ import AddMemberForm from "@/features/users/components/addMemberForm/AddMemberFo
 import {readAllCategories} from "@/features/team/action";
 import {readAllPosition} from "@/features/position/action";
 import {readAllRole} from "@/features/associationRole/action";
+import {notFound} from "next/navigation";
 
 export  default async function AddMemberPage() {
 
@@ -11,7 +12,7 @@ export  default async function AddMemberPage() {
 
 
     if(!categories.success || !playerPosition.success || !memberRole.success) {
-        return <p>Une erreur est survenue</p>
+        return notFound()
     }
 
     return (<>
