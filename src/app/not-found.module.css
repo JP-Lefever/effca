@@ -1,0 +1,25 @@
+.section{
+    background-color: var(--black-text);
+    min-height: 100vh;
+}
+.article {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+    background-color: var(--black-text);
+    transform : translateY(20%);
+}
+.h1 {
+    color : var(--white-main);
+    font-size: var(--title-size-h1);
+    font-family: var(--title-font), sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--white-main);
+    font-size: var(--title-size-h1b-resp);
+}
