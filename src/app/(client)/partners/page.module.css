@@ -39,7 +39,7 @@
 
 .articlePartner {
     width : 80vw;
-    margin :  auto;
+    margin :  5vh auto;
     @media screen and (max-width : 568px) {
         margin : 1em auto;
         width : 95vw;
