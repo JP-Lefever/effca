@@ -13,7 +13,7 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
 
     const category = await readCategoryById(slug)
     const members = await readMemberByTeam(slug)
-    const positionId = await readPositionByLabel("Entraineur")
+    const positionId = await readPositionByLabel("Entraineurs")
 
     if (!category.success || !members.success || !positionId.success) {
         return (
@@ -22,7 +22,6 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
     }
 
     const manager = members.data.filter((member)=>  member.positionId === positionId.data)
-    console.log(category.data)
 
     return(
         <>
