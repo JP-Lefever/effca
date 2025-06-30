@@ -20,9 +20,9 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
             notFound()
         )
     }
-  
 
     const manager = members.data.filter((member)=>  member.positionId === positionId.data)
+    console.log(category.data)
 
     return(
         <>

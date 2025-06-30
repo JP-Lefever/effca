@@ -9,6 +9,7 @@ export default function Team({category, manager}: {category: CategoryProps, mana
 
 
 
+
     return (
         <>
             <section className={styles.section}>

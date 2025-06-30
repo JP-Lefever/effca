@@ -4864,9 +4864,9 @@ export namespace Prisma {
     positionId?: boolean
     categoryId?: boolean
     memberFunctionId?: boolean
-    position?: boolean | Users$positionArgs<ExtArgs>
     category?: boolean | Users$categoryArgs<ExtArgs>
     memberFunction?: boolean | Users$memberFunctionArgs<ExtArgs>
+    position?: boolean | Users$positionArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
   export type UsersSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4881,9 +4881,9 @@ export namespace Prisma {
     positionId?: boolean
     categoryId?: boolean
     memberFunctionId?: boolean
-    position?: boolean | Users$positionArgs<ExtArgs>
     category?: boolean | Users$categoryArgs<ExtArgs>
     memberFunction?: boolean | Users$memberFunctionArgs<ExtArgs>
+    position?: boolean | Users$positionArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
   export type UsersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4898,9 +4898,9 @@ export namespace Prisma {
     positionId?: boolean
     categoryId?: boolean
     memberFunctionId?: boolean
-    position?: boolean | Users$positionArgs<ExtArgs>
     category?: boolean | Users$categoryArgs<ExtArgs>
     memberFunction?: boolean | Users$memberFunctionArgs<ExtArgs>
+    position?: boolean | Users$positionArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
   export type UsersSelectScalar = {
@@ -4919,27 +4919,27 @@ export namespace Prisma {
 
   export type UsersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstname" | "lastname" | "tel" | "mail" | "photo" | "is_admin" | "password" | "positionId" | "categoryId" | "memberFunctionId", ExtArgs["result"]["users"]>
   export type UsersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    position?: boolean | Users$positionArgs<ExtArgs>
     category?: boolean | Users$categoryArgs<ExtArgs>
     memberFunction?: boolean | Users$memberFunctionArgs<ExtArgs>
+    position?: boolean | Users$positionArgs<ExtArgs>
   }
   export type UsersIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    position?: boolean | Users$positionArgs<ExtArgs>
     category?: boolean | Users$categoryArgs<ExtArgs>
     memberFunction?: boolean | Users$memberFunctionArgs<ExtArgs>
+    position?: boolean | Users$positionArgs<ExtArgs>
   }
   export type UsersIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    position?: boolean | Users$positionArgs<ExtArgs>
     category?: boolean | Users$categoryArgs<ExtArgs>
     memberFunction?: boolean | Users$memberFunctionArgs<ExtArgs>
+    position?: boolean | Users$positionArgs<ExtArgs>
   }
 
   export type $UsersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Users"
     objects: {
-      position: Prisma.$Player_positionPayload<ExtArgs> | null
       category: Prisma.$CategoryPayload<ExtArgs> | null
       memberFunction: Prisma.$MemberFunctionPayload<ExtArgs> | null
+      position: Prisma.$Player_positionPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -5347,9 +5347,9 @@ export namespace Prisma {
    */
   export interface Prisma__UsersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    position<T extends Users$positionArgs<ExtArgs> = {}>(args?: Subset<T, Users$positionArgs<ExtArgs>>): Prisma__Player_positionClient<$Result.GetResult<Prisma.$Player_positionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     category<T extends Users$categoryArgs<ExtArgs> = {}>(args?: Subset<T, Users$categoryArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     memberFunction<T extends Users$memberFunctionArgs<ExtArgs> = {}>(args?: Subset<T, Users$memberFunctionArgs<ExtArgs>>): Prisma__MemberFunctionClient<$Result.GetResult<Prisma.$MemberFunctionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    position<T extends Users$positionArgs<ExtArgs> = {}>(args?: Subset<T, Users$positionArgs<ExtArgs>>): Prisma__Player_positionClient<$Result.GetResult<Prisma.$Player_positionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5786,25 +5786,6 @@ export namespace Prisma {
   }
 
   /**
-   * Users.position
-   */
-  export type Users$positionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Player_position
-     */
-    select?: Player_positionSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Player_position
-     */
-    omit?: Player_positionOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: Player_positionInclude<ExtArgs> | null
-    where?: Player_positionWhereInput
-  }
-
-  /**
    * Users.category
    */
   export type Users$categoryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5840,6 +5821,25 @@ export namespace Prisma {
      */
     include?: MemberFunctionInclude<ExtArgs> | null
     where?: MemberFunctionWhereInput
+  }
+
+  /**
+   * Users.position
+   */
+  export type Users$positionArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Player_position
+     */
+    select?: Player_positionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Player_position
+     */
+    omit?: Player_positionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Player_positionInclude<ExtArgs> | null
+    where?: Player_positionWhereInput
   }
 
   /**
@@ -9160,9 +9160,9 @@ export namespace Prisma {
     positionId?: StringNullableFilter<"Users"> | string | null
     categoryId?: StringNullableFilter<"Users"> | string | null
     memberFunctionId?: StringNullableFilter<"Users"> | string | null
-    position?: XOR<Player_positionNullableScalarRelationFilter, Player_positionWhereInput> | null
     category?: XOR<CategoryNullableScalarRelationFilter, CategoryWhereInput> | null
     memberFunction?: XOR<MemberFunctionNullableScalarRelationFilter, MemberFunctionWhereInput> | null
+    position?: XOR<Player_positionNullableScalarRelationFilter, Player_positionWhereInput> | null
   }
 
   export type UsersOrderByWithRelationInput = {
@@ -9177,9 +9177,9 @@ export namespace Prisma {
     positionId?: SortOrderInput | SortOrder
     categoryId?: SortOrderInput | SortOrder
     memberFunctionId?: SortOrderInput | SortOrder
-    position?: Player_positionOrderByWithRelationInput
     category?: CategoryOrderByWithRelationInput
     memberFunction?: MemberFunctionOrderByWithRelationInput
+    position?: Player_positionOrderByWithRelationInput
   }
 
   export type UsersWhereUniqueInput = Prisma.AtLeast<{
@@ -9197,9 +9197,9 @@ export namespace Prisma {
     positionId?: StringNullableFilter<"Users"> | string | null
     categoryId?: StringNullableFilter<"Users"> | string | null
     memberFunctionId?: StringNullableFilter<"Users"> | string | null
-    position?: XOR<Player_positionNullableScalarRelationFilter, Player_positionWhereInput> | null
     category?: XOR<CategoryNullableScalarRelationFilter, CategoryWhereInput> | null
     memberFunction?: XOR<MemberFunctionNullableScalarRelationFilter, MemberFunctionWhereInput> | null
+    position?: XOR<Player_positionNullableScalarRelationFilter, Player_positionWhereInput> | null
   }, "id">
 
   export type UsersOrderByWithAggregationInput = {
@@ -9541,9 +9541,9 @@ export namespace Prisma {
     photo?: string | null
     is_admin?: boolean
     password?: string | null
-    position?: Player_positionCreateNestedOneWithoutMembersInput
     category?: CategoryCreateNestedOneWithoutMembersInput
     memberFunction?: MemberFunctionCreateNestedOneWithoutMembersInput
+    position?: Player_positionCreateNestedOneWithoutMembersInput
   }
 
   export type UsersUncheckedCreateInput = {
@@ -9569,9 +9569,9 @@ export namespace Prisma {
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    position?: Player_positionUpdateOneWithoutMembersNestedInput
     category?: CategoryUpdateOneWithoutMembersNestedInput
     memberFunction?: MemberFunctionUpdateOneWithoutMembersNestedInput
+    position?: Player_positionUpdateOneWithoutMembersNestedInput
   }
 
   export type UsersUncheckedUpdateInput = {
@@ -9931,11 +9931,6 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type Player_positionNullableScalarRelationFilter = {
-    is?: Player_positionWhereInput | null
-    isNot?: Player_positionWhereInput | null
-  }
-
   export type CategoryNullableScalarRelationFilter = {
     is?: CategoryWhereInput | null
     isNot?: CategoryWhereInput | null
@@ -9944,6 +9939,11 @@ export namespace Prisma {
   export type MemberFunctionNullableScalarRelationFilter = {
     is?: MemberFunctionWhereInput | null
     isNot?: MemberFunctionWhereInput | null
+  }
+
+  export type Player_positionNullableScalarRelationFilter = {
+    is?: Player_positionWhereInput | null
+    isNot?: Player_positionWhereInput | null
   }
 
   export type UsersCountOrderByAggregateInput = {
@@ -10224,12 +10224,6 @@ export namespace Prisma {
     deleteMany?: UsersScalarWhereInput | UsersScalarWhereInput[]
   }
 
-  export type Player_positionCreateNestedOneWithoutMembersInput = {
-    create?: XOR<Player_positionCreateWithoutMembersInput, Player_positionUncheckedCreateWithoutMembersInput>
-    connectOrCreate?: Player_positionCreateOrConnectWithoutMembersInput
-    connect?: Player_positionWhereUniqueInput
-  }
-
   export type CategoryCreateNestedOneWithoutMembersInput = {
     create?: XOR<CategoryCreateWithoutMembersInput, CategoryUncheckedCreateWithoutMembersInput>
     connectOrCreate?: CategoryCreateOrConnectWithoutMembersInput
@@ -10242,18 +10236,14 @@ export namespace Prisma {
     connect?: MemberFunctionWhereUniqueInput
   }
 
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
-  }
-
-  export type Player_positionUpdateOneWithoutMembersNestedInput = {
+  export type Player_positionCreateNestedOneWithoutMembersInput = {
     create?: XOR<Player_positionCreateWithoutMembersInput, Player_positionUncheckedCreateWithoutMembersInput>
     connectOrCreate?: Player_positionCreateOrConnectWithoutMembersInput
-    upsert?: Player_positionUpsertWithoutMembersInput
-    disconnect?: Player_positionWhereInput | boolean
-    delete?: Player_positionWhereInput | boolean
     connect?: Player_positionWhereUniqueInput
-    update?: XOR<XOR<Player_positionUpdateToOneWithWhereWithoutMembersInput, Player_positionUpdateWithoutMembersInput>, Player_positionUncheckedUpdateWithoutMembersInput>
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type CategoryUpdateOneWithoutMembersNestedInput = {
@@ -10274,6 +10264,16 @@ export namespace Prisma {
     delete?: MemberFunctionWhereInput | boolean
     connect?: MemberFunctionWhereUniqueInput
     update?: XOR<XOR<MemberFunctionUpdateToOneWithWhereWithoutMembersInput, MemberFunctionUpdateWithoutMembersInput>, MemberFunctionUncheckedUpdateWithoutMembersInput>
+  }
+
+  export type Player_positionUpdateOneWithoutMembersNestedInput = {
+    create?: XOR<Player_positionCreateWithoutMembersInput, Player_positionUncheckedCreateWithoutMembersInput>
+    connectOrCreate?: Player_positionCreateOrConnectWithoutMembersInput
+    upsert?: Player_positionUpsertWithoutMembersInput
+    disconnect?: Player_positionWhereInput | boolean
+    delete?: Player_positionWhereInput | boolean
+    connect?: Player_positionWhereUniqueInput
+    update?: XOR<XOR<Player_positionUpdateToOneWithWhereWithoutMembersInput, Player_positionUpdateWithoutMembersInput>, Player_positionUncheckedUpdateWithoutMembersInput>
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -10480,8 +10480,8 @@ export namespace Prisma {
     photo?: string | null
     is_admin?: boolean
     password?: string | null
-    position?: Player_positionCreateNestedOneWithoutMembersInput
     memberFunction?: MemberFunctionCreateNestedOneWithoutMembersInput
+    position?: Player_positionCreateNestedOneWithoutMembersInput
   }
 
   export type UsersUncheckedCreateWithoutCategoryInput = {
@@ -10532,8 +10532,8 @@ export namespace Prisma {
     photo?: string | null
     is_admin?: boolean
     password?: string | null
-    position?: Player_positionCreateNestedOneWithoutMembersInput
     category?: CategoryCreateNestedOneWithoutMembersInput
+    position?: Player_positionCreateNestedOneWithoutMembersInput
   }
 
   export type UsersUncheckedCreateWithoutMemberFunctionInput = {
@@ -10575,21 +10575,6 @@ export namespace Prisma {
     data: XOR<UsersUpdateManyMutationInput, UsersUncheckedUpdateManyWithoutMemberFunctionInput>
   }
 
-  export type Player_positionCreateWithoutMembersInput = {
-    id?: string
-    label: string
-  }
-
-  export type Player_positionUncheckedCreateWithoutMembersInput = {
-    id?: string
-    label: string
-  }
-
-  export type Player_positionCreateOrConnectWithoutMembersInput = {
-    where: Player_positionWhereUniqueInput
-    create: XOR<Player_positionCreateWithoutMembersInput, Player_positionUncheckedCreateWithoutMembersInput>
-  }
-
   export type CategoryCreateWithoutMembersInput = {
     id?: string
     label: string
@@ -10628,25 +10613,19 @@ export namespace Prisma {
     create: XOR<MemberFunctionCreateWithoutMembersInput, MemberFunctionUncheckedCreateWithoutMembersInput>
   }
 
-  export type Player_positionUpsertWithoutMembersInput = {
-    update: XOR<Player_positionUpdateWithoutMembersInput, Player_positionUncheckedUpdateWithoutMembersInput>
+  export type Player_positionCreateWithoutMembersInput = {
+    id?: string
+    label: string
+  }
+
+  export type Player_positionUncheckedCreateWithoutMembersInput = {
+    id?: string
+    label: string
+  }
+
+  export type Player_positionCreateOrConnectWithoutMembersInput = {
+    where: Player_positionWhereUniqueInput
     create: XOR<Player_positionCreateWithoutMembersInput, Player_positionUncheckedCreateWithoutMembersInput>
-    where?: Player_positionWhereInput
-  }
-
-  export type Player_positionUpdateToOneWithWhereWithoutMembersInput = {
-    where?: Player_positionWhereInput
-    data: XOR<Player_positionUpdateWithoutMembersInput, Player_positionUncheckedUpdateWithoutMembersInput>
-  }
-
-  export type Player_positionUpdateWithoutMembersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    label?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type Player_positionUncheckedUpdateWithoutMembersInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    label?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryUpsertWithoutMembersInput = {
@@ -10695,6 +10674,27 @@ export namespace Prisma {
   }
 
   export type MemberFunctionUncheckedUpdateWithoutMembersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type Player_positionUpsertWithoutMembersInput = {
+    update: XOR<Player_positionUpdateWithoutMembersInput, Player_positionUncheckedUpdateWithoutMembersInput>
+    create: XOR<Player_positionCreateWithoutMembersInput, Player_positionUncheckedCreateWithoutMembersInput>
+    where?: Player_positionWhereInput
+  }
+
+  export type Player_positionUpdateToOneWithWhereWithoutMembersInput = {
+    where?: Player_positionWhereInput
+    data: XOR<Player_positionUpdateWithoutMembersInput, Player_positionUncheckedUpdateWithoutMembersInput>
+  }
+
+  export type Player_positionUpdateWithoutMembersInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type Player_positionUncheckedUpdateWithoutMembersInput = {
     id?: StringFieldUpdateOperationsInput | string
     label?: StringFieldUpdateOperationsInput | string
   }
@@ -10773,8 +10773,8 @@ export namespace Prisma {
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    position?: Player_positionUpdateOneWithoutMembersNestedInput
     memberFunction?: MemberFunctionUpdateOneWithoutMembersNestedInput
+    position?: Player_positionUpdateOneWithoutMembersNestedInput
   }
 
   export type UsersUncheckedUpdateWithoutCategoryInput = {
@@ -10825,8 +10825,8 @@ export namespace Prisma {
     photo?: NullableStringFieldUpdateOperationsInput | string | null
     is_admin?: BoolFieldUpdateOperationsInput | boolean
     password?: NullableStringFieldUpdateOperationsInput | string | null
-    position?: Player_positionUpdateOneWithoutMembersNestedInput
     category?: CategoryUpdateOneWithoutMembersNestedInput
+    position?: Player_positionUpdateOneWithoutMembersNestedInput
   }
 
   export type UsersUncheckedUpdateWithoutMemberFunctionInput = {
