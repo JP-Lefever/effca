@@ -16,7 +16,7 @@ export default async function PlayersPage(props : {params : Promise<{ slug: stri
             notFound()
         )
     }
-    const customOrder = ["Gardien", "Defenseur", "Milieu", "Attaquant", "Entraineur"];
+    const customOrder = ["Gardiens", "Défenseurs", "Milieux", "Attaquants", "Entraineurs"];
     const positionLabel = position.data
         .sort((a, b) => customOrder.indexOf(a.label) - customOrder.indexOf(b.label))
         .map((pos) => pos.label);
