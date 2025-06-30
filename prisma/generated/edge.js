@@ -212,17 +212,18 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "DATABASE_URL",
+        "fromEnvVar": "RAILWAY_DATABASE_URL",
         "value": null
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Category {\n  id        String  @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Users[]\n}\n\nmodel MemberFunction {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Users {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  password         String?\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  position         Player_position? @relation(fields: [positionId], references: [id])\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n",
-  "inlineSchemaHash": "e97f5918ccb71c24a4f59c17b5984f5f21ec030dc40733cdf2ed181be89c1ef8",
-  "copyEngine": false
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"RAILWAY_DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Category {\n  id        String  @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Users[]\n}\n\nmodel MemberFunction {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Users {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  password         String?\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  position         Player_position? @relation(fields: [positionId], references: [id])\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n",
+  "inlineSchemaHash": "ee77c47ffb3f6c2474103a35ff31e58495b2795c21ccdcc85bd5a6b22780c956",
+  "copyEngine": true
 }
 config.dirname = '/'
 
@@ -233,7 +234,7 @@ config.compilerWasm = undefined
 
 config.injectableEdgeEnv = () => ({
   parsed: {
-    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
+    RAILWAY_DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['RAILWAY_DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.RAILWAY_DATABASE_URL || undefined
   }
 })
 
