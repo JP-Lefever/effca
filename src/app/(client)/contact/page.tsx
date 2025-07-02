@@ -16,9 +16,9 @@ export default function ContactPage() {
                         <figure className={styles.figure}>
                             <Image className={styles.image} src={"/images/logo.webp"} alt={"logo"} fill={true}/>
                         </figure>
-                        <p>Stade de la Dourmelle, Route d'Issepts</p>
-                        <p>46100, Fons</p>
-                        <p>mail@mail.com</p>
+                        <p>{"Stade de la Dourmelle, Route d'Issepts"}</p>
+                        <p>{"46100, Fons"}</p>
+                        <p>{"mail@mail.com"}</p>
                     </article>
                     <article>
                         <ContactForm />
