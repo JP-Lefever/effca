@@ -21,8 +21,8 @@ export const sendEmail = async (data: ContactProps) : Promise<ResultProps<string
        }
    })
     await transporter.sendMail({
-        from: `"Contact form" <${process.env.SMTP_USER}>`,
-        to : process.env.CONTACT_RECEVER,
+        from: `"Nouveau message EFFCA" <${process.env.SMTP_USER}>`,
+        to : process.env.CONTACT_RECEIVER,
         subject: `Nouveau message de ${firstname} ${lastname}`,
         text : `
         Email : ${email}

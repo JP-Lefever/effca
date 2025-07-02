@@ -8,7 +8,7 @@ import {toast} from "react-toastify";
 
 export default function ContactForm() {
 
-    const {register, handleSubmit, formState : {errors}} = useForm<ContactProps>()
+    const {register, handleSubmit, formState : {errors}, reset} = useForm<ContactProps>()
 
     const onSubmit = async (data: ContactProps) => {
 
@@ -16,6 +16,7 @@ export default function ContactForm() {
 
         if(response.success) {
             toast.success(response.data)
+            reset()
         } else {
             toast.error(response.error)
         }
