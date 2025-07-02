@@ -37,7 +37,7 @@ export default function Footer() {
                 </article>
                 <article className={styles.legi}>
                     <h2>Services</h2>
-                    <p>Contact</p>
+                    <Link className={styles.link} href={"/contact"}>Contact</Link>
                     <p>Mentions légales</p>
                     <p>Politique de cookies</p>
                     <Link className={styles.link} href={"/admin"}>Admin</Link>
