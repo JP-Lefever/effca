@@ -1,5 +1,6 @@
 import ContactForm from "@/features/contact/components/contactForm/ContactForm";
 import styles from "./page.module.css";
+import Image from "next/image"
 
 export default function ContactPage() {
 
@@ -11,10 +12,10 @@ export default function ContactPage() {
                     <h1 className={styles.h1b}>Contact</h1>
                 </section>
                 <section className={styles.sectionForm} >
-                    <article>
-                        <h2>Entente Fons Fourmagnac Camburat Assier</h2>
-                        <p>Stade de la Dourmelle</p>
-                        <p>46100 Fons</p>
+                    <article className={styles.article}>
+                        <Image className={styles.image} src={"/images/logo.webp"} alt={"logo"} width={380} height={380}/>
+                        <p>Stade de la Dourmelle, Route d'Issepts</p>
+                        <p>46100, Fons</p>
                         <p>mail@mail.com</p>
                     </article>
                     <article>

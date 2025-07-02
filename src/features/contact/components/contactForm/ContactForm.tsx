@@ -57,7 +57,7 @@ export default function ContactForm() {
                             {errors.message && (<p>{errors.message.message as string}</p>)}
                         </div>
                     </fieldset>
-                    <button type={"submit"}>Envoyer</button>
+                    <button className={styles.button} type={"submit"}>Envoyer</button>
                 </form>
             </section>
         </>
