@@ -1,0 +1,27 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap : 2em;
+    font-size: 1.4em;
+}
+
+.legend {
+    margin-bottom: 1.5em;
+    font-size: 1.6em;
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.div input{
+    height: 4vh;
+    border: none;
+    border-bottom: 2px solid var(--black-text);
+}
+
+.fieldset {
+    border: none;
+}
