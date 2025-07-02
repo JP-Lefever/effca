@@ -2,15 +2,30 @@
 import styles from "./contactForm.module.css"
 import {useForm} from "react-hook-form";
 import dataError from "@/assets/data/errors/errors.json"
+import {ContactProps} from "@/features/contact/type";
+import {sendEmail} from "@/features/contact/action";
+import {toast} from "react-toastify";
 
 export default function ContactForm() {
 
-    const {register, handleSubmit, formState : {errors}} = useForm()
+    const {register, handleSubmit, formState : {errors}} = useForm<ContactProps>()
+
+    const onSubmit = async (data: ContactProps) => {
+
+        const response = await sendEmail(data)
+
+        if(response.success) {
+            toast.success(response.data)
+        } else {
+            toast.error(response.error)
+        }
+
+    }
 
     return (
         <>
             <section className={styles.section} >
-                <form className={styles.form}>
+                <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                     <fieldset className={styles.fieldset}>
                         <legend className={styles.legend}>{"N'hésitez pas à nous écrire"}</legend>
                         <div className={styles.div} role="group">

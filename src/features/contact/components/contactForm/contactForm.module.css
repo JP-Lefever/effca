@@ -43,4 +43,7 @@
     color: var(--white-main);
     border: none;
     cursor: pointer;
+    @media screen and (max-width: 1024px){
+        width: 40vw;
+    }
 }

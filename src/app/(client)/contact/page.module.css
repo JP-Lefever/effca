@@ -1,5 +1,6 @@
 .section{
     min-height: 100vh;
+    margin:  5vh auto ;
 
 }
 .div {
@@ -40,14 +41,32 @@
     width: 90vw;
     margin: auto;
     gap: 8em;
+    @media screen and (max-width: 568px){
+        display: flex;
+        flex-direction: column;
+        gap: 4em;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px){
+        gap: 2em;
+    }
 }
 
 .sectionForm article:first-of-type {
     width: 20vw;
+    @media screen and (max-width: 568px){
+        width: 90vw;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px){
+        width: 30vw;
+    }
 }
 
 .sectionForm article:last-of-type {
     width: 80%;
+    @media screen and (max-width: 568px){
+        width: 90vw;
+    }
+
 
 }
 
@@ -56,6 +75,10 @@
     flex-direction: column;
     font-size: 1.5em;
     gap: 0.5em;
+    @media screen and (max-width: 568px){
+        align-items: center;
+        text-align: center;
+    }
 }
 
 .h2{
@@ -66,8 +89,26 @@
     text-align : center;
 }
 
-.image {
-    display: block;
-    margin: 0 auto;
+.figure {
+    width: 15vw;
+    height: 15vw;
+    position: relative;
+    @media screen and (max-width: 568px){
+        width: 60vw;
+        height: 60vw;
+    }
+    @media screen and (min-width: 569px) and (max-width: 1024px){
+        width: 30vw;
+        height: 30vw;
+    }
+}
 
+.image {
+    object-fit: cover;
+
+    @media screen and (max-width: 568px){
+        margin: 0 ;
+
+
+    }
 }

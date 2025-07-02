@@ -13,7 +13,9 @@ export default function ContactPage() {
                 </section>
                 <section className={styles.sectionForm} >
                     <article className={styles.article}>
-                        <Image className={styles.image} src={"/images/logo.webp"} alt={"logo"} width={380} height={380}/>
+                        <figure className={styles.figure}>
+                            <Image className={styles.image} src={"/images/logo.webp"} alt={"logo"} fill={true}/>
+                        </figure>
                         <p>Stade de la Dourmelle, Route d'Issepts</p>
                         <p>46100, Fons</p>
                         <p>mail@mail.com</p>
