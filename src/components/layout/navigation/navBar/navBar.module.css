@@ -109,6 +109,7 @@
     text-decoration: none;
     width: 100%;
     display: block;
+    text-transform: capitalize;
 }
 
 .subLink:hover {
