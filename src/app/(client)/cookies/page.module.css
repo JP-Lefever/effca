@@ -1,0 +1,80 @@
+.section {
+    min-height: 100vh;
+    margin: 5vh auto;
+    width: 60vw;
+    color : var(--black-text);
+    @media screen and (max-width :1024px) {
+    width: 90vw;
+}
+    @media screen and (min-width: 1024px) and (max-width : 1280px) {
+        width: 80vw;
+    }
+}
+
+.div {
+    margin : 3em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.h1 {
+    font-family: var(--title-font), sans-serif;
+    font-size: var(--title-size-h1);
+    letter-spacing: 8px;
+    color :var(--grey-effect);
+    position : relative;
+    top : 4vh;
+    @media screen and (max-width : 568px) {
+        display: none;
+    }
+    @media screen and (min-width: 569px) and (max-width : 1024px) {
+        font-size: 4em;
+        text-align: center;
+    }
+}
+
+.h1b {
+    font-family: var(--title-font), sans-serif;
+    font-size: var(--title-size-h1b);
+    letter-spacing: 8px;
+    position : relative;
+    color : var(--red-main);
+    bottom : 4vh;
+
+    @media screen and (max-width : 568px) {
+        font-size: var(--title-size-h1b-resp);
+        bottom : 2vh;
+        text-align: center;
+    }
+    @media screen and (min-width: 569px) and (max-width : 1024px) {
+        font-size: 3.5em;
+        text-align: center;
+        bottom : 1vh;
+    }
+}
+
+.article{
+    white-space: pre-line;
+    line-height: 2em;
+
+}
+
+.h2{
+    text-align: center;
+    margin: 1em;
+    font-size: 1.8em;
+    color : var(--red-main)
+}
+
+.text {
+    font-size: 1.4em;
+    line-height: 1.8em;
+}
+
+.link {
+    display: block;
+    text-decoration: none;
+    font-size: 1.4em;
+    margin : 0.5em 1em;
+}
