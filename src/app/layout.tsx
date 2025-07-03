@@ -1,4 +1,5 @@
 import {titleFont, paragraphFont} from "@/assets/fonts/fonts";
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
@@ -33,6 +34,7 @@ export default function RootLayout({
           theme="colored"
       />
         {children}
+      <Analytics/>
       </body>
     </html>
   );
