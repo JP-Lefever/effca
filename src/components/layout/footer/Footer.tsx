@@ -39,7 +39,7 @@ export default function Footer() {
                     <h2>Services</h2>
                     <Link className={styles.link} href={"/contact"}>Contact</Link>
                     <p>Mentions légales</p>
-                    <p>Politique de cookies</p>
+                    <Link className={styles.link} href={"/cookies"}>Politique de cookies</Link>
                     <Link className={styles.link} href={"/admin"}>Admin</Link>
                 </article>
             </section>

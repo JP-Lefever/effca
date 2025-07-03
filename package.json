@@ -23,6 +23,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.57.0",
+    "react-markdown": "7.0.1",
     "react-toastify": "^11.0.5",
     "swiper": "^11.2.8",
     "zod": "^3.25.51"
