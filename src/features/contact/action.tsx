@@ -8,7 +8,7 @@ import type {ResultProps} from "./type"
 export const sendEmail = async (data: ContactProps) : Promise<ResultProps<string>> => {
 
     const {firstname, lastname, email,  message} = data;
-    console.log(data)
+
     try {
 
    const transporter = nodemailer.createTransport({
