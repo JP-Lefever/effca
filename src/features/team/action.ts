@@ -45,7 +45,7 @@ export const readCategoryById = async (label: string) : Promise<ResultProps<Cate
 export const editCategory = async (data : Omit<CategoryProps, "id" |"photo">, photo : string, id:string) : Promise<ResultProps<CategoryProps>> =>{
 
     const validData = categorySchema.safeParse(data);
-    console.log(validData.error)
+
     if (!validData.success) {
         return {success: false, error : "Données invalides"};
     }
