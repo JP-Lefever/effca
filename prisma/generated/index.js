@@ -35,12 +35,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.8.2
- * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
+ * Prisma Client JS version: 6.11.0
+ * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
  */
 Prisma.prismaVersion = {
-  client: "6.8.2",
-  engine: "2060c79ba17c6bb9f5823312b6f6b7f4a845738e"
+  client: "6.11.0",
+  engine: "9c30299f5a0ea26a96790e13f796dc6094db3173"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -211,8 +211,8 @@ const config = {
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "..",
-  "clientVersion": "6.8.2",
-  "engineVersion": "2060c79ba17c6bb9f5823312b6f6b7f4a845738e",
+  "clientVersion": "6.11.0",
+  "engineVersion": "9c30299f5a0ea26a96790e13f796dc6094db3173",
   "datasourceNames": [
     "db"
   ],
@@ -226,8 +226,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n  output        = \"./generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Category {\n  id        String  @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Users[]\n}\n\nmodel MemberFunction {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Users {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  password         String?\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n  position         Player_position? @relation(fields: [positionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n",
-  "inlineSchemaHash": "672f936159dc367cdcd441767e86165e5a088d016cebcbc3a45ab29be65297b8",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Category {\n  id        String  @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Users[]\n}\n\nmodel MemberFunction {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Users {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  password         String?\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n  position         Player_position? @relation(fields: [positionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n",
+  "inlineSchemaHash": "e4b6c79f16dd84e103cef2cc432faac1f83c10a52a15fa6313806a2a86501ac6",
   "copyEngine": true
 }
 
