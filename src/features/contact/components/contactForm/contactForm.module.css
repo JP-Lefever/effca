@@ -30,11 +30,11 @@
 }
 
 .div textarea{
-    height: 4vh;
+    height: 15vh;
     border: none;
     border-bottom: 2px solid var(--black-text);
     font-family: var(--paragraph-font), sans-serif;
-
+    padding-left: 0.2em;
     font-size: 1.2em;
 }
 
@@ -56,3 +56,4 @@
 .div p {
     color : var(--red-main)
 }
+
