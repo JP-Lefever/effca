@@ -5,6 +5,7 @@ import Image from "next/image"
 import {useRouter} from "next/navigation";
 import {SquareArrowUp,User, Phone, AtSign } from "lucide-react"
 import {formatedDate} from "@/assets/helpers/formatedDate";
+import {Suspense} from "react";
 
 export default function DetailActuality({actuality }: {actuality: ActualityProps}) {
 
@@ -19,8 +20,9 @@ export default function DetailActuality({actuality }: {actuality: ActualityProps
                         <h1 className={styles.h1}>{actuality.title}</h1>
                         <h1 className={styles.h1b}>{actuality.title}</h1>
                     </div>
-
-                    <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} width = {1920} height = {1080} />
+                    <Suspense>
+                        <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} width = {1920} height = {1080} />
+                    </Suspense>
                 </article>
                 <article>
                     <h2 className={styles.h2}>{actuality.title} </h2>
