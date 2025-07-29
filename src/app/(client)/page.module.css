@@ -56,7 +56,7 @@
     }
 }
 .sectionPhoto{
-    background-image: url("/images/photo_victoire.jpg");
+    background-image: url("/images/photo_victoire.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
