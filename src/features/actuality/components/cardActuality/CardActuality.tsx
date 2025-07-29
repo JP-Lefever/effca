@@ -6,6 +6,7 @@ import {ActualityProps} from "@/features/actuality/type";
 import Link from "next/link";
 import {shortPres} from "@/assets/helpers/sliceText";
 import {formatedDate} from "@/assets/helpers/formatedDate";
+import {Suspense} from "react";
 
 
 export default function CardActuality({actuality} : {actuality: ActualityProps }) {
@@ -17,9 +18,11 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
 
             <Link href={`/actuality/${actuality.id}`}  className={styles.section}>
                 {actuality.photo !== "" && actuality.photo !== null &&
+            <Suspense>
                 <figure className={styles.figure}>
                     <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} fill={true} />
                 </figure>
+            </Suspense>
                 }
                 <article className={styles.article}>
                     <h2 className={styles.h2}>{actuality.title}</h2>

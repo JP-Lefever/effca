@@ -4,6 +4,7 @@ import Image from "next/image"
 import data from "@/assets/data/team/team.json"
 import {CategoryProps} from "@/features/team/types";
 import {MemberProps} from "@/features/users/type";
+import {Suspense} from "react";
 
 export default function Team({category, manager}: {category: CategoryProps, manager : MemberProps}) {
 
@@ -14,9 +15,11 @@ export default function Team({category, manager}: {category: CategoryProps, mana
         <>
             <section className={styles.section}>
                 <article>
-                    <figure className={styles.figure}>
-                        <Image className={styles.image} src={category.photo as string} alt={category.label} fill={true} />
-                    </figure>
+                    <Suspense>
+                        <figure className={styles.figure}>
+                            <Image className={styles.image} src={category.photo as string} alt={category.label} fill={true} />
+                        </figure>
+                    </Suspense>
                 </article>
                 <section className={styles.sectionInfo}>
                         <h1 className={styles.h1}>{data.team} {category.label}</h1>
