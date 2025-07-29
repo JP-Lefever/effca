@@ -4,7 +4,7 @@ import NavBar from "@/components/layout/navigation/navBar/NavBar";
 import Footer from "@/components/layout/footer/Footer";
 import {readAllCategories} from "@/features/team/action";
 import {notFound} from "next/navigation";
-import {Metadata} from "next";
+
 
 
 
