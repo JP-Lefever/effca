@@ -7,6 +7,13 @@ import Organigramme from "@/features/club/components/organigramme/Organigramme";
 import {readAllRole} from "@/features/associationRole/action";
 import {readMemberRole} from "@/features/users/action";
 import {notFound} from "next/navigation";
+import type {Metadata} from "next";
+
+export const metadata : Metadata = {
+    title: "EFFCA | L'histoire et l'organisation du club",
+    description: "Les origines du club et l'organigramme de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
 
 export default async function ClubPage(){
 

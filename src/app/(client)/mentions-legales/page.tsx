@@ -1,6 +1,7 @@
 import styles from "@/app/(client)/cookies/page.module.css";
 import dataJson from "@/assets/data/mentions-legales/mentionsLegale.json"
 import ReactMarkdown from "react-markdown";
+import type {Metadata} from "next";
 
 type MentionsProps = {
     title: string;
@@ -9,7 +10,16 @@ type MentionsProps = {
 
 type MentionsPageProps = Record<string,MentionsProps>;
 
+
+export const metadata : Metadata = {
+    title: "EFFCA | Mentions Légales",
+    description: "Mentions légales du site de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
+
 export default function MentionLegalPage(){
+
+
 
 const data : MentionsPageProps = dataJson;
     return (

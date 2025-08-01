@@ -1,8 +1,15 @@
 import styles from "./page.module.css"
 import ActualitiesList from "@/features/actuality/components/actualitiesList/ActualitiesList";
+import type {Metadata} from "next";
+
+export const metadata : Metadata = {
+    title: "EFFCA | Les actualités du club",
+    description: "Actualités du club de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
+
 
 export default async function ActualityPage(){
-
 
 
     return (

@@ -1,6 +1,7 @@
 import styles from "./page.module.css"
 import dataJSON from "@/assets/data/cookies/cookies.json"
 import ReactMarkdown from "react-markdown";
+import type {Metadata} from "next";
 
 type cookiesProps = {
     title: string,
@@ -9,6 +10,12 @@ type cookiesProps = {
 }
 
 type cookieJson = Record<string, cookiesProps>
+
+export const metadata : Metadata = {
+    title: "EFFCA | Politique de cookies",
+    description: "Politiques de cookies du site de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
 
 export default function cookiePage(){
 
