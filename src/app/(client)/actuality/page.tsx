@@ -4,7 +4,7 @@ import type {Metadata} from "next";
 
 export const metadata : Metadata = {
     title: "EFFCA | Les actualités du club",
-    description: "Actualités du club de l'Entente Fons Fourmagnac Camburat Assier",
+    description: "Club de foot de l'Entente Fons Fourmagnac Camburat Assier",
     icons : "/images/logo.webp",
 }
 

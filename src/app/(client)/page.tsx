@@ -8,7 +8,13 @@ import {readAllPartner} from "@/features/partner/repository";
 import Slider from "@/components/ui/slider/Slider";
 import {notFound} from "next/navigation";
 import React from "react";
+import type {Metadata} from "next";
 
+export const metadata : Metadata = {
+    title: "EFFCA | Entente Fons Fourmagnac Camburat Assier",
+    description: "Actualités du club de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
 
 export default async function HomePage() {
 

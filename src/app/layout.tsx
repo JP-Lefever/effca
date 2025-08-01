@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 export const metadata : Metadata = {
     title: "EFFCA | Entente Fons Fourmagnac Camburat Assier",
-    description: "Actualités du club de l'Entente Fons Fourmagnac Camburat Assier",
+    description: "Club de foot de l'Entente Fons Fourmagnac Camburat Assier",
     icons : "/images/logo.webp",
 }
 
