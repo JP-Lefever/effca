@@ -7,6 +7,7 @@ import Header from "@/components/layout/header/Header";
 import {readAllPartner} from "@/features/partner/repository";
 import Slider from "@/components/ui/slider/Slider";
 import {notFound} from "next/navigation";
+import React from "react";
 
 
 export default async function HomePage() {

@@ -66,7 +66,7 @@ export default function ContactForm() {
                             <label htmlFor={"message"}>Message</label>
                             <textarea {...register("message", {required: dataError.require,
                             pattern : {
-                                value : /^[\p{L}0-9 _\-.,!?@()%$]+$/u,
+                                value : /^[\p{L}0-9 _\-.,!?@()%$:\n\r]+$/u,
                                 message : dataError.pattern,
                             }
                             })}/>
