@@ -1,6 +1,14 @@
 import ContactForm from "@/features/contact/components/contactForm/ContactForm";
 import styles from "./page.module.css";
 import Image from "next/image"
+import {Metadata} from "next";
+
+
+export const metadata : Metadata = {
+    title: "EFFCA | Contact",
+    description: "Formulaire de contact de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
 
 export default function ContactPage() {
 

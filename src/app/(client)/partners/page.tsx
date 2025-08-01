@@ -3,6 +3,13 @@ import styles from "./page.module.css";
 import data from "@/assets/data/partner/partner.json";
 import {readAllPartner} from "@/features/partner/repository";
 import {notFound} from "next/navigation";
+import {Metadata} from "next";
+
+export const metadata : Metadata = {
+    title: "EFFCA | Les partenaires",
+    description: "Les partenaires officiels de l'Entente Fons Fourmagnac Camburat Assier",
+    icons : "/images/logo.webp",
+}
 
 export default async function PartnersPage() {
 
