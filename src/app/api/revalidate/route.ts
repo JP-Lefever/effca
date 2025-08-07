@@ -17,11 +17,13 @@ export async function POST(req: NextRequest) {
         for (const path of paths) {
             revalidatePath(path);
         }
+
         revalidatePath('/admin/modifyMember');
         revalidatePath('/admin/modifyActuality');
         revalidatePath('/admin/modifyHistory');
         revalidatePath('/admin/modifyPartner');
         revalidatePath('/admin/modifyTeam');
+        revalidatePath('/admin/addMember');
 
         const actualities = await readAllActualities();
         if (actualities.success && Array.isArray(actualities.data)) {
@@ -37,6 +39,7 @@ export async function POST(req: NextRequest) {
         if (teams.success && Array.isArray(teams.data)) {
             for (const team of teams.data) {
                 revalidatePath(`/team/${team.id}`);
+                revalidatePath(`/team/${team.id}/players`);
             }
         } else {
             console.warn("Aucune équipe trouvée ou erreur.");
