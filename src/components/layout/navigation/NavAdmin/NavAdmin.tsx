@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight, LogOut  } from 'lucide-react';
 
 import {signOut} from "next-auth/react";
+import RevalidateButton from "@/components/ui/revalidateButton/RevalidateButton";
 
 
 
@@ -58,6 +59,7 @@ export default function NavAdmin() {
                     </p><p className={styles.logout}>Deconnexion</p>
                 </div>
             </button>
+                    <RevalidateButton/>
         </section>
 }
         </nav>

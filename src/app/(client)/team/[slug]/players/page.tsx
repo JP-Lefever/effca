@@ -4,6 +4,8 @@ import {readMemberByPos} from "@/features/users/action";
 import {readAllPosition} from "@/features/position/action";
 import {notFound} from "next/navigation";
 
+export const revalidate = 0
+
 export default async function PlayersPage(props : {params : Promise<{ slug: string }>}){
 
     const params = await props.params;
