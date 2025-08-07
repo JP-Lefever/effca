@@ -18,11 +18,11 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
 
             <Link href={`/actuality/${actuality.id}`}  className={styles.section}>
                 {actuality.photo !== "" && actuality.photo !== null &&
-            <Suspense>
-                <figure className={styles.figure}>
-                    <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} fill={true} />
-                </figure>
-            </Suspense>
+                <Suspense fallback={<p>Chargement...</p>}>
+                    <figure className={styles.figure}>
+                        <Image className={styles.image} src={actuality.photo as string} alt={actuality.title} fill={true} />
+                    </figure>
+                </Suspense>
                 }
                 <article className={styles.article}>
                     <h2 className={styles.h2}>{actuality.title}</h2>
