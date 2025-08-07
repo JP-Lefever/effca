@@ -8,7 +8,7 @@ import {createCategory, deleteCategory, readCategories, readCategory, updateCate
 export const addCategory = async (data : Omit<CategoryProps, "id" |"photo">, photo : string |null) : Promise<ResultProps<CategoryProps>> => {
 
     const validData = categorySchema.safeParse(data);
-
+    console.log(validData.data);
     if (!validData.success) {
         return {success: false, error: "Une erreur est survenue."};
     }
@@ -18,6 +18,7 @@ export const addCategory = async (data : Omit<CategoryProps, "id" |"photo">, pho
     if(!response.success) {
         return {success: false, error : response.error};
     }
+    console.log(response.data);
     return {success : response.success, data : response.data};
 }
 
