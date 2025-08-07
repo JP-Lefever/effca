@@ -17,7 +17,11 @@ export async function POST(req: NextRequest) {
         for (const path of paths) {
             revalidatePath(path);
         }
-
+        revalidatePath('/admin/modifyMember');
+        revalidatePath('/admin/modifyActuality');
+        revalidatePath('/admin/modifyHistory');
+        revalidatePath('/admin/modifyPartner');
+        revalidatePath('/admin/modifyTeam');
 
         const actualities = await readAllActualities();
         if (actualities.success && Array.isArray(actualities.data)) {

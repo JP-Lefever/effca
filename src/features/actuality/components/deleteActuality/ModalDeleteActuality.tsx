@@ -8,8 +8,8 @@ import {deleteActuality} from "@/features/actuality/action";
 
 export default function ModalDeleteActuality({id, closeModalAction } : {id: string, closeModalAction : () => void} ) {
 
+    console.log(id)
     const onClickDelete = async () => {
-
         const response = await deleteActuality(id)
 
         if (response.success) {
