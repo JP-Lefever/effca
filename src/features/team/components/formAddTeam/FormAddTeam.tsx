@@ -17,7 +17,7 @@ export default function FormAddTeam() {
         const validData = (data : string |null | undefined)=>{
             return data === "" || data === undefined ? null : data
         }
-
+            console.log(data)
         const formatedData = {
             label : data.label,
             training1 : data.training1,

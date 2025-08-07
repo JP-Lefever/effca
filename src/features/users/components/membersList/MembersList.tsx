@@ -13,19 +13,23 @@ export default function MembersList({members, categories, memberFunction, positi
 
 
     const [filter, setFilter] = useState<string>("");
-
+console.log(members);
 
     const filteredMembers = members.filter((member)=> member.categoryId?.includes(filter))
 
     return (<>
             <FilterMember categoryList={categories} setFilterAction={setFilter} />
         <section className={styles.sectionCard}>
-        {filteredMembers.map((member) => (
+        {filter !== "" ? filteredMembers.map((member) => (
            <article key={member.id} >
             <ModifyMemberForm member ={member} categories = {categories} memberFunction={memberFunction} positions = {positions} />
            </article>
 
-        ))}
+        )) : members.map((member : MemberProps) => (
+            <article key={member.id} >
+                <ModifyMemberForm member ={member} categories = {categories} memberFunction={memberFunction} positions = {positions} />
+            </article>))}
+
         </section>
         </>)
 }
