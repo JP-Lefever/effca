@@ -15,6 +15,8 @@ export const metadata : Metadata = {
     icons : "/images/logo.webp",
 }
 
+export const revalidate = 0
+
 export default async function ClubPage(){
 
     const history = await readHistory();

@@ -8,3 +8,4 @@ export const Button = ({name, onClick, className} : {name : string, onClick : ()
 
     </>)
 }
+
