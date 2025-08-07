@@ -2,6 +2,7 @@ import {readActualityId} from "@/features/actuality/action";
 import DetailActuality from "@/features/actuality/components/detailActuality/DetailActuality";
 import {notFound} from "next/navigation";
 
+export const revalidate = 0
 
 export default async function actualityPage(props : {params : Promise<{id: string}>}) {
     const params = await props.params

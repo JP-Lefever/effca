@@ -5,6 +5,9 @@ import {readMemberByTeam} from "@/features/users/action";
 import {readPositionByLabel} from "@/features/position/action";
 import {notFound} from "next/navigation";
 
+
+export const revalidate = 0
+
 export default async function  TeamDetailPage(props : {params : Promise<{slug : string}>}) {
 
     const params = await props.params
