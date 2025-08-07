@@ -3,6 +3,8 @@ import {browsePartner} from "@/features/partner/action";
 import ModifyPartner from "@/features/partner/components/modifyPartner/modifyPartner";
 import {notFound} from "next/navigation";
 
+export const revalidate = 0
+
 export default async function ModifyPartnerPage() {
 
 
