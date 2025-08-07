@@ -6,6 +6,8 @@ import {readAllRole} from "@/features/associationRole/action";
 import {readAllPosition} from "@/features/position/action";
 import {notFound} from "next/navigation";
 
+export const revalidate = 0
+
 export default async function ModifyMemberPage() {
 
     const members = await readMembers();

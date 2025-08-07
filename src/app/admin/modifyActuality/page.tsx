@@ -2,6 +2,8 @@ import ActualityList from "@/features/actuality/components/actualityListAdmin/Ac
 import {browseActualities} from "@/features/actuality/action";
 import {notFound} from "next/navigation";
 
+export const revalidate = 0
+
 export default async function ModifyActualityPage() {
 
     const actualities = await browseActualities()
