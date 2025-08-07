@@ -1,5 +1,6 @@
 "use client";
 
+import style from "./revalidateButton.module.css"
 import { useState } from "react";
 import {toast} from "react-toastify";
 
@@ -36,7 +37,7 @@ export default function RevalidateButton() {
     };
 
     return (
-        <button onClick={handleClick} disabled={status === "loading"}>
+        <button className={style.button} onClick={handleClick} disabled={status === "loading"}>
             {status === "idle" && "🔁 Revalider le site"}
             {status === "loading" && "⏳ Mise à jour..."}
             {status === "done" && "✅ Mis à jour !"}
