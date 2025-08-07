@@ -12,8 +12,16 @@ import ModalDeleteActuality from "@/features/actuality/components/deleteActualit
 export default function ActualityList({actualities} : {actualities: ActualityProps[]}) {
 
     const [openModal, setOpenModal] = useState(false);
+    const [selectedId, setSelectedId] = useState<string>("");
 
-    const handleOpenModal = () => {
+
+
+    const handleOpenModal = (id : string) => {
+        setSelectedId(id)
+        setOpenModal(!openModal);
+    }
+    const closeModalAction = () => {
+
         setOpenModal(!openModal);
     }
 
@@ -37,10 +45,10 @@ export default function ActualityList({actualities} : {actualities: ActualityPro
                         <td>{actuality.title}</td>
                         <td>{formatedDate(actuality.date)}</td>
                         <td><Link className={styles.link} href={`/admin/modifyActuality/${actuality.id}`}><FilePenLine/></Link></td>
-                        <td><button onClick={handleOpenModal} className={styles.link} type={"button"}><Trash2/></button></td>
+                        <td><button onClick={()=>handleOpenModal(actuality.id)} className={styles.link} type={"button"}><Trash2/></button></td>
                     </tr>
             {openModal && (
-                createPortal(<ModalDeleteActuality id={actuality.id} closeModalAction={handleOpenModal}/>, document.body)
+                createPortal(<ModalDeleteActuality id={selectedId} closeModalAction={closeModalAction}/>, document.body)
             )}
                 </tbody>
             ))}

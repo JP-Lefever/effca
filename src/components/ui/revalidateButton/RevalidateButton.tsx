@@ -4,11 +4,13 @@ import style from "./revalidateButton.module.css"
 import { useState } from "react";
 import {toast} from "react-toastify";
 
+
 export default function RevalidateButton() {
     const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
 
     const handleClick = async () => {
         setStatus("loading");
+
 
         try {
             const res = await fetch("/api/revalidate", {
@@ -21,6 +23,11 @@ export default function RevalidateButton() {
                         "/club",
                         "/team",
                         "/partners",
+                        '/admin/modifyMember',
+                        '/admin/modifyActuality',
+                        '/admin/modifyHistory',
+                        '/admin/modifyPartner',
+                        '/admin/modifyTeam'
                     ],
                 }),
             });
