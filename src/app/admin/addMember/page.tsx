@@ -4,6 +4,8 @@ import {readAllPosition} from "@/features/position/action";
 import {readAllRole} from "@/features/associationRole/action";
 import {notFound} from "next/navigation";
 
+export const revalidate = 0
+
 export  default async function AddMemberPage() {
 
     const categories = await readAllCategories()

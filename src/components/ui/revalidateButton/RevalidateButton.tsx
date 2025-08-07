@@ -27,7 +27,8 @@ export default function RevalidateButton() {
                         '/admin/modifyActuality',
                         '/admin/modifyHistory',
                         '/admin/modifyPartner',
-                        '/admin/modifyTeam'
+                        '/admin/modifyTeam',
+                        '/admin/addMember'
                     ],
                 }),
             });
