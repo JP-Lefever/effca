@@ -32,7 +32,7 @@ export async function readAllActualities( ) : Promise<ResultProps<ActualityProps
     try {
         const actuality = await prisma.actuality.findMany({
             orderBy :{
-                date : "asc"
+                date : "desc"
             }
         })
 
