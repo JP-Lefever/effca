@@ -16,7 +16,7 @@ export  async function createPartner(data : Omit<PartnerProps, "id" |"photo">, p
             }
 
         })
-        console.log(`repo : ${newPartner}`)
+        console.log("repo:", newPartner)
         return {success : true, data : newPartner}
     }catch(err){
         console.error(err)

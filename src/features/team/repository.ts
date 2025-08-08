@@ -28,7 +28,7 @@ export async function createCategory(category: Omit<CategoryProps, "id" |"photo"
             }
         })
 
-        console.log(`repo: ${newCategory}`)
+        console.log("repo:",newCategory);
         return {success : true, data : newCategory}
 
     }catch(err) {
