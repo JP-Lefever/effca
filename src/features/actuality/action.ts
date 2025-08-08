@@ -15,7 +15,7 @@ export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo"
 
     const validData = actualitySchema.safeParse(data)
 
-
+    console.log(`action : ${validData.success}`)
         if(!validData.success) {
             return {success : false, error : "Données invalides"}
         }
@@ -24,7 +24,7 @@ export const addNewActuality = async (data : Omit<ActualityProps, "id" | "photo"
         if(!response.success) {
             return {success : response.success, error: response.error}
         }
-
+    console.log(`action : ${validData.data}`)
         return {success: response.success, data: response.data}
 }
 export const browseActualities = async () : Promise<ResultProps<ActualityProps[]>> => {

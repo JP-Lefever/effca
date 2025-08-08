@@ -34,7 +34,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
 
         const {photo, ...rest} = data
         let photoURL : string  = photo as string
-
+        console.log(`form : ${data}`)
         if (typeof photo !== "string" && photo.length >0 &&  photo  ){
             const formData = new FormData
             formData.append("photo", photo[0])
@@ -57,6 +57,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
         const responseAddPartner = await addNewPartner(rest, photoURL)
 
         if(responseAddPartner.success){
+            console.log(`form : ${responseAddPartner.data}`)
             toast.success(`Le partenaire ${responseAddPartner.data.name} a bien été ajouté`)
             reset()
         } else {
