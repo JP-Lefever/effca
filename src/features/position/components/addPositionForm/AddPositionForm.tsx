@@ -13,11 +13,11 @@ export default function AddPositionForm() {
     const {register, handleSubmit, formState: {errors}, reset} = useForm<PlayerPositionProps>()
 
     const onSubmit = async (data : PlayerPositionProps)=>{
-        console.log(`form : ${data}`)
+        console.log("form :", data)
         const response = await addPlayerPosition(data)
 
         if(response.success){
-            console.log(`form : ${response.data}`)
+            console.log("form :" , response.data)
             toast.success(`Le poste ${response.data.label} a bien été ajouté`)
             reset()
         }else{toast.error("Erreur lors de l'ajout du membre")}

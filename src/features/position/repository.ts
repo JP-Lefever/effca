@@ -12,7 +12,7 @@ export async function createPlayerPosition(data : Omit<PlayerPositionProps, "id"
                 }
             }
         )
-console.log(`repo : ${newPosition}`)
+        console.log("repo:",newPosition)
         return { success : true, data : newPosition}
     }catch(err) {
         console.error(err)

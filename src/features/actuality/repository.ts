@@ -20,7 +20,7 @@ export async function createActuality(data : Omit<ActualityProps, "id" | "photo"
                     photo : photo ,
                 }
             })
-            console.log(`repo : ${newActuality}`)
+            console.log("repo:", newActuality)
             return {success : true, data : newActuality}
         }catch(err){
             console.error(err)

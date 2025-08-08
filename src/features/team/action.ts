@@ -9,7 +9,7 @@ export const addCategory = async (data : Omit<CategoryProps, "id" |"photo">, pho
 
     const validData = categorySchema.safeParse(data);
 
-    console.log(validData.success);
+    console.log("action:", validData.success);
     if (!validData.success) {
         return {success: false, error: "Une erreur est survenue."};
     }
@@ -18,7 +18,7 @@ export const addCategory = async (data : Omit<CategoryProps, "id" |"photo">, pho
     if(!response.success) {
         return {success: false, error : response.error};
     }
-  console.log(`action : ${validData.data}`);
+    console.log("action:",  response.data);
     return {success : response.success, data : response.data};
 }
 
