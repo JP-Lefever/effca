@@ -9,7 +9,7 @@ import {createPartner, deletePartner, readAllPartner, updatePartner} from "@/fea
 export const addNewPartner = async (data : Omit<PartnerProps, "id" | "photo">, photo : string ) : Promise<ResultProps<PartnerProps>> =>{
 
     const validData = partnerSchema.safeParse(data)
-
+    console.log(`action : ${validData.success}`)
     if (!validData.success){
         return {success : false, error : "Données invalides"}
     }
@@ -19,7 +19,7 @@ export const addNewPartner = async (data : Omit<PartnerProps, "id" | "photo">, p
     if (!response.success){
         return {success : response.success, error : response.error}
     }
-
+    console.log(`action : ${response.data}`)
     return {success : true, data : response.data}
 
 }

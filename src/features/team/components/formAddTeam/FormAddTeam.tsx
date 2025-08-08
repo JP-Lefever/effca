@@ -17,7 +17,7 @@ export default function FormAddTeam() {
         const validData = (data : string |null | undefined)=>{
             return data === "" || data === undefined ? null : data
         }
-            console.log(data)
+    console.log(`form : ${data}`)
         const formatedData = {
             label : data.label,
             training1 : data.training1,
@@ -47,10 +47,11 @@ export default function FormAddTeam() {
             photoUrl = result.url
 
         }
-
+        console.log(`form : ${photoUrl}`)
         const response = await addCategory(formatedData, photoUrl)
 
         if(response.success){
+        console.log(`form: ${response.data}`)
             toast.success(`La catégorie ${response.data.label} a bien été ajoutée`)
             reset()
         }else{toast.error("Erreur lors de l'ajout de la categorie")}

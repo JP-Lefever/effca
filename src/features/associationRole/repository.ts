@@ -12,7 +12,7 @@ export async function createAssociationRole(data : Omit<RoleProps, "id">) : Prom
                 label : data.label,
             }
         })
-
+console.log(`repo : ${newRole}`)
         return {success : true, data : newRole}
     }catch(err){
         console.error(err)
