@@ -6,7 +6,7 @@ import {createPlayerPosition, readPosition, readPositionByName} from "@/features
 export const addPlayerPosition = async (data : Omit<PlayerPositionProps, "id">) : Promise<ResultProps<PlayerPositionProps>> =>{
 
     const validData = playerPositionSchema.safeParse(data)
-
+    console.log(`action : ${validData.success}`)
     if(!validData.success){
         return {success : false, error : "Une erreur est survenue"};
     }
@@ -16,7 +16,7 @@ export const addPlayerPosition = async (data : Omit<PlayerPositionProps, "id">) 
     if(!response.success){
         return {success : response.success, error : response.error }
     }
-
+    console.log(`action : ${response.data}`)
     return {success : response.success, data: response.data}
 
 

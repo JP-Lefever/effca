@@ -52,6 +52,8 @@ export default function AddActuality() {
         const responseNewActuality = await addNewActuality(rest, photoUrl)
 
             if (responseNewActuality.success) {
+
+                console.log(`form : ${responseNewActuality.data}`)
                 toast.success(`L'évènement ${responseNewActuality.data.title} a bien été ajouté`)
                 reset()
 
