@@ -25,7 +25,7 @@ export default function AddActuality() {
             phone : data.phone === "" || data.phone === undefined ? null : data.phone,
 
         }
-
+        console.log("form: ", rest)
         const {photo} = data
         let photoUrl = null
 
@@ -53,7 +53,7 @@ export default function AddActuality() {
 
             if (responseNewActuality.success) {
 
-                console.log(`form : ${responseNewActuality.data}`)
+                console.log("form:", responseNewActuality.data)
                 toast.success(`L'évènement ${responseNewActuality.data.title} a bien été ajouté`)
                 reset()
 

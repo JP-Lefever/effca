@@ -14,11 +14,11 @@ export default function AddRole(){
     const {register, handleSubmit, formState: {errors}, reset } = useForm<RoleProps>()
 
     const onSubmit = async (data : RoleProps) =>{
-    console.log(`form : ${data}`)
+    console.log("form:",data)
         const response = await addNewRole(data)
 
         if(response.success){
-            console.log(`form : ${response.data}`)
+            console.log("form:",response.data)
             toast.success(`Le role ${response.data.label} a bien été ajoutée`)
             reset()
         }else{toast.error("Erreur lors de l'ajout du membre")}

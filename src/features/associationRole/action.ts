@@ -7,7 +7,7 @@ import {createAssociationRole, readRole} from "@/features/associationRole/reposi
 export const addNewRole = async (data : Omit<RoleProps, "id">) : Promise<ResultProps<RoleProps>> =>{
 
     const validData = associationRoleSchema.safeParse(data)
-    console.log(`action : ${validData.success}`);
+    console.log("action:",validData.success)
     if(!validData.success){
 
         return {success : false, error : "Une erreur est survenue"}
@@ -18,7 +18,7 @@ export const addNewRole = async (data : Omit<RoleProps, "id">) : Promise<ResultP
     if(!response.success){
         return {success : response.success, error : response.error}
     }
-    console.log(`action : ${response.data}`);
+    console.log("action:",response.data )
     return {success : response.success, data : response.data }
 
 }
