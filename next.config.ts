@@ -13,12 +13,8 @@ const nextConfig: NextConfig = {
                 hostname: "cdn.simpleicons.org",
             },
         ],
-    },
-    outputFileTracing: true,
-    outputFileTracingIncludes: {
+    }
 
-        "**/*": ["./generated/client"],
-    },
 };
 
 export default nextConfig;
