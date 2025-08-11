@@ -195,10 +195,6 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
-      },
-      {
-        "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -225,8 +221,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated/client\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Category {\n  id        String  @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Users[]\n}\n\nmodel MemberFunction {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Users {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  password         String?\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n  position         Player_position? @relation(fields: [positionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n",
-  "inlineSchemaHash": "d5adaa433e322f5ea6c952fb6397ab2d7ac55d3bc973b2b17b20587f5b3aa302",
+  "inlineSchema": "generator client {\n  provider      = \"prisma-client-js\"\n  output        = \"./generated/client\"\n  binaryTargets = [\"native\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Player_position {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Category {\n  id        String  @id @default(uuid())\n  label     String\n  training1 String\n  training2 String?\n  training3 String?\n  photo     String?\n  members   Users[]\n}\n\nmodel MemberFunction {\n  id      String  @id @default(uuid())\n  label   String\n  members Users[]\n}\n\nmodel Users {\n  id               String           @id @default(uuid())\n  firstname        String\n  lastname         String\n  tel              String?\n  mail             String?\n  photo            String?\n  is_admin         Boolean          @default(false)\n  password         String?\n  positionId       String?\n  categoryId       String?\n  memberFunctionId String?\n  category         Category?        @relation(fields: [categoryId], references: [id])\n  memberFunction   MemberFunction?  @relation(fields: [memberFunctionId], references: [id])\n  position         Player_position? @relation(fields: [positionId], references: [id])\n\n  @@index([positionId])\n}\n\nmodel Club {\n  id      String @id @default(uuid())\n  history String\n}\n\nmodel Partner {\n  id      String  @id @default(uuid())\n  name    String\n  photo   String\n  is_main Boolean\n}\n\nmodel Actuality {\n  id          String   @id @default(uuid())\n  title       String\n  date        DateTime\n  description String\n  contact     String?\n  phone       String?\n  mail        String?\n  photo       String?\n}\n",
+  "inlineSchemaHash": "bbab980ea00e0bf1a56b48b053098951902b6f2c0a1717183d7c618bbd428566",
   "copyEngine": true
 }
 config.dirname = '/'
