@@ -1,23 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images : {
-      remotePatterns : [
-          {
-          protocol : "https",
-          hostname : "res.cloudinary.com",
-          pathname : "/**"
-      },
-          {
-              protocol: 'https',
-              hostname: 'cdn.simpleicons.org',
-          },
-      ],
-  }
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "res.cloudinary.com",
+                pathname: "/**",
+            },
+            {
+                protocol: "https",
+                hostname: "cdn.simpleicons.org",
+            },
+        ],
+    },
+    outputFileTracingIncludes: {
+
+        "**/*": ["./prisma/generated/client"],
+    },
 };
-// const withBundleAnalyzer = require('@next/bundle-analyzer')({
-//     enabled: process.env.ANALYZE === 'true',
-// });
-// module.exports = withBundleAnalyzer({});
 
 export default nextConfig;
