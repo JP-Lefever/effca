@@ -43,7 +43,7 @@ export default function NavBar({team} : {team : CategoryProps[]}){
             </li>
             <li className={styles.imageContainer} >
                 <Link className={styles.link} onClick={toggleMenu} href={dataNav.logo.link}>
-                    <Image className={styles.image} src={dataNav.logo.title} alt={"Logo club"} priority width={200} height={200}/>
+                    <Image className={styles.image} src={dataNav.logo.title} alt={"Logo club"} priority width={160} height={160}/>
                 </Link>
             </li>
             <li>
