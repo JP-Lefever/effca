@@ -36,6 +36,7 @@ export default function Team({category, manager}: {category: CategoryProps, mana
                             }
                         </ul>
                     </article>
+                    {manager &&
                     <article className={styles.infoMana} role={"group"}>
                         <h2 className={styles.h2}>{data.manager}</h2>
                         <ul className={styles.ul}>
@@ -43,16 +44,21 @@ export default function Team({category, manager}: {category: CategoryProps, mana
                                 <h4>{data.name}</h4>
                                 <p>{manager.firstname} {manager.lastname}</p>
                             </li>
-                            <li className={styles.manager}>
-                                <h4>{data.mail}</h4>
-                                <p>{manager.mail}</p>
-                            </li>
-                            <li className={styles.manager}>
-                                <h4>{data.phone}</h4>
-                                <p>{manager.tel}</p>
-                            </li>
+                            {manager.mail &&
+                                <li className={styles.manager}>
+                                    <h4>{data.mail}</h4>
+                                    <p>{manager.mail}</p>
+                                </li>
+                            }
+                            {manager.tel &&
+                                <li className={styles.manager}>
+                                    <h4>{data.phone}</h4>
+                                    <p>{manager.tel}</p>
+                                </li>
+                            }
                         </ul>
                     </article>
+                    }
                 </div>
                 </section>
             </section>
