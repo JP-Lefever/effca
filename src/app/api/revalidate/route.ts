@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
 import { readAllActualities } from "@/features/actuality/repository";
-
 import { readCategories } from "@/features/team/repository";
 
 export async function POST(req: NextRequest) {
