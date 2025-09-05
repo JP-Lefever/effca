@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚽ EFFCA (Entente Fons Fourmagnac Camburat)
+# <u>🇫🇷 Version française</u>
 
-## Getting Started
+### EFFCA est le site officiel du club de football amateur Entente Fons Fourmagnac Camburat.
+### Développé avec Next.js, Prisma, et une base de données Neon, le site centralise toutes les informations du club pour les membres et supporters.
 
-First, run the development server:
+# ✨ Fonctionnalités principales
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🏟️ Consultation des matchs passés et à venir, calendrier et résultats via les widgets Score n Co
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 📜 Histoire du club et organigramme
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📰 Actualités du club
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🤝 Sponsors et partenaires
 
-## Learn More
+# 🛠️ Administration complète :
 
-To learn more about Next.js, take a look at the following resources:
+### Ajouter / modifier / supprimer :
+### - Equipes
+### - Joueurs/membres
+### - Actualités
+### - Partenaires
+### - L’histoire du club
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 🛠️ Tech Stack
 
-## Deploy on Vercel
+### Frontend : Next.js, React, Module CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend & DB : Prisma, Neon DB
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Authentification : NextAuth, Argon2
+
+### Services : Cloudinary (médias), Nodemailer (emails)
+
+### Librairies UI & utilitaires : Lucide-React, Swiper, React-Hook-Form, React-Markdown, React-Toastify, Zod
+
+# 📈 Analytics 
+
+### Vercel Analytics
+
+## 🧾 Portfolio personnel : <a href="https://jplef.fr">Voir mon portfolio</a>
+
+***
+
+
+# <u>🇬🇧 English Version</u>
+
+### EFFCA is the official website of the amateur football club Entente Fons Fourmagnac Camburat.
+### Built with Next.js, Prisma, and a Neon database, it centralizes all club information for members and supporters.
+
+# ✨ Key Features
+
+### 🏟️ View past and upcoming matches, calendar, and results via Score n Co widgets
+
+### 📜 Club history and organizational chart
+
+### 📰 News section to follow club updates
+
+### 🤝 Sponsors and partners
+
+# 🛠️ Full administration panel:
+
+### Add / edit / delete :
+### - Teams
+### - Players/members
+### - News
+### - Partners
+### - The club history
+
+# 🛠️ Tech Stack
+
+### Frontend: Next.js, React, Module CSS
+
+### Backend & DB: Prisma, Neon DB
+
+### Authentication: NextAuth, Argon2
+
+### Services: Cloudinary (media), Nodemailer (emails)
+
+### UI & Utilities: Lucide-React, Swiper, React-Hook-Form, React-Markdown, React-Toastify, Zod
+
+# 📈 Analytics:
+
+### Vercel Analytics
+
+## 🧾 Personal portfolio : <a href="https://jplef.fr">Voir mon portfolio</a>
