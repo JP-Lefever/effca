@@ -39,7 +39,7 @@ console.log(manager)
                     <h2 className={styles.h2}>{data.manager}</h2>
                     {manager.length >0 &&
                         manager.map((m)=>
-                    <article className={styles.infoMana} role={"group"}>
+                    <article key={m.id} className={styles.infoMana} role={"group"}>
                         <ul className={styles.ul}>
                             <li className={styles.manager}>
                                 <p> - {m.firstname} {m.lastname}</p>
