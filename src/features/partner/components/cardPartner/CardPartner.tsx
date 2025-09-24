@@ -1,7 +1,7 @@
 import styles from "./cardPartner.module.css"
 import Image from "next/image"
 import {PartnerProps} from "@/features/partner/type";
-import Link from "next/link";
+
 
 export default function CardPartner({partner} : {partner: PartnerProps}) {
 

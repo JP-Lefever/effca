@@ -8,7 +8,7 @@ export  async function createPartner(data : Omit<PartnerProps, "id" |"photo">, p
     const {is_main, name, link} = data
 
     const validLink = (data : string | undefined | null) => {
-    console.log(link)
+
         return data === undefined  ? "#" : data === null ? "#" : data;
     }
     try {
