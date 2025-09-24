@@ -134,6 +134,9 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
                         </select>
                         {errors[is_main] && (<p>{errors[is_main]?.message as string}</p>)}
                     </div>
+                    <div role={"group"}>
+
+                    </div>
                 <button type="submit">{partners ? buttonModify : buttonAdd}</button>
                 {partners &&
                 <button onClick={toggleDeleteModal} type={"button"}>{buttonDelete}</button>

@@ -10,8 +10,8 @@
             0 4px 6px rgba(0, 0, 0, 0.08),
             0 1px 3px rgba(0, 0, 0, 0.06);
 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    text-decoration: none;
 
     @media screen and (max-width: 375px){
         width: 45vw;
@@ -29,6 +29,10 @@
         width: 20vw;
         height: 40vh;
     }
+}
+
+.article:hover{
+    transform: scale(1.1);
 }
 
 .figure {

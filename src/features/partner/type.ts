@@ -20,6 +20,7 @@ export type PartnerProps = {
     is_main : boolean;
     name : string;
     photo : string | FileList;
+    link : string;
 }
 
 export type ResultProps<T> = | {success : true, data : T} | {success : false , error : string};
