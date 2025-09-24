@@ -14,7 +14,7 @@ import ModalDeletePartner from "@/features/partner/components/ModalDeletePartner
 export default function PartnerForm({dataForm, partners} : { dataForm : formProps, partners?: PartnerProps }) {
 
 
-    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify, buttonDelete} = dataForm
+    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify, buttonDelete, link, linkLabel} = dataForm
 
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
@@ -135,7 +135,19 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
                         {errors[is_main] && (<p>{errors[is_main]?.message as string}</p>)}
                     </div>
                     <div role={"group"}>
-
+                        <label htmlFor={link}>{linkLabel}</label>
+                        <input type="text" {...register(link ,{
+                            validate: (value) => {
+                                if (typeof value !== "string" || !value) return true;
+                                if (!value) return true;
+                                try {
+                                    new URL(value);
+                                    return true;
+                                } catch {
+                                    return "URL invalide";
+                                }
+                            },
+                        })}/>
                     </div>
                 <button type="submit">{partners ? buttonModify : buttonAdd}</button>
                 {partners &&

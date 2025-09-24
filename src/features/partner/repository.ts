@@ -5,18 +5,23 @@ import {ResultProps} from "@/features/club/type";
 
 export  async function createPartner(data : Omit<PartnerProps, "id" |"photo">, photo: string ) : Promise<ResultProps<PartnerProps>> {
 
-    const {is_main, name} = data
+    const {is_main, name, link} = data
 
+    const validLink = (data : string | undefined | null) => {
+    console.log(link)
+        return data === undefined  ? "#" : data === null ? "#" : data;
+    }
     try {
         const newPartner = await prisma.partner.create({
             data : {
                 is_main : is_main,
                 name : name,
-                photo : photo
+                photo : photo,
+                link : validLink(link),
             }
 
         })
-        console.log("repo:", newPartner)
+
         return {success : true, data : newPartner}
     }catch(err){
         console.error(err)

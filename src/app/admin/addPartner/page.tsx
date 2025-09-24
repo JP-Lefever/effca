@@ -14,6 +14,7 @@ export default function AddPartnerPage(){
                 name : dataForm.name as keyof PartnerProps,
                 is_main : dataForm.is_main as keyof  PartnerProps,
                 photo: dataForm.photo as keyof PartnerProps,
+                link: dataForm.link as keyof PartnerProps,
             }}
         />
     </>)

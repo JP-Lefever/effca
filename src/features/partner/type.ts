@@ -7,6 +7,8 @@ export type formProps = {
     name : formFieldName ;
     labelPartner: string;
     selectName: string;
+    link : formFieldName;
+    linkLabel : string;
     is_main: formFieldName;
     photo: formFieldName;
     labelFile: string;
@@ -20,7 +22,7 @@ export type PartnerProps = {
     is_main : boolean;
     name : string;
     photo : string | FileList;
-    link : string;
+    link? : string | undefined | null;
 }
 
 export type ResultProps<T> = | {success : true, data : T} | {success : false , error : string};

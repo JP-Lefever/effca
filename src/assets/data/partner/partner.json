@@ -4,6 +4,8 @@
   "labelPartner" : "Nom du partenaire",
   "is_main" : "is_main",
   "selectName" : "Le partenaire est il un partenaire majeur ?",
+  "link" : "link",
+  "linkLabel" : "Lien vers site internet",
   "photo" : "photo",
   "labelFile" : "Ajouter une photo/image",
   "modifyFile" : "Modifier photo",

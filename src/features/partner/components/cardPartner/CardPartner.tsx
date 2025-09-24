@@ -7,12 +7,20 @@ export default function CardPartner({partner} : {partner: PartnerProps}) {
 
     return (
         <>
-        <Link href={partner.link || "#"} className={styles.article}>
+            {partner.link ?
+        <a rel={"noopener noreferrer"} target={"_blank"} href={partner.link } className={styles.article}>
             <figure className={styles.figure}>
                 <Image className={styles.image} src={partner.photo as string} alt={partner.name} width={190} height={100} />
             </figure>
             <h2>{partner.name}</h2>
-        </Link>
+        </a> :
+        <article className={styles.article}>
+            <figure className={styles.figure}>
+                <Image className={styles.image} src={partner.photo as string} alt={partner.name} width={190} height={100} />
+            </figure>
+            <h2>{partner.name}</h2>
+        </article>
+            }
         </>
     )
 }
