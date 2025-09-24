@@ -26,6 +26,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
         defaultValues : {
             name : partners?.name,
             is_main : partners?.is_main,
+            link : partners?.link
         }
         }
     )
@@ -148,6 +149,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
                                 }
                             },
                         })}/>
+                        {errors[link] && <p>{errors[link]?.message as string}</p>}
                     </div>
                 <button type="submit">{partners ? buttonModify : buttonAdd}</button>
                 {partners &&

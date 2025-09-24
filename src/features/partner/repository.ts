@@ -48,13 +48,14 @@ export  async function readAllPartner() : Promise<ResultProps<PartnerProps[]>> {
 
 export async function updatePartner(data : Omit<PartnerProps, "id" | "photo">, photo: string, id : string) : Promise<ResultProps<PartnerProps>> {
 
-        const {is_main, name} = data
+        const {is_main, name, link} = data
     try {
         const updatedPartner = await prisma.partner.update({
             data : {
                 is_main : is_main,
                 name : name,
-                photo : photo
+                photo : photo,
+                link : link
             },
             where : {
                 id : id,
