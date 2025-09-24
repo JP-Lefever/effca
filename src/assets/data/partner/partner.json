@@ -14,5 +14,6 @@
   "buttonDelete" : "Supprimer",
   "title" : "Partenaires",
   "major" : "Partenaires majeurs",
-  "normal" : "Partenaires officiels"
+  "normal" : "Partenaires officiels",
+  "delete" : "Etes vous sur de vouloir supprimer le partenaire?"
 }
