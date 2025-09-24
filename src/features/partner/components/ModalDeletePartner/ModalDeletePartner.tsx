@@ -15,7 +15,7 @@ export default function ModalDeletePartner({id, closeModalAction } : {id: string
         if (response.success) {
             toast.success("Le partenaire a bien été supprimé")
             redirect("/admin/modifyPartner")
-        } else { toast.error("Une erreur est survenue lors de la suppression du joueur") }
+        } else { toast.error("Une erreur est survenue lors de la suppression du partenaire") }
     }
 
     return (<>
