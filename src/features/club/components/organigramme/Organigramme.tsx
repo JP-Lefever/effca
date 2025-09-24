@@ -26,7 +26,9 @@ export default function Organigramme({members, role} : { members : MemberProps[]
     const secretaireAdjoint = members.find(member => member.memberFunctionId?.includes((secretaireAdjointId.id)))
     const treasurer = members.find(member => member.memberFunctionId?.includes((treasurerId.id)))
     const treasurerAdjoint = members.find(member => member.memberFunctionId?.includes((treasurerAdjointId.id)))
-    const coachGeneral = members.find(member => member.memberFunctionId?.includes((coachGeneralId.id)))
+    const coachGeneral = members.filter(member => member.memberFunctionId?.includes((coachGeneralId.id)))
+
+    console.log(coachGeneral)
 
     return (
         <>
@@ -56,9 +58,14 @@ export default function Organigramme({members, role} : { members : MemberProps[]
                             <h3 className={styles.h3}>{treasurerAdjoint?.firstname} {treasurerAdjoint?.lastname}</h3>
                         </article>
                     </div>
+
                     <article className={styles.coach}>
                         <h3>{coachGeneralId.label}</h3>
-                        <h3 className={styles.h3}>{coachGeneral?.firstname} {coachGeneral?.lastname}</h3>
+                        {coachGeneral.map(member =>(
+                            <div key={member.id}>
+                             <h3 className={styles.h3}>{member.firstname} {member.lastname}</h3>
+                            </div>
+                        ))}
                     </article>
                     <article>
                         <h3 className={styles.comity}>{directionComity.label}</h3>
