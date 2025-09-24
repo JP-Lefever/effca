@@ -20,6 +20,7 @@ export default function ModifyPartner({partners} : {partners: PartnerProps[]}) {
                 name : dataForm.name as keyof PartnerProps,
                 is_main : dataForm.is_main as keyof  PartnerProps,
                 photo: dataForm.photo as keyof PartnerProps,
+                link: dataForm.link as keyof PartnerProps,
             }}
             partners = {p}
         />

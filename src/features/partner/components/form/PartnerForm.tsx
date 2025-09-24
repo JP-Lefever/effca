@@ -14,7 +14,7 @@ import ModalDeletePartner from "@/features/partner/components/ModalDeletePartner
 export default function PartnerForm({dataForm, partners} : { dataForm : formProps, partners?: PartnerProps }) {
 
 
-    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify, buttonDelete} = dataForm
+    const {legendName,name,labelPartner,selectName,is_main,photo,labelFile, buttonAdd, buttonModify, buttonDelete, link, linkLabel} = dataForm
 
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
@@ -26,6 +26,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
         defaultValues : {
             name : partners?.name,
             is_main : partners?.is_main,
+            link : partners?.link
         }
         }
     )
@@ -34,7 +35,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
 
         const {photo, ...rest} = data
         let photoURL : string  = photo as string
-        console.log("form:", data)
+
         if (typeof photo !== "string" && photo.length >0 &&  photo  ){
             const formData = new FormData
             formData.append("photo", photo[0])
@@ -57,7 +58,7 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
         const responseAddPartner = await addNewPartner(rest, photoURL)
 
         if(responseAddPartner.success){
-            console.log("form: ",responseAddPartner.data)
+
             toast.success(`Le partenaire ${responseAddPartner.data.name} a bien été ajouté`)
             reset()
         } else {
@@ -133,6 +134,22 @@ export default function PartnerForm({dataForm, partners} : { dataForm : formProp
                             <option value={"true"}>Oui</option>
                         </select>
                         {errors[is_main] && (<p>{errors[is_main]?.message as string}</p>)}
+                    </div>
+                    <div role={"group"}>
+                        <label htmlFor={link}>{linkLabel}</label>
+                        <input type="text" {...register(link ,{
+                            validate: (value) => {
+                                if (typeof value !== "string" || !value) return true;
+                                if (!value) return true;
+                                try {
+                                    new URL(value);
+                                    return true;
+                                } catch {
+                                    return "URL invalide";
+                                }
+                            },
+                        })}/>
+                        {errors[link] && <p>{errors[link]?.message as string}</p>}
                     </div>
                 <button type="submit">{partners ? buttonModify : buttonAdd}</button>
                 {partners &&
