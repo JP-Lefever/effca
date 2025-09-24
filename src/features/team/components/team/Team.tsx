@@ -6,10 +6,10 @@ import {CategoryProps} from "@/features/team/types";
 import {MemberProps} from "@/features/users/type";
 import {Suspense} from "react";
 
-export default function Team({category, manager}: {category: CategoryProps, manager : MemberProps}) {
+export default function Team({category, manager}: {category: CategoryProps, manager : MemberProps[]}) {
 
 
-
+console.log(manager)
 
     return (
         <>
@@ -36,28 +36,29 @@ export default function Team({category, manager}: {category: CategoryProps, mana
                             }
                         </ul>
                     </article>
-                    {manager &&
+                    <h2 className={styles.h2}>{data.manager}</h2>
+                    {manager.length >0 &&
+                        manager.map((m)=>
                     <article className={styles.infoMana} role={"group"}>
-                        <h2 className={styles.h2}>{data.manager}</h2>
                         <ul className={styles.ul}>
                             <li className={styles.manager}>
-                                <h4>{data.name}</h4>
-                                <p>{manager.firstname} {manager.lastname}</p>
+                                <p> - {m.firstname} {m.lastname}</p>
                             </li>
-                            {manager.mail &&
+                            {m.mail &&
                                 <li className={styles.manager}>
                                     <h4>{data.mail}</h4>
-                                    <p>{manager.mail}</p>
+                                    <p>{m.mail}</p>
                                 </li>
                             }
-                            {manager.tel &&
+                            {m.tel &&
                                 <li className={styles.manager}>
                                     <h4>{data.phone}</h4>
-                                    <p>{manager.tel}</p>
+                                    <p>{m.tel}</p>
                                 </li>
                             }
                         </ul>
                     </article>
+                )
                     }
                 </div>
                 </section>

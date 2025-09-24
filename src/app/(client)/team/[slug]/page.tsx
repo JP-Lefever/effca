@@ -29,7 +29,7 @@ export default async function  TeamDetailPage(props : {params : Promise<{slug : 
     return(
         <>
 
-            <Team category={category.data} manager = {manager[0]} />
+            <Team category={category.data} manager = {manager} />
         </>
     )
 }
