@@ -59,6 +59,7 @@ model Partner {
   name    String
   photo   String
   is_main Boolean
+  link    String?
 }
 
 model Actuality {

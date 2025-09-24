@@ -10,6 +10,18 @@ export const partnerSchema = z.object({
         if (val === "true") return true;
         if (val === "false") return false;
         return val ;
-    },z.boolean())
+    },z.boolean()),
+    link: z
+        .string()
+        .optional()
+        .refine((val) => {
+            if (!val) return true; // vide = ok
+            try {
+                new URL(val);
+                return true;
+            } catch {
+                return false;
+            }
+        }, { message: "URL invalide" }),
 
 })

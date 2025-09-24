@@ -1,5 +1,5 @@
 import styles from "./modalDeletePartner.module.css"
-import confirmData from "@/assets/data/member/member.json"
+import confirmData from "@/assets/data/partner/partner.json"
 import {Button } from "@/components/ui/buttons/Buttons";
 import {toast} from "react-toastify";
 import {redirect} from "next/navigation";
@@ -13,9 +13,9 @@ export default function ModalDeletePartner({id, closeModalAction } : {id: string
         const response = await destroyPartner(id)
 
         if (response.success) {
-            toast.success("Le joueur a bien été supprimé")
+            toast.success("Le partenaire a bien été supprimé")
             redirect("/admin/modifyPartner")
-        } else { toast.error("Une erreur est survenue lors de la suppression du joueur") }
+        } else { toast.error("Une erreur est survenue lors de la suppression du partenaire") }
     }
 
     return (<>
