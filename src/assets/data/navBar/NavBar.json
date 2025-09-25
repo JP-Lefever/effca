@@ -16,14 +16,14 @@
   },
   "match" : {
     "title" : "Matchs",
-    "link" : "/match/nextMatch"
+    "link" : "/match/prochain-match"
   },
   "actuality" : {
     "title" : "Actualités",
-    "link" : "/actuality"
+    "link" : "/actualites"
   },
   "partner" : {
     "title" : "Partenaires",
-    "link" : "/partners"
+    "link" : "/partenaires"
   }
 }

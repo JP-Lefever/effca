@@ -32,7 +32,7 @@ export default async function HomePage() {
             <article>
                 <MatchWidget/>
             </article>
-            <Link className={styles.linkPartner} href="/match/nextMatch">{dataTitle.buttonMatch}</Link>
+            <Link className={styles.linkPartner} href="/match/prochain-match">{dataTitle.buttonMatch}</Link>
         </section>
         <section className={styles.sectionPhoto} />
         <section className={styles.sectionActu}>
@@ -43,7 +43,7 @@ export default async function HomePage() {
             <article>
                 <ActualitiesList limit={4}/>
             </article>
-            <Link className={styles.linkActu} href="/actuality">{dataTitle.buttonActu}</Link>
+            <Link className={styles.linkActu} href="/actualites">{dataTitle.buttonActu}</Link>
         </section>
         <section className={styles.sectionPartner}>
             <article className={styles.div} >
@@ -54,7 +54,7 @@ export default async function HomePage() {
                 <Slider partners={partners.data}/>
 
             </article>
-            <Link className={styles.linkPartner} href="/partners">{dataTitle.buttonPartner}</Link>
+            <Link className={styles.linkPartner} href="/partenaires">{dataTitle.buttonPartner}</Link>
         </section>
     </>)
 }

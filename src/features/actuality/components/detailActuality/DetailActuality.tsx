@@ -13,7 +13,7 @@ export default function DetailActuality({actuality }: {actuality: ActualityProps
     return (
         <>
       <main id={"top"} className={styles.main}>
-            <button className={styles.button} type={"button"} onClick={() => {router.push("/actuality")}}>Revenir à la liste</button>
+            <button className={styles.button} type={"button"} onClick={() => {router.push("/actualites")}}>Revenir à la liste</button>
             <section  className={styles.section}>
                 <article>
                     <div role={"group"} className={styles.div}>
