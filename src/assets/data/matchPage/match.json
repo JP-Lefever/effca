@@ -4,17 +4,17 @@
     {
       "id" : 1,
       "title" : "Match",
-      "href" : "/match/nextMatch"
+      "href" : "/match/prochain-match"
     },
     {
       "id" : 2,
       "title" : "Classement",
-      "href" : "/match/league"
+      "href" : "/match/classement"
     },
     {
       "id" : 3,
       "title" : "Calendrier",
-      "href" : "/match/calendar"
+      "href" : "/match/calendrier"
     }
   ]
 }

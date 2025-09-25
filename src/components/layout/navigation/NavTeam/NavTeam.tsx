@@ -10,12 +10,12 @@ export default function NavTeam() {
 const pathname = usePathname()
 const splitUrl = pathname.split("/")
 const slug = splitUrl[2]
-const baseUrl = `/team/${slug}`
+const baseUrl = `/equipes/${slug}`
 
 
     const navItems = [
         { title: "Équipe", href: baseUrl },
-        { title: "Joueurs", href: `${baseUrl}/players` },
+        { title: "Joueurs", href: `${baseUrl}/joueurs` },
     ];
 
 
