@@ -16,7 +16,7 @@
   },
   "match" : {
     "title" : "Matchs",
-    "link" : "/match/nextMatch"
+    "link" : "/match/prochain-match"
   },
   "actuality" : {
     "title" : "Actualités",

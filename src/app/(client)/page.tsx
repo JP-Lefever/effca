@@ -32,7 +32,7 @@ export default async function HomePage() {
             <article>
                 <MatchWidget/>
             </article>
-            <Link className={styles.linkPartner} href="/match/nextMatch">{dataTitle.buttonMatch}</Link>
+            <Link className={styles.linkPartner} href="/match/prochain-match">{dataTitle.buttonMatch}</Link>
         </section>
         <section className={styles.sectionPhoto} />
         <section className={styles.sectionActu}>
