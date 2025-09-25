@@ -36,7 +36,7 @@ export default function NavBar({team} : {team : CategoryProps[]}){
                 <ul className={styles.dropDown}>
                         {team.map((item, index) => (
                     <li className={styles.liDropdown} key={index}>
-                            <Link className={styles.subLink} onClick={toggleMenu} href={`/team/${item.label}`}>{item.label}</Link>
+                            <Link className={styles.subLink} onClick={toggleMenu} href={`/equipes/${item.label}`}>{item.label}</Link>
                     </li>
                         ))}
                 </ul>

@@ -19,9 +19,9 @@ export default function RevalidateButton() {
                 body: JSON.stringify({
                     paths: [
                         "/",
-                        "/actualite",
+                        "/actualites",
                         "/club",
-                        "/team",
+                        "/equipes",
                         "/partners",
                         '/admin/modifyMember',
                         '/admin/modifyActuality',
