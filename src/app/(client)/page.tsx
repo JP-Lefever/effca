@@ -54,7 +54,7 @@ export default async function HomePage() {
                 <Slider partners={partners.data}/>
 
             </article>
-            <Link className={styles.linkPartner} href="/partners">{dataTitle.buttonPartner}</Link>
+            <Link className={styles.linkPartner} href="/partenaires">{dataTitle.buttonPartner}</Link>
         </section>
     </>)
 }

@@ -22,7 +22,7 @@ export default function RevalidateButton() {
                         "/actualites",
                         "/club",
                         "/equipes",
-                        "/partners",
+                        "/partenaires",
                         '/admin/modifyMember',
                         '/admin/modifyActuality',
                         '/admin/modifyHistory',
