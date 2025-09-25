@@ -43,7 +43,7 @@ export default async function HomePage() {
             <article>
                 <ActualitiesList limit={4}/>
             </article>
-            <Link className={styles.linkActu} href="/actuality">{dataTitle.buttonActu}</Link>
+            <Link className={styles.linkActu} href="/actualites">{dataTitle.buttonActu}</Link>
         </section>
         <section className={styles.sectionPartner}>
             <article className={styles.div} >

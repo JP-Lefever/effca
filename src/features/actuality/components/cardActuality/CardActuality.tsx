@@ -16,7 +16,7 @@ export default function CardActuality({actuality} : {actuality: ActualityProps }
     return (
         <>
 
-            <Link href={`/actuality/${actuality.id}`}  className={styles.section}>
+            <Link href={`/actualites/${actuality.id}`} className={styles.section}>
                 {actuality.photo !== "" && actuality.photo !== null &&
                 <Suspense fallback={<p>Chargement...</p>}>
                     <figure className={styles.figure}>
