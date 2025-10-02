@@ -45,7 +45,7 @@ export default function Footer() {
             </section>
             <section>
                 <article className={styles.dev}>
-                    <p>Réalisé par <a target={"_blank"} rel={"noopener noreferrer"} href={"https://jplef.fr"}>JPLEFEVER</a></p>
+                    <p>Réalisé par <a target={"_blank"} rel={"noopener noreferrer"} href={"https://loopiweb.fr"}>LOOPI WEB</a></p>
                 </article>
             </section>
         </footer>
