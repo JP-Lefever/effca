@@ -8,6 +8,34 @@ import {readAllPartner} from "@/features/partner/repository";
 import Slider from "@/components/ui/slider/Slider";
 import {notFound} from "next/navigation";
 import React from "react";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "EFFCA | Club de foot Entente Fons Fourmagnac Camburat Assier",
+    description: "EFFCA, club de football basé à Fons, Fourmagnac, Camburat et Assier. Suivez nos équipes, nos matchs et nos événements sportifs.",
+    icons: "/images/logo.webp",
+    keywords: ["football", "EFFCA", "club de foot", "Fons", "Fourmagnac", "Camburat", "Assier", "sport local"],
+    openGraph: {
+        title: "EFFCA - Club de foot Entente Fons Fourmagnac Camburat Assier",
+        description: "Suivez l'actualité du club de foot EFFCA : équipes, matchs, événements et résultats.",
+        url: "#",
+        images: [
+            {
+                url: "/images/logo.webp",
+                width: 800,
+                height: 600,
+                alt: "Logo EFFCA"
+            }
+        ],
+        siteName: "EFFCA"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "EFFCA - Club de foot Entente Fons Fourmagnac Camburat Assier",
+        description: "Suivez l'actualité du club de foot EFFCA : équipes, matchs, événements et résultats.",
+        images: ["/images/logo.webp"]
+    },
+};
 
 export const revalidate = 0
 
