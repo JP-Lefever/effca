@@ -5,11 +5,50 @@ import {readAllPartner} from "@/features/partner/repository";
 import {notFound} from "next/navigation";
 import {Metadata} from "next";
 
-export const metadata : Metadata = {
+export const metadata: Metadata = {
     title: "EFFCA | Les partenaires",
-    description: "Les partenaires officiels de l'Entente Fons Fourmagnac Camburat Assier",
-    icons : "/images/logo.webp",
-}
+    description:
+        "Découvrez les partenaires officiels du club de football EFFCA : Entente Fons Fourmagnac Camburat Assier et leurs collaborations.",
+    icons: "/images/logo.webp",
+    keywords: [
+        "EFFCA",
+        "club de foot",
+        "football",
+        "partenaires",
+        "collaborations",
+        "Fons",
+        "Fourmagnac",
+        "Camburat",
+        "Assier",
+    ],
+    metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"),
+    openGraph: {
+        title: "EFFCA | Les partenaires",
+        description:
+            "Découvrez les partenaires officiels du club de football EFFCA : Entente Fons Fourmagnac Camburat Assier et leurs collaborations.",
+        url: `${process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"}/partenaires`,
+        images: [
+            {
+                url: "/images/logo.webp",
+                width: 800,
+                height: 600,
+                alt: "Logo EFFCA",
+            },
+        ],
+        siteName: "EFFCA",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "EFFCA | Les partenaires",
+        description:
+            "Découvrez les partenaires officiels du club de football EFFCA : Entente Fons Fourmagnac Camburat Assier et leurs collaborations.",
+        images: ["/images/logo.webp"],
+    },
+    alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_DOMAIN || "http://localhost:3000"}/partenaires`,
+    },
+};
+
 
 export const revalidate = 0
 
