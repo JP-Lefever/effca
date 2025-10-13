@@ -15,11 +15,11 @@
 
     @media screen and (max-width: 375px){
         width: 45vw;
-        height: 35vh;
+        height: 50vh;
     }
     @media screen and (min-width: 375px) and (max-width: 568px){
         width: 45vw;
-        height: 30vh;
+        height: 40vh;
     }
     @media screen and (min-width: 569px) and (max-width: 1024px){
         width: 35vw;
