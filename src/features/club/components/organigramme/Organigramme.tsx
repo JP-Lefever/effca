@@ -13,9 +13,9 @@ export default function Organigramme({members, role} : { members : MemberProps[]
     const treasurerId = role.find((r)=> r.label === "Trésorier")
     const treasurerAdjointId = role.find((r)=> r.label === "Trésorier adjoint")
     const coachGeneralId = role.find((r)=> r.label === "Entraineur général")
-    const directionComity = role.find((r)=> r.label === "Comité de direction")
+    const directionComityId = role.find((r)=> r.label === "Comité de direction")
 
-    if(!presidentId || !secretaireGeneralId ||  !treasurerId || !secretaireAdjointId || !treasurerAdjointId || !coachGeneralId || !directionComity){
+    if(!presidentId || !secretaireGeneralId ||  !treasurerId || !secretaireAdjointId || !treasurerAdjointId || !coachGeneralId || !directionComityId){
         return (
             <p>Aucun membre trouvé</p>
         )
@@ -27,6 +27,9 @@ export default function Organigramme({members, role} : { members : MemberProps[]
     const treasurer = members.find(member => member.memberFunctionId?.includes((treasurerId.id)))
     const treasurerAdjoint = members.find(member => member.memberFunctionId?.includes((treasurerAdjointId.id)))
     const coachGeneral = members.filter(member => member.memberFunctionId?.includes((coachGeneralId.id)))
+    const directionComity = members.filter(member => member.memberFunctionId?.includes((directionComityId.id)))
+
+
 
     console.log(coachGeneral)
 
@@ -68,9 +71,15 @@ export default function Organigramme({members, role} : { members : MemberProps[]
                         ))}
                     </article>
                     <article>
-                        <h3 className={styles.comity}>{directionComity.label}</h3>
+                        <h3 className={styles.comity}>{directionComityId.label}</h3>
                             <div role={"group"} className={styles.comityName}>
-                        {members.map((member)=> (
+                                <h3  className={styles.h3Comity}>{president?.firstname} {president?.lastname}</h3>
+                                <h3  className={styles.h3Comity}>{secretaireGeneral?.firstname} {secretaireGeneral?.lastname}</h3>
+                                <h3  className={styles.h3Comity}>{secretaireAdjoint?.firstname} {secretaireAdjoint?.lastname}</h3>
+                                <h3  className={styles.h3Comity}>{treasurer?.firstname} {treasurer?.lastname}</h3>
+                                <h3  className={styles.h3Comity}>{treasurerAdjoint?.firstname} {treasurerAdjoint?.lastname}</h3>
+                                <h3  className={styles.h3Comity}>{coachGeneral[1]?.firstname} {coachGeneral[1]?.lastname}</h3>
+                        {directionComity.map((member)=> (
                                 <h3 key={member.id} className={styles.h3Comity}>{member.firstname} {member.lastname}</h3>
                         ))}
                             </div>
