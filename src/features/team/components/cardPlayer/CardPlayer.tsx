@@ -9,10 +9,10 @@ export default function CardPlayer({player} : {player : MemberProps}) {
 
     return (
         <>
-        <section  >
+        <section >
             <Suspense>
-                <figure>
-                    <Image src={player.photo as string} alt={player.firstname} width={320} height={320} />
+                <figure className={styles.figure}>
+                    <Image className={styles.image} src={player.photo as string} alt={player.firstname} fill={true} />
                 </figure>
             </Suspense>
             <article className={styles.info}>
