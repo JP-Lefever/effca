@@ -13,7 +13,6 @@ type PlayersByPosProps = {
 
 export default function Players({playersByPositions}:  PlayersByPosProps) {
 
-
     return <>
 
 

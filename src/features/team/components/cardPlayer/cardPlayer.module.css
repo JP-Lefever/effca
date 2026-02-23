@@ -1,6 +1,21 @@
 .info {
     display: flex;
     gap : 1em;
+    justify-content: center; /* Centre les noms sous la photo */
+    margin-top: 10px;
 
 }
 
+.figure {
+    position: relative;
+    width : 15vw;
+    min-height: 20vw;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: transparent;
+}
+
+.image {
+    object-fit: cover;
+    object-position: bottom center;
+}
