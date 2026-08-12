@@ -24,7 +24,7 @@ export default function Players({playersByPositions}:  PlayersByPosProps) {
                     </article>
                     <article className={clsx(styles.card, i%2===0 ? styles.card : styles.cardB )}>
                         {player.players.map((player)=>(
-                            <article  key={player.id}>
+                            <article key={player.id}>
                                 <CardPlayer player={player}/>
                             </article>
                         ))}
