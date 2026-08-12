@@ -16,8 +16,8 @@ export default function CardPlayer({player} : {player : MemberProps}) {
                 </figure>
             </Suspense>
             <article className={styles.info}>
-                <h2>{player.firstname}</h2>
-                <h2>{player.lastname}</h2>
+                <h2 className={styles.h2}>{player.firstname}</h2>
+                <h2 className={styles.h2}>{player.lastname}</h2>
             </article>
         </section>
 

@@ -68,9 +68,10 @@
     position : relative;
     top : 4vh;
     @media screen and (max-width : 568px) {
-        font-size: var(--title-size-h1-resp);
+        font-size: 2em;
         color : var(--black-text);
         margin-bottom: 0.5em;
+
     }
 }
 
