@@ -49,17 +49,25 @@ export default function Organigramme({members, role} : { members : MemberProps[]
                         <h3 className={styles.h3}>{presidentAdjoint?.firstname} {presidentAdjoint?.lastname}</h3>
                     </article>
                 </div>
-                    <div role={"group"} className={styles.secretaire}>
+                    <div role={"group"} className={styles.dir}>
                         <article className={styles.pres}>
                             <h3>{secretaireGeneralId.label}</h3>
                             <h3 className={styles.h3}>{secretaireGeneral?.firstname} {secretaireGeneral?.lastname}</h3>
                         </article>
                         <article className={styles.pres}>
-                            <h3>{secretaireAdjointId.label}</h3>
-                            <h3 className={styles.h3}>{secretaireAdjoint?.firstname} {secretaireAdjoint?.lastname}</h3>
+                            <h3>{coachGeneralId.label}</h3>
+                            {coachGeneral.map(member =>(
+                                <div key={member.id}>
+                                    <h3 className={styles.h3}>{member.firstname} {member.lastname}</h3>
+                                </div>
+                            ))}
                         </article>
+                        {/*<article className={styles.pres}>*/}
+                        {/*    <h3>{secretaireAdjointId.label}</h3>*/}
+                        {/*    <h3 className={styles.h3}>{secretaireAdjoint?.firstname} {secretaireAdjoint?.lastname}</h3>*/}
+                        {/*</article>*/}
                     </div>
-                    <div role={"group"} className={styles.treasurer}>
+                    <div role={"group"} className={styles.dir}>
                         <article className={styles.pres}>
                             <h3>{treasurerId.label}</h3>
                             <h3 className={styles.h3}>{treasurer?.firstname} {treasurer?.lastname}</h3>
@@ -70,21 +78,14 @@ export default function Organigramme({members, role} : { members : MemberProps[]
                         </article>
                     </div>
 
-                    <article className={styles.coach}>
-                        <h3>{coachGeneralId.label}</h3>
-                        {coachGeneral.map(member =>(
-                            <div key={member.id}>
-                             <h3 className={styles.h3}>{member.firstname} {member.lastname}</h3>
-                            </div>
-                        ))}
-                    </article>
+
                     <article>
                         <h3 className={styles.comity}>{directionComityId.label}</h3>
                             <div role={"group"} className={styles.comityName}>
                                 <h3  className={styles.h3Comity}>{president?.firstname} {president?.lastname}</h3>
                                 <h3  className={styles.h3Comity}>{presidentAdjoint?.firstname} {presidentAdjoint?.lastname}</h3>
                                 <h3  className={styles.h3Comity}>{secretaireGeneral?.firstname} {secretaireGeneral?.lastname}</h3>
-                                <h3  className={styles.h3Comity}>{secretaireAdjoint?.firstname} {secretaireAdjoint?.lastname}</h3>
+                                {/*<h3  className={styles.h3Comity}>{secretaireAdjoint?.firstname} {secretaireAdjoint?.lastname}</h3>*/}
                                 <h3  className={styles.h3Comity}>{treasurer?.firstname} {treasurer?.lastname}</h3>
                                 <h3  className={styles.h3Comity}>{treasurerAdjoint?.firstname} {treasurerAdjoint?.lastname}</h3>
                         {directionComity.map((member)=> (
