@@ -25,5 +25,9 @@
   "partner" : {
     "title" : "Partenaires",
     "link" : "/partenaires"
+  },
+  "shop" : {
+    "title" : "Boutique",
+    "link" : "https://www.11teamsports.com/fr-fr/clubshop/entente-fons-fourmagnac-camburat-assier/"
   }
 }

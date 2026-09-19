@@ -55,6 +55,9 @@ export default function NavBar({team} : {team : CategoryProps[]}){
             <li>
                 <Link className={styles.link} onClick={toggleMenu} href={dataNav.partner.link}>{dataNav.partner.title}</Link>
             </li>
+            <li>
+                <Link className={styles.link} onClick={toggleMenu} href={dataNav.shop.link} target={"_blank"}>{dataNav.shop.title}</Link>
+            </li>
 
         </ul>
 
