@@ -41,19 +41,22 @@ export default function NavBar({team} : {team : CategoryProps[]}){
                         ))}
                 </ul>
             </li>
+            <li>
+                <Link className={styles.link} onClick={toggleMenu} href={dataNav.match.link}>{dataNav.match.title}</Link>
+            </li>
             <li className={styles.imageContainer} >
                 <Link className={styles.link} onClick={toggleMenu} href={dataNav.logo.link}>
                     <Image className={styles.image} src={dataNav.logo.title} alt={"Logo club"} priority width={160} height={160}/>
                 </Link>
             </li>
             <li>
-                <Link className={styles.link} onClick={toggleMenu} href={dataNav.match.link}>{dataNav.match.title}</Link>
-            </li>
-            <li>
                 <Link className={styles.link} onClick={toggleMenu} href={dataNav.actuality.link}>{dataNav.actuality.title}</Link>
             </li>
             <li>
                 <Link className={styles.link} onClick={toggleMenu} href={dataNav.partner.link}>{dataNav.partner.title}</Link>
+            </li>
+            <li>
+                <Link className={styles.link} onClick={toggleMenu} href={dataNav.shop.link} target={"_blank"}>{dataNav.shop.title}</Link>
             </li>
 
         </ul>
